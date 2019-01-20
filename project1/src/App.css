@@ -13,3 +13,26 @@
   color: white;
 }
 
+
+.chart{
+  max-height: 300px;
+}
+
+.slider{
+ margin-top: 20px;
+ width:30vw !important;
+ margin: 0 auto;
+ top: 0 !important;
+}
+
+
+@media screen and (max-width: 768px){
+.slider{
+  width:70vw !important;;
+}
+  .box{
+    padding-top:50px;
+    width: 90vw;
+  }
+}
+
