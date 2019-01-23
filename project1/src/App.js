@@ -139,8 +139,8 @@ class App extends Component {
 
 
   render() {
-    var filteredPeople = this.state.filteredPeople.map(people => <li key={people.name} name={people.name} onClick={e => this.selectPerson(e.target.getAttribute("name"))} className="btn">{people.name}</li>)
-    var wrapperFilteredPeople = <ul>{filteredPeople}</ul>
+    var filteredPeople = this.state.filteredPeople.map(people => <li key={people.name} className="col-12 text-center" name={people.name} onClick={e => this.selectPerson(e.target.getAttribute("name"))} >{people.name}</li>)
+    var wrapperFilteredPeople = <ul className="studentList mx-auto">{filteredPeople}</ul>
 
 
     return (
@@ -177,12 +177,14 @@ class App extends Component {
                  */}
                 </div>
          
-              <div className="row pt-5">
+              <div className="row height">
+              <div className="col-12 mx-auto">
                 {wrapperFilteredPeople}
+              </div>
               </div>
             </div>
 
-            <div className="col-12 col-md-6 chart">
+            <div className="col-12 col-md-6 chart wrapper">
             <div className="row">
             <div className="col-10 mx-auto">
             <h4 className="text-center">Personal information</h4>  <br/>
@@ -196,15 +198,19 @@ class App extends Component {
             </div>
             
           </div>
-              <FlexibleXYPlot yDomain={[0, 10]} xType="ordinal" animation >
+              <FlexibleXYPlot className="wrapper" yDomain={[0, 10]} xType="ordinal" animation >
                 <VerticalGridLines />
                 <HorizontalGridLines />
                 <XAxis />
                 <YAxis tickValues={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]} />
                 <VerticalBarSeries colorType="literal" data={this.state.person["data"]} />
               </FlexibleXYPlot >
-              <h4>Interests</h4>
-              <p>{this.state.person["interests"]}</p>
+              <div className="row">
+              <div className="col-12">
+              <h4 className="text-center">Interests</h4>
+              <p className="text-left">{this.state.person["interests"]}</p>
+              </div>
+              </div>
             </div>
           </div>
         </div>

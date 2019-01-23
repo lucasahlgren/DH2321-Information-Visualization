@@ -25,6 +25,10 @@
 }
 
 
+.wrapper{
+  min-height: 500px;
+}
+
 canvas {
   padding-left: 0;
   padding-right: 0;
@@ -43,6 +47,7 @@ svg {
 .chart{
   min-height: 300px;
   max-height: 300px;
+  position: fixed;
 }
 
 .slider{
@@ -52,6 +57,25 @@ svg {
  top: 0 !important;
 }
 
+.height{
+  min-height: 500px;
+}
+.studentList{
+  overflow: scroll;
+  height: 500px;
+  list-style: none;
+  width: 80%;
+  padding: 0px;
+}
+
+.studentList li{
+  padding: 10px;
+  background: lightgrey;
+}
+
+.studentList li:hover{
+  background: lightblue;
+}
 
 @media screen and (max-width: 768px){
 .slider{
