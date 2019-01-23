@@ -75,7 +75,7 @@ class App extends Component {
     cleanedDataBar[0]["data"].map(label => itemsList.push({ title: label["x"] }))
     console.log(labels)
     console.log(itemsList[0].title)
-    this.setState({ cleanedDataPara: <ParalellCoordinatesPlot filter={this.paraFilter} data={cleanedDataPara} />, labelComp: <LabeledHeatmap data={cleanedDataBar}></LabeledHeatmap>, data: cleanedDataBar, options: options, person: cleanedDataBar[0], labels: labels, label: itemsList[0].title })
+    this.setState({ cleanedDataPara: <ParalellCoordinatesPlot filter={this.paraFilter} data={cleanedDataPara} />, filteredPeople: cleanedDataPara, labelComp: <LabeledHeatmap data={cleanedDataBar}></LabeledHeatmap>, data: cleanedDataBar, options: options, person: cleanedDataBar[0], labels: labels, label: itemsList[0].title })
   }
 
   /* Filter people by slider */
@@ -139,12 +139,12 @@ class App extends Component {
 
 
   render() {
-    var filteredPeople = this.state.filteredPeople.map(people => <li name={people.name} onClick={e => this.selectPerson(e.target.getAttribute("name"))} className="btn">{people.name}</li>)
+    var filteredPeople = this.state.filteredPeople.map(people => <li key={people.name} name={people.name} onClick={e => this.selectPerson(e.target.getAttribute("name"))} className="btn">{people.name}</li>)
     var wrapperFilteredPeople = <ul>{filteredPeople}</ul>
 
 
     return (
-      <div className="App">
+      <div className="App" >
         <header className="App-header">
           <h2>Visualize Student Groups</h2>
         </header>
@@ -156,36 +156,46 @@ class App extends Component {
               <h3>Welcome</h3>
               <p>This is a visualization tool where you can search and look up the skills of the persons who are taking the course this year.</p>
             </div>
-            
-             
-           
           </div>
         </div>
         <div className="Test2">
                 {this.state.cleanedDataPara}
               </div>
-        <div className="container">
-          <div className="row mx-auto">
-            <select onChange={this.filterData} value={this.state.person.name}>
-              {this.state.options}
-            </select>
-          </div>
+        <div className="container pt-3 pb-3">
+          
           <div className="row p-3">
-            <div className="col-6">
+            <div className="col-12 col-md-6">
               <div className="row">
+              <div className="col-10 mx-auto">
+            <h4 className="text-center">Students</h4>  <br/>
+            </div>
+            {/*
                 <select className="mx-auto mb-3" onChange={this.handleLabel} value={this.state.label}>
                   {this.state.labels}
                 </select>
                 <Range className="slider" defaultValue={[0, 10]} marks={{ 0: 0, 1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10 }} min={0} max={10} onChange={this.changeSlider} />
-              </div>
+                 */}
+                </div>
+         
               <div className="row pt-5">
-
-
                 {wrapperFilteredPeople}
               </div>
             </div>
 
             <div className="col-12 col-md-6 chart">
+            <div className="row">
+            <div className="col-10 mx-auto">
+            <h4 className="text-center">Personal information</h4>  <br/>
+            </div>
+            </div>
+            <div className="row mx-auto">
+            <div className="col-12">
+            <select onChange={this.filterData} value={this.state.person.name}>
+              {this.state.options}
+            </select>
+            </div>
+            
+          </div>
               <FlexibleXYPlot yDomain={[0, 10]} xType="ordinal" animation >
                 <VerticalGridLines />
                 <HorizontalGridLines />
@@ -198,7 +208,9 @@ class App extends Component {
             </div>
           </div>
         </div>
-
+        <footer className="App-footer">
+          <p><strong>&copy; Lucas Ahlgren 2019 | Project 1 DH2321 VT19-1 Information Visualization</strong></p>
+        </footer>
       </div>
 
     );

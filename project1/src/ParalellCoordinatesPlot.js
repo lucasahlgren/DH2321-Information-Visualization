@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
 import data from './data';
 import './d3.parcoords.css';
 
@@ -10,7 +9,6 @@ class ParalellCoordinatesPlot extends Component {
         super(props);
         this.state = {
             color: ['rgb(150,20,20)'],
-            width: 1300,
             height: 300,
             dummy: false,
             
