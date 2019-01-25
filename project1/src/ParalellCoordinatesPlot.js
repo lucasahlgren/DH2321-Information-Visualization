@@ -48,6 +48,7 @@ class ParalellCoordinatesPlot extends Component {
         this.props.reset()
     }
 
+
     componentDidMount() {
 
         /* Responsive plot */

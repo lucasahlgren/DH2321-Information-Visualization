@@ -41,7 +41,6 @@ class App extends Component {
 
   componentDidMount() {
     /* Eventlistener responsive when resizing */
-    this.searchPeople("Media")
     window.addEventListener("resize", () => {
       console.log("resized!")
       console.log(window.innerHeight)
@@ -87,7 +86,7 @@ class App extends Component {
     console.log(cleanedDataPara)
     var options = cleanedDataBar.map(person => <option key={person["name"]} value={person["name"]}>{person["name"]}</option>)
     console.log(options)
-    this.setState({ cleanedDataPara: cleanedDataPara, cleanedDataParaComp: <ParalellCoordinatesPlot reset={this.resetFilteredData} filter={this.paraFilter} data={cleanedDataPara} />, data: cleanedDataBar, options: options, person: cleanedDataBar[0]})
+    this.setState({ cleanedDataPara: cleanedDataPara, data: cleanedDataBar, options: options, person: cleanedDataBar[0]})
   }
 
   /* Filter people by slider */
@@ -161,6 +160,10 @@ class App extends Component {
       console.log("Searched list")
     }
 
+  
+      var paralellPlot = <ParalellCoordinatesPlot reset={this.resetFilteredData} filter={this.paraFilter} data={cleanedDataPara} />
+   
+
     var filteredPeopleTag = this.results.map(people => <li key={people.name} className="col-12 text-center" name={people.name} onClick={e => this.selectPerson(e.target.getAttribute("name"))} >{people.name}</li>)
     var wrapperFilteredPeople = <ul className="studentList mx-auto">{filteredPeopleTag}</ul>
 
@@ -169,7 +172,7 @@ class App extends Component {
     return (
       <div className="app">
         <div className="parallelCoordinatesPlot">
-          {this.state.cleanedDataParaComp}
+          {paralellPlot}
         </div>
         <div className="container-fluid pt-3 pb-3">
           <div className="row p-3 mx-auto">
@@ -186,7 +189,7 @@ class App extends Component {
             </div>
             <div className="col-12 col-md-7">
               <div className="mx-auto">
-                <h4 className="text-center pb-2">Personal information</h4>
+                <h4 className="text-center pb-2">Student information</h4>
                 <div className="col-12">
                   <select onChange={this.filterData} value={this.state.person.name}>
                     {this.state.options}
