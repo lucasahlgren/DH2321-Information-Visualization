@@ -7,7 +7,7 @@ import ParalellCoordinatesPlot from './ParalellCoordinatesPlot'
 
 /* React-vis */
 import '../node_modules/react-vis/dist/style.css';
-import { FlexibleXYPlot, VerticalGridLines, HorizontalGridLines, XAxis, YAxis, VerticalBarSeries } from 'react-vis';
+import { XYPlot, VerticalGridLines, HorizontalGridLines, XAxis, YAxis, VerticalBarSeries } from 'react-vis';
 
 /* RC-Slider */
 import 'rc-slider/assets/index.css';
@@ -28,16 +28,33 @@ class App extends Component {
     this.filterData = this.filterData.bind(this)
     this.cleanData = this.cleanData.bind(this)
     this.selectPerson = this.selectPerson.bind(this)
-    this.changeSlider = this.changeSlider.bind(this)
-    this.handleLabel = this.handleLabel.bind(this)
     this.filterPeople = this.filterPeople.bind(this)
     this.paraFilter = this.paraFilter.bind(this)
+    this.resetFilteredData = this.resetFilteredData.bind(this)
   }
 
 
   componentWillMount() {
     this.cleanData()
+     /* Responsive plot */
+    this.setState({width: window.innerWidth - (window.innerWidth * 0.7)})
   }
+
+  componentDidMount(){
+    /* Eventlistener responsive when resizing */
+    window.addEventListener("resize", () => {
+        console.log("resized!")
+        console.log(window.innerHeight)
+        console.log(window.innerWidth)
+        console.log("Width calc: " + this.state.width)
+        if(window.innerWidth < 768){
+        this.setState({width: window.innerWidth - (window.innerWidth * 0.3)})
+      }
+      else{
+        this.setState({width: window.innerWidth - (window.innerWidth * 0.7)})
+      }
+    })
+}
 
 
   cleanData() {
@@ -45,7 +62,9 @@ class App extends Component {
     var cleanedDataBar = [];
     var cleanedDataPara = [];
     data.map(person => cleanedDataBar.push({
-      name: person["What is your first and last name?"], interests: person["Please, tell me about yourself. What interest you? Do you have any hobbies?"],
+      name: person["What is your first and last name?"], 
+      interests: person["Please, tell me about yourself. What interest you? Do you have any hobbies?"],
+      major: person["What is your Major?"],
       data: [{ x: "Visualization", y: person["How would you rate your Information Visualization skills?"], color: "#12939A" },
       { x: "Statistics", y: person["How would you rate your statistical skills?"], color: "#79C7E3" },
       { x: "Math", y: person["How would you rate your mathematics skills?"], color: "#A3177" },
@@ -61,11 +80,9 @@ class App extends Component {
       math: person["How would you rate your mathematics skills?"],
       drawing: person["How would you rate your drawing and artistic skills?"],
       coding: person["How would you rate your programming skills?"],
-      ux: person["How would you rate your user experience evaluation skills?"]
+      ux: person["How would you rate your user experience evaluation skills?"],
+      major: person["What is your Major?"]
     }))
-
-
-
     console.log(cleanedDataBar)
     console.log(cleanedDataPara)
     var options = cleanedDataBar.map(person => <option key={person["name"]} value={person["name"]}>{person["name"]}</option>)
@@ -75,7 +92,7 @@ class App extends Component {
     cleanedDataBar[0]["data"].map(label => itemsList.push({ title: label["x"] }))
     console.log(labels)
     console.log(itemsList[0].title)
-    this.setState({ cleanedDataPara: <ParalellCoordinatesPlot filter={this.paraFilter} data={cleanedDataPara} />, filteredPeople: cleanedDataPara, labelComp: <LabeledHeatmap data={cleanedDataBar}></LabeledHeatmap>, data: cleanedDataBar, options: options, person: cleanedDataBar[0], labels: labels, label: itemsList[0].title })
+    this.setState({ cleanedDataPara: cleanedDataPara, cleanedDataParaComp: <ParalellCoordinatesPlot reset={this.resetFilteredData} filter={this.paraFilter} data={cleanedDataPara} />, filteredPeople: cleanedDataPara, data: cleanedDataBar, options: options, person: cleanedDataBar[0], labels: labels, label: itemsList[0].title })
   }
 
   /* Filter people by slider */
@@ -99,23 +116,9 @@ class App extends Component {
     this.setState({ filteredPeople: list })
   }
 
-
-  /* Slider value and type */
-  handleLabel(event) {
-    var label = event.target.value;
-    console.log(label)
-    this.setState({ label: label })
-    this.filterPeople(label)
-  }
-
-  changeSlider(event) {
-    console.log("Slider: " + event)
-    console.log(event)
-    var min = event[0]
-    var max = event[1]
-    this.setState({ min: min, max: max })
-    var label = this.state.label
-    this.filterPeople(label)
+  resetFilteredData(){
+    console.log(this.state.cleanedDataPara)
+    this.setState({filteredPeople: this.state.cleanedDataPara})
   }
 
 
@@ -137,88 +140,64 @@ class App extends Component {
     this.selectPerson(e.target.value)
   }
 
-
   render() {
     var filteredPeople = this.state.filteredPeople.map(people => <li key={people.name} className="col-12 text-center" name={people.name} onClick={e => this.selectPerson(e.target.getAttribute("name"))} >{people.name}</li>)
     var wrapperFilteredPeople = <ul className="studentList mx-auto">{filteredPeople}</ul>
 
-
     return (
-      <div className="App" >
-        <header className="App-header">
-          <h2>Visualize Student Groups</h2>
-        </header>
-        <div>
+      <div className="app">
+        <div className="parallelCoordinatesPlot">
+                {this.state.cleanedDataParaComp}
         </div>
-        <div className="container">
-          <div className="row">
-            <div className="col-12 p-3">
-              <h3>Welcome</h3>
-              <p>This is a visualization tool where you can search and look up the skills of the persons who are taking the course this year.</p>
-            </div>
-          </div>
-        </div>
-        <div className="Test2">
-                {this.state.cleanedDataPara}
-              </div>
-        <div className="container pt-3 pb-3">
-          
-          <div className="row p-3">
-            <div className="col-12 col-md-6">
-              <div className="row">
+        <div className="container-fluid pt-3 pb-3">
+          <div className="row p-3 mx-auto">
+            <div className="col-12 col-md-4">
               <div className="col-10 mx-auto">
-            <h4 className="text-center">Students</h4>  <br/>
+            <h4 className="text-center pb-2">Students</h4>
             </div>
-            {/*
-                <select className="mx-auto mb-3" onChange={this.handleLabel} value={this.state.label}>
-                  {this.state.labels}
-                </select>
-                <Range className="slider" defaultValue={[0, 10]} marks={{ 0: 0, 1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10 }} min={0} max={10} onChange={this.changeSlider} />
-                 */}
-                </div>
-         
-              <div className="row height">
+              <div className="height">
               <div className="col-12 mx-auto">
                 {wrapperFilteredPeople}
               </div>
               </div>
             </div>
-
-            <div className="col-12 col-md-6 chart wrapper">
-            <div className="row">
-            <div className="col-10 mx-auto">
-            <h4 className="text-center">Personal information</h4>  <br/>
-            </div>
-            </div>
-            <div className="row mx-auto">
+            <div className="col-12 col-md-7">
+            <div className="mx-auto">  
+            <h4 className="text-center pb-2">Personal information</h4>
             <div className="col-12">
             <select onChange={this.filterData} value={this.state.person.name}>
               {this.state.options}
             </select>
             </div>
-            
           </div>
-              <FlexibleXYPlot className="wrapper" yDomain={[0, 10]} xType="ordinal" animation >
+          <div className="row pt-4">
+                 <div className="col-md-7 p-md-0 pb-3">
+                  <h4>Skills</h4>
+              <XYPlot height={300} width={this.state.width} yDomain={[0, 10]} xType="ordinal" animation >
                 <VerticalGridLines />
                 <HorizontalGridLines />
                 <XAxis />
                 <YAxis tickValues={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]} />
                 <VerticalBarSeries colorType="literal" data={this.state.person["data"]} />
-              </FlexibleXYPlot >
-              <div className="row">
-              <div className="col-12">
+              </XYPlot >
+              </div>
+              <div className="col-md-5">
+              <h4 className="text-center">Major</h4>
+              <p>{this.state.person["major"]}</p>
+              <br/>
               <h4 className="text-center">Interests</h4>
-              <p className="text-left">{this.state.person["interests"]}</p>
-              </div>
-              </div>
+              <p>{this.state.person["interests"]}</p>
+                 </div>
+                 </div>
             </div>
           </div>
         </div>
-        <footer className="App-footer">
+        <div className="container-fluid p-0">
+          <footer className="appFooter p-3 m-0">
           <p><strong>&copy; Lucas Ahlgren 2019 | Project 1 DH2321 VT19-1 Information Visualization</strong></p>
         </footer>
+        </div> 
       </div>
-
     );
   }
 }
