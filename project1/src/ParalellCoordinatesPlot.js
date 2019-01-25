@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import data from './data';
 import './d3.parcoords.css';
 
 import { ParallelCoordinates } from 'react-parcoords';
@@ -10,8 +9,6 @@ class ParalellCoordinatesPlot extends Component {
         this.state = {
             color: ['rgb(150,20,20)'],
             height: 200,
-            dummy: false,
-
             dimensions: {
                 visualization: {
                     title: 'Visualization',
@@ -68,14 +65,13 @@ class ParalellCoordinatesPlot extends Component {
 
     render() {
         console.log(this.props.data)
-        console.log(data.data)
         return (
-                <div className="container-fluid card">
-                    <div className="row">
-                        <div className="col-12 appHeader">
-                            <h2 className="p-3">Visualize student groups</h2>
-                        </div>
-                        <div className="row mx-auto">
+            <div className="container-fluid card">
+                <div className="row">
+                    <div className="col-12 appHeader">
+                        <h2 className="p-3">Visualize student groups</h2>
+                    </div>
+                    <div className="row mx-auto">
                         <div className="col-12 mx-auto p-2">
                             <button className="btn-danger btn" onClick={this.reset}>Reset</button>
                         </div>
