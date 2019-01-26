@@ -90,6 +90,12 @@ svg {
   font-weight: bolder;
 }
 
+.studentList li:focus{
+  background:rgb(226, 83, 83);
+  color: white;
+  font-weight: bolder;
+}
+
 @media screen and (max-width: 768px){
 .slider{
   width:70vw !important;;
