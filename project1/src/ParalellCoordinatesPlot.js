@@ -59,6 +59,7 @@ class ParalellCoordinatesPlot extends Component {
             console.log("resized!")
             console.log(window.innerHeight)
             console.log(window.innerWidth)
+            this.props.reset()
             this.setState({ width: window.innerWidth - (window.innerWidth * 0.2), paddingleft: (window.innerWidth * 0.1) })
         })
     }
