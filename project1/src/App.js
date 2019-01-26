@@ -36,7 +36,7 @@ class App extends Component {
   componentWillMount() {
     this.cleanData()
     /* Responsive plot */
-    this.setState({ width: window.innerWidth - (window.innerWidth * 0.7) })
+    this.setState({ width: window.innerWidth - (window.innerWidth * 0.73) })
   }
 
   componentDidMount() {
@@ -47,10 +47,10 @@ class App extends Component {
       console.log(window.innerWidth)
       console.log("Width calc: " + this.state.width)
       if (window.innerWidth < 768) {
-        this.setState({ width: window.innerWidth - (window.innerWidth * 0.3) })
+        this.setState({ width: window.innerWidth - (window.innerWidth * 0.27) })
       }
       else {
-        this.setState({ width: window.innerWidth - (window.innerWidth * 0.7) })
+        this.setState({ width: window.innerWidth - (window.innerWidth * 0.73) })
       }
     })
   }
@@ -150,21 +150,24 @@ class App extends Component {
     if ((filteredPeople.length === 0 && !this.state.filter) && (searchPeople.length >= 0 && !this.state.search)) {
       this.results = cleanedDataPara
       console.log("Start list")
+      this.numberFilteredPeople = cleanedDataPara.length
     }
     else if ((filteredPeople.length >= 0 && this.state.filter) && (searchPeople.length >= 0 && !this.state.search)) {
       this.results = filteredPeople
       console.log("Filtered list")
+      this.numberFilteredPeople = filteredPeople.length
     }
     else if (searchPeople.length >= 0) {
       this.results = searchPeople
       console.log("Searched list")
+      this.numberFilteredPeople = searchPeople.length
     }
 
   
       var paralellPlot = <ParalellCoordinatesPlot reset={this.resetFilteredData} filter={this.paraFilter} data={cleanedDataPara} />
    
 
-    var filteredPeopleTag = this.results.map(people => <li key={people.name} className="col-12 text-center" name={people.name} onClick={e => this.selectPerson(e.target.getAttribute("name"))} >{people.name}</li>)
+    var filteredPeopleTag = this.results.map(people => <li key={people.name} className="text-center" name={people.name} onClick={e => this.selectPerson(e.target.getAttribute("name"))} >{people.name}</li>)
     var wrapperFilteredPeople = <ul className="studentList mx-auto">{filteredPeopleTag}</ul>
 
 
@@ -175,19 +178,19 @@ class App extends Component {
           {paralellPlot}
         </div>
         <div className="container-fluid pt-3 pb-3">
-          <div className="row p-3 mx-auto">
-            <div className="col-12 col-md-4">
+          <div className="row col-md-11 mx-auto p-3">
+            <div className="col-md-5 col-lg-4 pb-md-0 pb-2 mx-auto">
               <div className="col-10 mx-auto">
-                <h4 className="text-center pb-2">Students</h4>
+                <h4 className="text-center pb-2">Students<span className="badge custom-badge badge-color ml-2">{this.numberFilteredPeople}</span></h4>
                 <input className="mb-2" type="text" value={this.state.searchText} onChange={this.searchData} placeholder="Search..." />
               </div>
               <div className="height">
-                <div className="col-12 mx-auto">
+                <div className="mx-auto">
                   {wrapperFilteredPeople}
                 </div>
               </div>
             </div>
-            <div className="col-12 col-md-7">
+            <div className="col-md-7 card p-4 mx-auto">
               <div className="mx-auto">
                 <h4 className="text-center pb-2">Student information</h4>
                 <div className="col-12">

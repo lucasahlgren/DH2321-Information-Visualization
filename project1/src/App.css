@@ -57,6 +57,17 @@ svg {
  top: 0 !important;
 }
 
+.custom-badge{
+  min-width: 21px !important;
+}
+
+.badge-color{
+  background: #dc3545;
+  color: white;
+  font-family: "Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+
 
 .studentList{
   overflow: scroll;
@@ -69,11 +80,14 @@ svg {
 
 .studentList li{
   padding: 8px;
-  background: lightgrey;
+  background: rgb(216, 214, 214);
+  cursor: pointer;
 }
 
 .studentList li:hover{
-  background: lightblue;
+  background:rgb(226, 83, 83);
+  color: white;
+  font-weight: bolder;
 }
 
 @media screen and (max-width: 768px){
