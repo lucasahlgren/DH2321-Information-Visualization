@@ -23,7 +23,7 @@ class ParalellCoordinatesPlot extends Component {
                     type: 'number'
                 },
                 design: {
-                    title: 'design',
+                    title: 'Design',
                     type: 'number'
                 },
                 coding: {
