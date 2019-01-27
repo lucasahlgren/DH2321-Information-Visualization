@@ -53,6 +53,18 @@ class App extends Component {
         this.setState({ width: window.innerWidth - (window.innerWidth * 0.73) })
       }
     })
+    window.addEventListener("load", () => {
+      console.log("load!")
+      console.log(window.innerHeight)
+      console.log(window.innerWidth)
+      console.log("Width calc: " + this.state.width)
+      if (window.innerWidth < 768) {
+        this.setState({ width: window.innerWidth - (window.innerWidth * 0.27) })
+      }
+      else {
+        this.setState({ width: window.innerWidth - (window.innerWidth * 0.73) })
+      }
+    })
   }
 
 

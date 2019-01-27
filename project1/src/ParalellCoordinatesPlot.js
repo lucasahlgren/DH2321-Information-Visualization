@@ -9,6 +9,7 @@ class ParalellCoordinatesPlot extends Component {
         this.state = {
             color: ['rgb(150,20,20)'],
             height: 200,
+            width: 1000,
             dimensions: {
                 visualization: {
                     title: 'Visualization',
@@ -51,17 +52,37 @@ class ParalellCoordinatesPlot extends Component {
 
     componentDidMount() {
 
-        /* Responsive plot */
-        this.setState({ width: window.innerWidth - (window.innerWidth * 0.2), paddingleft: (window.innerWidth * 0.1) })
-
         /* Eventlistener responsive when resizing */
         window.addEventListener("resize", () => {
             console.log("resized!")
             console.log(window.innerHeight)
             console.log(window.innerWidth)
+            
+            if(window.innerWidth >= 1000 && this.state.width === 350){
+                this.props.reset()
+                this.setState({width:1000})
+            }
+            else if(window.innerWidth <= 768 && this.state.width === 1000){
             this.props.reset()
-            this.setState({ width: window.innerWidth - (window.innerWidth * 0.2), paddingleft: (window.innerWidth * 0.1) })
+            this.setState({ width: 350})
+        }
         })
+
+        window.addEventListener("load", () => {
+            console.log("load!")
+            console.log(window.innerHeight)
+            console.log(window.innerWidth)
+            
+            if(window.innerWidth >= 1000 && this.state.width === 350){
+                this.props.reset()
+                this.setState({width:1000})
+            }
+            else if(window.innerWidth <= 800 && this.state.width === 1000){
+            this.props.reset()
+            this.setState({ width: 350})
+        }
+        })
+
     }
 
 
@@ -80,7 +101,7 @@ class ParalellCoordinatesPlot extends Component {
 
                     </div>
                 </div>
-                <div className="pt-3 pb-3" style={{ paddingLeft: this.state.paddingleft }}>
+                <div className="pt-3 pb-3 plot mx-auto">
                     <ParallelCoordinates
                         width={this.state.width}
                         height={this.state.height}
