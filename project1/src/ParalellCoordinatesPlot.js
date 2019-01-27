@@ -22,8 +22,8 @@ class ParalellCoordinatesPlot extends Component {
                     title: 'Math',
                     type: 'number'
                 },
-                drawing: {
-                    title: 'Drawing',
+                design: {
+                    title: 'design',
                     type: 'number'
                 },
                 coding: {

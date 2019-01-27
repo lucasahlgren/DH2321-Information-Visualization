@@ -67,7 +67,7 @@ class App extends Component {
       data: [{ x: "Visualization", y: person["How would you rate your Information Visualization skills?"], color: "#12939A" },
       { x: "Statistics", y: person["How would you rate your statistical skills?"], color: "#79C7E3" },
       { x: "Math", y: person["How would you rate your mathematics skills?"], color: "#A3177" },
-      { x: "Drawing", y: person["How would you rate your drawing and artistic skills?"], color: "#FF9833" },
+      { x: "Design", y: person["How would you rate your drawing and artistic skills?"], color: "#FF9833" },
       { x: "Coding", y: person["How would you rate your programming skills?"], color: "#EF5D28" },
       { x: "UX", y: person["How would you rate your user experience evaluation skills?"], color: "#12939A" }]
     }))
@@ -77,7 +77,7 @@ class App extends Component {
       visualization: person["How would you rate your Information Visualization skills?"],
       statistics: person["How would you rate your statistical skills?"],
       math: person["How would you rate your mathematics skills?"],
-      drawing: person["How would you rate your drawing and artistic skills?"],
+      design: person["How would you rate your drawing and artistic skills?"],
       coding: person["How would you rate your programming skills?"],
       ux: person["How would you rate your user experience evaluation skills?"],
       major: person["What is your Major?"]
