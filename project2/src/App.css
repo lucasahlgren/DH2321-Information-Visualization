@@ -1,32 +1,58 @@
+/* Fonts */
+@font-face {
+	font-family: "Raleway Italic";
+	src: url("./assets/fonts/Raleway/Raleway-Italic.ttf");
+}
+
+@font-face {
+	font-family: "Raleway Italic Bold";
+	src: url("./assets/fonts/Raleway/Raleway-BoldItalic.ttf");
+}
+
+@font-face {
+	font-family: "Raleway Bold";
+	src: url("./assets/fonts/Raleway/Raleway-Bold.ttf");
+}
+
+@font-face {
+	font-family: "Raleway Black";
+	src: url("./assets/fonts/Raleway/Raleway-Black.ttf");
+}
+@font-face {
+	font-family: "Raleway Black Italic";
+	src: url("./assets/fonts/Raleway/Raleway-BlackItalic.ttf");
+}
+@font-face {
+	font-family: "Raleway";
+	src: url("./assets/fonts/Raleway/Raleway-Regular.ttf");
+}
+
+@font-face {
+	font-family: "Raleway Extra Bold";
+	src: url("./assets/fonts/Raleway/Raleway-ExtraBold.ttf");
+}
+
+@font-face {
+	font-family: "Raleway Thin";
+	src: url("./assets/fonts/Raleway/Raleway-Thin.ttf");
+}
+
+
 .App {
   text-align: center;
+  background-color: rgba(202, 238, 255, 0.36);
+  width: 100vw;
+  height: 100vh;
+  min-width: 1000px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.header{
+  font-family: "Raleway Extra Bold";
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.map{
+  width: 60vw !important;
+  height: 85vh !important;
+  margin-right: 10vw;
+  min-width: 1000px;
 }
