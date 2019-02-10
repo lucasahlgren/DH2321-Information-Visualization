@@ -3,8 +3,10 @@
 // src/components/WorldMap.js
 
 import React, { Component } from "react";
-import { geoMercator, geoPath } from "d3-geo";
+import { geoMercator, geoOrthographic, geoPath } from "d3-geo";
+import * as d3 from "d3";
 import { feature } from "topojson-client";
+import data2 from "../assets/world_id.json";
 
 import data from "../assets/world-110m.v1.json";
 
@@ -169,11 +171,42 @@ class WorldMap extends Component {
 			.scale(100)
 			.translate([800 / 2, 450 / 2]);
 	}
+
+	readCountryId = () => {
+		var countryIdList = [];
+		data2.map(entry =>
+			countryIdList.push({ name: entry.name, id: parseInt(entry.iso_n3) })
+		);
+		console.log(countryIdList);
+		this.setState({ countryIdList: countryIdList });
+	};
+
+	changeData = () => {
+		this.setState({
+			cities: [
+				{
+					name: "Tokyo",
+					coordinates: [139.6917, 35.6895],
+					population: 37843000
+				},
+				{
+					name: "Jakarta",
+					coordinates: [106.865, -6.1751],
+					population: 30539000
+				}
+			]
+		});
+	};
+
 	handleCountryClick(countryIndex) {
-    console.log("Clicked on country: ", this.state.worlddata[countryIndex]);
-   this.setState({clickedCountry: this.state.worlddata[countryIndex]})
-   console.log(this.state.worlddata)
-    
+		var countryId = this.state.worlddata[countryIndex].id;
+		console.log("Country id: ", countryId);
+		console.log(this.state.countryIdList)
+		var country = this.state.countryIdList.filter(
+			country => country.id == countryId
+		);
+		console.log("Clicked on country: ", country[0].name);
+		this.setState({ clickedCountry: country[0].name });
 	}
 	handleMarkerClick(markerIndex) {
 		console.log("Marker: ", this.state.cities[markerIndex]);
@@ -193,6 +226,7 @@ class WorldMap extends Component {
         })
       })*/
 
+		this.readCountryId();
 		window.addEventListener("resize", this.updateSize());
 
 		console.log(data);
@@ -211,12 +245,10 @@ class WorldMap extends Component {
 		return (
 			<div className="container-fluid">
 				<div className="d-flex flex-row justify-content-center">
-					<div className="d-flex align-items-center ">
 						<svg
 							className="map"
-				
 							viewBox={
-								"0 0 " + this.state.width/2 + " " + this.state.height/2
+								"0 0 " + this.state.width / 2 + " " + this.state.height / 2
 							}
 						>
 							<g className="countries">
@@ -225,7 +257,7 @@ class WorldMap extends Component {
 										key={`path-${i}`}
 										d={geoPath().projection(this.projection())(d)}
 										className="country"
-										fill={`rgba(38,50,56,${(1 / this.state.worlddata.length) *
+										fill={`rgb(38,50,56,${(1 / this.state.worlddata.length) *
 											i})`}
 										stroke="#FFFFFF"
 										strokeWidth={0.5}
@@ -248,14 +280,19 @@ class WorldMap extends Component {
 								))}
 							</g>
 						</svg>
-            <div className="col-6">
-                  <div>
-                    <h4>Country</h4>
-                    <p>{!this.state.clickedCountry ? "" : this.state.clickedCountry["id"] }</p>
-                  </div>
-            </div>
+						<div className="card country">
+							<div>
+								<button onClick={this.changeData}> Change data </button>
+								<h4>Country</h4>
+								<p>
+									{!this.state.clickedCountry
+										? ""
+										: this.state.clickedCountry}
+								</p>
+							</div>
+						</div>
 					</div>
-				</div>
+			
 			</div>
 		);
 	}

@@ -53,6 +53,15 @@
 .map{
   width: 60vw !important;
   height: 85vh !important;
-  margin-right: 10vw;
-  min-width: 1000px;
+  margin-right: 5vw;
+	min-width: 1000px;
+	transition: .4s ease;
+}
+
+.country{
+	width: 20vw;
+	height: 20vh;
+	padding: 10px;
+	margin-right: 5vw;
+	position: fixed;
 }
