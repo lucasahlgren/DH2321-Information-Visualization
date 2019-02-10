@@ -175,7 +175,11 @@ class WorldMap extends Component {
 	readCountryId = () => {
 		var countryIdList = [];
 		data2.map(entry =>
-			countryIdList.push({ name: entry.name, id: parseInt(entry.iso_n3) })
+			countryIdList.push({
+				name: entry.name,
+				id: parseInt(entry.iso_n3),
+				iso_a2: entry.iso_a2
+			})
 		);
 		console.log(countryIdList);
 		this.setState({ countryIdList: countryIdList });
@@ -201,12 +205,12 @@ class WorldMap extends Component {
 	handleCountryClick(countryIndex) {
 		var countryId = this.state.worlddata[countryIndex].id;
 		console.log("Country id: ", countryId);
-		console.log(this.state.countryIdList)
+		console.log(this.state.countryIdList);
 		var country = this.state.countryIdList.filter(
 			country => country.id == countryId
 		);
 		console.log("Clicked on country: ", country[0].name);
-		this.setState({ clickedCountry: country[0].name });
+		this.setState({ clickedCountry: country[0] });
 	}
 	handleMarkerClick(markerIndex) {
 		console.log("Marker: ", this.state.cities[markerIndex]);
@@ -242,58 +246,63 @@ class WorldMap extends Component {
 
 	render() {
 		console.log("Width: " + this.state.width + " px");
+
+		var clickedCountry = this.state.clickedCountry
+		var img = clickedCountry ? <img className="flag mx-auto" src={require("../assets/svg/" + clickedCountry.iso_a2.toLowerCase() + ".svg")} /> : null;
+		var name = clickedCountry ? clickedCountry.name : null;
+
+		
+
+
 		return (
 			<div className="container-fluid">
 				<div className="d-flex flex-row justify-content-center">
-						<svg
-							className="map"
-							viewBox={
-								"0 0 " + this.state.width / 2 + " " + this.state.height / 2
-							}
-						>
-							<g className="countries">
-								{this.state.worlddata.map((d, i) => (
-									<path
-										key={`path-${i}`}
-										d={geoPath().projection(this.projection())(d)}
-										className="country"
-										fill={`rgb(38,50,56,${(1 / this.state.worlddata.length) *
-											i})`}
-										stroke="#FFFFFF"
-										strokeWidth={0.5}
-										onClick={() => this.handleCountryClick(i)}
-									/>
-								))}
-							</g>
-							<g className="markers">
-								{this.state.cities.map((city, i) => (
-									<circle
-										key={`marker-${i}`}
-										cx={this.projection()(city.coordinates)[0]}
-										cy={this.projection()(city.coordinates)[1]}
-										r={city.population / 3000000}
-										fill="#E91E63"
-										stroke="#FFFFFF"
-										className="marker"
-										onClick={() => this.handleMarkerClick(i)}
-									/>
-								))}
-							</g>
-						</svg>
-						<div className="card country">
-							<div>
-								<button onClick={this.changeData}> Change data </button>
-								<h4>Country</h4>
-								<p>
-									{!this.state.clickedCountry
-										? ""
-										: this.state.clickedCountry}
-								</p>
-							</div>
-						</div>
+					<svg
+						className="map"
+						viewBox={
+							"0 0 " + this.state.width / 2 + " " + this.state.height / 2
+						}
+					>
+						<g className="countries">
+							{this.state.worlddata.map((d, i) => (
+								<path
+									key={`path-${i}`}
+									d={geoPath().projection(this.projection())(d)}
+									className="country"
+									fill={`rgb(38,50,56,${(1 / this.state.worlddata.length) *
+										i})`}
+									stroke="#FFFFFF"
+									strokeWidth={0.5}
+									onClick={() => this.handleCountryClick(i)}
+								/>
+							))}
+						</g>
+						<g className="markers">
+							{this.state.cities.map((city, i) => (
+								<circle
+									key={`marker-${i}`}
+									cx={this.projection()(city.coordinates)[0]}
+									cy={this.projection()(city.coordinates)[1]}
+									r={city.population / 3000000}
+									fill="#E91E63"
+									stroke="#FFFFFF"
+									className="marker"
+									onClick={() => this.handleMarkerClick(i)}
+								/>
+							))}
+						</g>
+					</svg>
+					<div className="card country">
+							<button onClick={this.changeData}> Change data </button>
+							<h4>Country</h4>
+						{img}
+							<p>
+								{name}
+							</p>
 					</div>
-			
+				</div>
 			</div>
+
 		);
 	}
 }

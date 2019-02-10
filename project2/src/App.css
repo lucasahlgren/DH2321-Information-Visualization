@@ -59,9 +59,12 @@
 }
 
 .country{
-	width: 20vw;
-	height: 20vh;
+	height: 300px;
+	width: 500px;
 	padding: 10px;
 	margin-right: 5vw;
-	position: fixed;
+}
+
+.flag{
+	width: 200px;
 }
