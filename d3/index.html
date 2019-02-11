@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+</head>
+<style>
+
+.background {
+  fill: none;
+  pointer-events: all;
+}
+
+.country:hover {
+  fill: #aaa !important;
+}
+
+.country{
+  fill: black
+}
+
+.flag{
+  width: 80px;
+}
+
+
+#countryInfo{
+  height:100px;
+  width: 100px;
+}
+
+.map{
+
+  margin-right:20vw;
+    width: 60vw !important;
+    height: 60vh !important;
+    background-color: lightcyan;
+
+}
+
+#state-borders {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1.5px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  pointer-events: none;
+}
+
+</style>
+<body>
+  <div class="container-fluid m-5">
+      <div class="row">
+        <div class="d-flex align-items-center justify-content-center">
+  <div id="container" class="d-flex">
+  <div id="countryInfo" class="card d-flex">
+
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js" integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp" crossorigin="anonymous"></script>
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<script src="https://d3js.org/topojson.v1.min.js"></script>
+<script>
+
+
+this.width = 900;
+  height = 400;
+
+
+    var projection = d3.geo.mercator()
+    .scale(110)
+    .translate([width/2, height/2]);
+
+var path = d3.geo.path()
+    .projection(projection);
+
+var zoom = d3.behavior.zoom()
+    .translate(projection.translate())
+    .scale(projection.scale())
+    .scaleExtent([height*0.2, 8 * height])
+    .on("zoom", zoomed);
+
+var svg = d3.select("#container").append("svg")
+    .attr("width", width)
+    .attr("class", "map card shadow d-flex")
+    .attr("height", height);
+
+
+var g = svg.append("g")
+    .call(zoom);
+
+g.append("rect")
+    .attr("class", "background")
+    .attr("width", width)
+    .attr("height", height);
+
+d3.json("world-110m.v1.json", function(error, world) {
+  if (error) throw error;
+
+  var countries = topojson.feature(world, world.objects.countries).features,
+      neighbors = topojson.neighbors(world.objects.countries.geometries);
+
+g.append("g")
+.attr("id", "countries")
+  .selectAll(".country")
+      .data(countries)
+    .enter().insert("path", ".graticule")
+      .attr("class", "country")
+      .attr("d", path)
+      .attr("data-name", function(d) {
+                return d.properties.name})
+      .on("click", clicked);
+
+
+
+});
+
+function updateCountry(d){
+
+console.log("HEJ")
+
+d3.json("world_id.json", function(data) {
+
+  console.log(data);
+
+  var country = data.filter(country => parseInt(country.iso_n3) == parseInt(d.id))
+  console.log(country[0].name)
+
+    
+  $('#countryInfo').text(country[0].name);
+  var iso_a2 = country[0].iso_a2.toLowerCase();
+  var src = 'svg/' + iso_a2 + '.svg';
+  var img = "<img class='flag' src=" + src + " />"
+  $("#countryInfo").append(img);
+
+
+
+});
+
+
+}
+
+function clicked(d) {
+  console.log("Clicked")
+  console.log(d)
+
+  updateCountry(d)
+
+  var centroid = path.centroid(d),
+      translate = projection.translate();
+
+      console.log(translate)
+      console.log(centroid)
+
+  projection.translate([
+    translate[0] - centroid[0] + width / 2,
+    translate[1] - centroid[1] + height / 2
+  ]);
+
+  zoom.translate(projection.translate());
+
+  g.selectAll("path").transition()
+      .duration(700)
+      .attr("d", path);
+}
+
+function zoomed() {
+  console.log("zoomed")
+  projection.translate(d3.event.translate).scale(d3.event.scale);
+  g.selectAll("path").attr("d", path);
+}
+
+
+
+</script>

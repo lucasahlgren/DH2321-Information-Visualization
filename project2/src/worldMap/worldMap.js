@@ -172,6 +172,8 @@ class WorldMap extends Component {
 			.translate([800 / 2, 450 / 2]);
 	}
 
+
+
 	readCountryId = () => {
 		var countryIdList = [];
 		data2.map(entry =>
