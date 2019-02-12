@@ -1,180 +1,293 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
+<meta charset="utf-8" />
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+	<link
+		rel="stylesheet"
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css"
+		integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA"
+		crossorigin="anonymous"
+	/>
 </head>
 <style>
+	.background {
+		fill: none;
+		pointer-events: all;
+	}
 
-.background {
-  fill: none;
-  pointer-events: all;
-}
+	.country:hover {
+		fill: #aaa !important;
+	}
 
-.country:hover {
-  fill: #aaa !important;
-}
+	.country {
+		fill: black;
+	}
 
-.country{
-  fill: black
-}
+	.flag {
+		width: 80px;
+	}
 
-.flag{
-  width: 80px;
-}
+	.active {
+		fill: orange;
+	}
 
+	.active:hover {
+		fill: orange !important;
+	}
 
-#countryInfo{
-  height:100px;
-  width: 100px;
-}
+	#countryInfo {
+		height: 100px;
+		width: 100px;
+	}
+	.hidden {
+		display: none;
+	}
+	div.tooltip {
+		color: #222;
+		background: #fff;
+		padding: 0.5em;
+		text-shadow: #f5f5f5 0 1px 0;
+		border-radius: 2px;
+		box-shadow: 0px 0px 2px 0px #a6a6a6;
+		opacity: 0.9;
+		position: absolute;
+	}
 
-.map{
+	.map {
+		margin-right: 20vw;
+		width: 60vw !important;
+		height: 60vh !important;
+		background-color: lightcyan;
+	}
 
-  margin-right:20vw;
-    width: 60vw !important;
-    height: 60vh !important;
-    background-color: lightcyan;
-
-}
-
-#state-borders {
-  fill: none;
-  stroke: #fff;
-  stroke-width: 1.5px;
-  stroke-linejoin: round;
-  stroke-linecap: round;
-  pointer-events: none;
-}
-
+	#state-borders {
+		fill: none;
+		stroke: #fff;
+		stroke-width: 1.5px;
+		stroke-linejoin: round;
+		stroke-linecap: round;
+		pointer-events: none;
+	}
 </style>
 <body>
-  <div class="container-fluid m-5">
-      <div class="row">
-        <div class="d-flex align-items-center justify-content-center">
-  <div id="container" class="d-flex">
-  <div id="countryInfo" class="card d-flex">
+	<div class="container-fluid m-5">
+		<div class="row">
+			<div class="d-flex align-items-center justify-content-center">
+				<div id="container" class="d-flex">
+					<div id="countryInfo" class="card d-flex"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script
+		src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"
+	></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"
+	></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js"
+		integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp"
+		crossorigin="anonymous"
+	></script>
+	<script src="https://d3js.org/d3.v3.min.js"></script>
+	<script src="https://d3js.org/topojson.v1.min.js"></script>
+	<script>
+		var width = 900,
+			height = 400,
+			centered,
+			world_id;
 
-  </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js" integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp" crossorigin="anonymous"></script>
-<script src="https://d3js.org/d3.v3.min.js"></script>
-<script src="https://d3js.org/topojson.v1.min.js"></script>
-<script>
+		var tooltip = d3
+			.select("#container")
+			.append("div")
+			.attr("class", "tooltip hidden");
 
+		//offsets for tooltips
+		var offsetL = document.getElementById("container").offsetLeft + 40;
+		var offsetT = document.getElementById("container").offsetTop - 40;
 
-this.width = 900;
-  height = 400;
+		var projection = d3.geo
+			.mercator()
+			.scale(110)
+			.translate([width / 2, height / 1.3]);
 
+		var path = d3.geo.path().projection(projection);
 
-    var projection = d3.geo.mercator()
-    .scale(110)
-    .translate([width/2, height/2]);
+		var zoom = d3.behavior
+			.zoom()
+			.translate(projection.translate())
+			.scale(projection.scale())
+			.scaleExtent([height * 0.2, 8 * height])
+			.on("zoom", zoomed);
 
-var path = d3.geo.path()
-    .projection(projection);
+		var svg = d3
+			.select("#container")
+			.append("svg")
+			.attr("width", width)
+			.attr("class", "map card shadow d-flex")
+			.attr("height", height);
 
-var zoom = d3.behavior.zoom()
-    .translate(projection.translate())
-    .scale(projection.scale())
-    .scaleExtent([height*0.2, 8 * height])
-    .on("zoom", zoomed);
+		var g = svg.append("g").call(zoom);
 
-var svg = d3.select("#container").append("svg")
-    .attr("width", width)
-    .attr("class", "map card shadow d-flex")
-    .attr("height", height);
+		g.append("rect")
+			.attr("class", "background")
+			.attr("width", width)
+			.attr("height", height);
 
+		d3.json("world_id.json", function(error, data) {
+			if (error) throw error;
+			world_id = data;
+		});
 
-var g = svg.append("g")
-    .call(zoom);
+		d3.json("world-110m.v1.json", function(error, world) {
+			if (error) throw error;
 
-g.append("rect")
-    .attr("class", "background")
-    .attr("width", width)
-    .attr("height", height);
+			var rawCountries = topojson.feature(world, world.objects.countries)
+					.features,
+				neighbors = topojson.neighbors(world.objects.countries.geometries);
 
-d3.json("world-110m.v1.json", function(error, world) {
-  if (error) throw error;
+			console.log(rawCountries);
+			console.log(neighbors);
+			var countries = [];
 
-  var countries = topojson.feature(world, world.objects.countries).features,
-      neighbors = topojson.neighbors(world.objects.countries.geometries);
+			// Splice(remove) random pieces
+			rawCountries.splice(145, 1);
+			rawCountries.splice(38, 1);
 
-g.append("g")
-.attr("id", "countries")
-  .selectAll(".country")
-      .data(countries)
-    .enter().insert("path", ".graticule")
-      .attr("class", "country")
-      .attr("d", path)
-      .attr("data-name", function(d) {
-                return d.properties.name})
-      .on("click", clicked);
+			rawCountries.map(country => {
+				//console.log(parseInt(country.id) !== 010)
+				// Filter out Antartica and Kosovo
+				if (parseInt(country.id) !== parseInt("010")) {
+					countries.push(country);
+				} else {
+					console.log(country.id);
+				}
+			});
 
+			console.log(countries);
 
+			g.append("g")
+				.attr("id", "countries")
+				.selectAll(".country")
+				.data(countries)
+				.enter()
+				.insert("path", ".graticule")
+				.attr("class", "country")
+				.attr("d", path)
+				.attr("data-name", function(d) {
+					return d.id;
+				})
+				.on("click", clicked)
+				.on("mousemove", function(d, i) {
+					var mouse = d3.mouse(svg.node()).map(function(d) {
+						return parseInt(d);
+					});
 
-});
+					tooltip
+						.classed("hidden", false)
+						.attr(
+							"style",
+							"left:" +
+								(mouse[0] + offsetL) +
+								"px;top:" +
+								(mouse[1] + offsetT) +
+								"px"
+						)
+						.html(getCountryName(d.id));
+				})
+				.on("mouseout", function(d, i) {
+					tooltip.classed("hidden", true);
+				});
+		});
 
-function updateCountry(d){
+		function getCountryName(id) {
+			world_id.map(country => console.log(country.iso_n3));
+			var country = world_id.filter(
+				country => parseInt(country.iso_n3) == parseInt(id)
+			);
+			console.log(country[0].name);
+			console.log(id);
+			return country[0].name;
+		}
 
-console.log("HEJ")
+		function updateCountry(d) {
+			console.log(world_id);
 
-d3.json("world_id.json", function(data) {
+			var country = world_id.filter(
+				country => parseInt(country.iso_n3) == parseInt(d.id)
+			);
+			console.log(country[0].name);
+			if (country[0].name === "Kosovo") {
+				var iso_a2 = "xk";
+			} else {
+				var iso_a2 = country[0].iso_a2.toLowerCase();
+			}
 
-  console.log(data);
+			$("#countryInfo").text(country[0].name);
 
-  var country = data.filter(country => parseInt(country.iso_n3) == parseInt(d.id))
-  console.log(country[0].name)
+			var src = "svg/" + iso_a2 + ".svg";
+			var img = "<img class='flag' src=" + src + " />";
+			$("#countryInfo").append(img);
+		}
 
-    
-  $('#countryInfo').text(country[0].name);
-  var iso_a2 = country[0].iso_a2.toLowerCase();
-  var src = 'svg/' + iso_a2 + '.svg';
-  var img = "<img class='flag' src=" + src + " />"
-  $("#countryInfo").append(img);
+		// Remove country when deselected
+		function removeCountry() {
+			$("#countryInfo").empty();
+		}
 
+		// When clicked on a country
+		function clicked(d) {
+			var x, y, z;
 
+			if (d && centered !== d) {
+				centered = d;
 
-});
+				updateCountry(d);
+			} else {
+				centered = null;
+				removeCountry();
+			}
 
+			g.selectAll("path").classed(
+				"active",
+				centered &&
+					function(d) {
+						return d === centered;
+					}
+			);
 
-}
+			console.log("Clicked");
+			console.log(d);
+			console.log(d);
 
-function clicked(d) {
-  console.log("Clicked")
-  console.log(d)
+			var centroid = path.centroid(d),
+				translate = projection.translate();
 
-  updateCountry(d)
+			console.log(translate);
+			console.log(centroid);
 
-  var centroid = path.centroid(d),
-      translate = projection.translate();
+			projection.translate([
+				translate[0] - centroid[0] + width / 2,
+				translate[1] - centroid[1] + height / 2
+			]);
 
-      console.log(translate)
-      console.log(centroid)
+			zoom.translate(projection.translate());
 
-  projection.translate([
-    translate[0] - centroid[0] + width / 2,
-    translate[1] - centroid[1] + height / 2
-  ]);
+			g.selectAll("path")
+				.transition()
+				.duration(700)
+				.attr("d", path);
+		}
 
-  zoom.translate(projection.translate());
-
-  g.selectAll("path").transition()
-      .duration(700)
-      .attr("d", path);
-}
-
-function zoomed() {
-  console.log("zoomed")
-  projection.translate(d3.event.translate).scale(d3.event.scale);
-  g.selectAll("path").attr("d", path);
-}
-
-
-
-</script>
+		// D3 zoomed
+		function zoomed() {
+			console.log("zoomed");
+			projection.translate(d3.event.translate).scale(d3.event.scale);
+			g.selectAll("path").attr("d", path);
+		}
+	</script>
+</body>

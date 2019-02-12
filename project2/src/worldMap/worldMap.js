@@ -166,6 +166,7 @@ class WorldMap extends Component {
 		this.handleCountryClick = this.handleCountryClick.bind(this);
 		this.handleMarkerClick = this.handleMarkerClick.bind(this);
 	}
+	
 	projection() {
 		return geoMercator()
 			.scale(100)
