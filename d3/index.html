@@ -43,6 +43,8 @@
 
 	.country {
 		fill: black;
+		stroke: white;
+		stroke-opacity: 0.3;
 	}
 
 	.flag {
@@ -55,6 +57,7 @@
 
 	.active:hover {
 		fill: orange !important;
+	
 	}
 
 	#countryInfo {
@@ -78,7 +81,7 @@
 		display: none;
 	}
 	div.tooltip {
-		color: #222;
+		color: rgb(5, 5, 5);
 		background: #fff;
 		padding: 0.5em;
 		text-shadow: #f5f5f5 0 1px 0;
@@ -86,6 +89,7 @@
 		box-shadow: 0px 0px 2px 0px #a6a6a6;
 		opacity: 0.9;
 		position: absolute;
+		font-family: "Raleway Black";
 	}
 
 	.map {
@@ -141,11 +145,11 @@
 	<script src="https://d3js.org/topojson.v1.min.js"></script>
 	<script>
 		window.addEventListener("resize", function() {
-			width = window.innerWidth * 0.6
+			width = window.innerWidth * 0.66
       height = window.innerHeight * 0.7;
 		});
 
-		var width = window.innerWidth * 0.6,
+		var width = window.innerWidth * 0.66,
 			height = window.innerHeight * 0.7,
 			centered,
 			world_id;
@@ -155,14 +159,11 @@
 			.append("div")
 			.attr("class", "tooltip hidden");
 
-		//offsets for tooltips
-		var offsetL = $("#container").width() - 1000;
-		var offsetT = $("#container").height() + 100;
-
+	
 		var projection = d3.geo
 			.mercator()
 			.scale(100)
-			.translate([width / 2, height / 1.4]);
+			.translate([width / 2, height / 1.50]);
 
 		var path = d3.geo.path().projection(projection);
 
@@ -170,7 +171,7 @@
 			.zoom()
 			.translate(projection.translate())
 			.scale(projection.scale())
-			.scaleExtent([height * 0.2, 8 * height])
+			.scaleExtent([height * 0.197, 3 * height])
 			.on("zoom", zoomed);
 
 		var svg = d3
@@ -241,9 +242,9 @@
 						.attr(
 							"style",
 							"left:" +
-								(mouse[0] + offsetL) +
+								(mouse[0]) +
 								"px;top:" +
-								(mouse[1] + offsetT) +
+								(mouse[1] - 50) +
 								"px"
 						)
 						.html(getCountryName(d.id));
