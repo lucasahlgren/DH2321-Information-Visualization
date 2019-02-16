@@ -105,8 +105,6 @@ div.tooltip {
 }
 .map {
     background-color: rgb(230, 246, 248);
-    min-width: 60vw;
-    min-height: 65vh;
 }
 
 
@@ -168,18 +166,5 @@ div.tooltip {
     }
     to {
         opacity: 1;
-    }
-}
-
-@media (max-width: 768px) {
-    .map {
-        min-width: 60vw;
-        min-height: 60vh;
-    }
-}
-
-@media (max-width: 769px) {
-    .map {
-        width: 90vw;
     }
 }
