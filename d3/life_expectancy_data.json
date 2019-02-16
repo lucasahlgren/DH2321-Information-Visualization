@@ -1,0 +1,1311 @@
+[
+  {
+    "country": "Afghanistan",
+    "wave1": "51,04",
+    "wave2": "52,44",
+  "wave3": "54,7",
+   "wave4": "57,12"
+  },
+  {
+    "country": "Albania",
+    "wave1": "73,92",
+    "wave2": "74,54",
+  "wave3": "75,4",
+   "wave4": "76,92"
+  },
+  {
+    "country": "Algeria",
+    "wave1": "72,94",
+    "wave2": "74,4",
+  "wave3": "75,86",
+   "wave4": "76,82"
+  },
+  {
+    "country": "Andorra",
+    "wave1": "80,94",
+    "wave2": "82,16",
+  "wave3": "82,62",
+   "wave4": "82,62"
+  },
+  {
+    "country": "Angola",
+    "wave1": "52,54",
+    "wave2": "54,46",
+  "wave3": "57,84",
+   "wave4": "61,7"
+  },
+  {
+    "country": "Antigua and Barbuda",
+    "wave1": "74,7",
+    "wave2": "75,26",
+  "wave3": "76,36",
+   "wave4": "77,02"
+  },
+  {
+    "country": "Argentina",
+    "wave1": "73,5",
+    "wave2": "74,52",
+  "wave3": "75,4",
+   "wave4": "76,1"
+  },
+  {
+    "country": "Armenia",
+    "wave1": "70,2",
+    "wave2": "72,32",
+  "wave3": "72,74",
+   "wave4": "74,36"
+  },
+  {
+    "country": "Australia",
+    "wave1": "78,82",
+    "wave2": "80,24",
+  "wave3": "81,44",
+   "wave4": "82,32"
+  },
+  {
+    "country": "Austria",
+    "wave1": "77,26",
+    "wave2": "78,68",
+  "wave3": "79,96",
+   "wave4": "80,9"
+  },
+  {
+    "country": "Azerbaijan",
+    "wave1": "65,54",
+    "wave2": "67,2",
+  "wave3": "68,22",
+   "wave4": "70,34"
+  },
+  {
+    "country": "Bahamas",
+    "wave1": "70,84",
+    "wave2": "71,86",
+  "wave3": "73,48",
+   "wave4": "73,76"
+  },
+  {
+    "country": "Bahrain",
+    "wave1": "71,12",
+    "wave2": "72,52",
+  "wave3": "74,58",
+   "wave4": "76,36"
+  },
+  {
+    "country": "Bangladesh",
+    "wave1": "63,46",
+    "wave2": "66,54",
+  "wave3": "69",
+   "wave4": "71,26"
+  },
+  {
+    "country": "Barbados",
+    "wave1": "74,3",
+    "wave2": "75,44",
+  "wave3": "76,24",
+   "wave4": "76,74"
+  },
+  {
+    "country": "Belarus",
+    "wave1": "68,22",
+    "wave2": "68,42",
+  "wave3": "69,74",
+   "wave4": "71,66"
+  },
+  {
+    "country": "Belgium",
+    "wave1": "77,28",
+    "wave2": "78,26",
+  "wave3": "79,48",
+   "wave4": "80,38"
+  },
+  {
+    "country": "Belize",
+    "wave1": "69,98",
+    "wave2": "69,18",
+  "wave3": "70,6",
+   "wave4": "71,6"
+  },
+  {
+    "country": "Benin",
+    "wave1": "56,84",
+    "wave2": "58,24",
+  "wave3": "60,38",
+   "wave4": "62,6"
+  },
+  {
+    "country": "Bhutan",
+    "wave1": "64,46",
+    "wave2": "67,68",
+  "wave3": "70,68",
+   "wave4": "72,84"
+  },
+  {
+    "country": "Bolivia",
+    "wave1": "65,64",
+    "wave2": "68,76",
+  "wave3": "70,72",
+   "wave4": "72,18"
+  },
+  {
+    "country": "Bosnia and Herz.",
+    "wave1": "72,68",
+    "wave2": "75,24",
+  "wave3": "76,12",
+   "wave4": "77,02"
+  },
+  {
+    "country": "Botswana",
+    "wave1": "52,04",
+    "wave2": "45,82",
+  "wave3": "51,22",
+   "wave4": "60,52"
+  },
+  {
+    "country": "Brazil",
+    "wave1": "70,4",
+    "wave2": "72,08",
+  "wave3": "73,52",
+   "wave4": "74,64"
+  },
+  {
+    "country": "Brunei",
+    "wave1": "75,12",
+    "wave2": "76,46",
+  "wave3": "76,84",
+   "wave4": "76,96"
+  },
+  {
+    "country": "Bulgaria",
+    "wave1": "71,02",
+    "wave2": "72,24",
+  "wave3": "73,1",
+   "wave4": "74,56"
+  },
+  {
+    "country": "Burkina Faso",
+    "wave1": "51,04",
+    "wave2": "53,22",
+  "wave3": "56,24",
+   "wave4": "58,88"
+  },
+  {
+    "country": "Burundi",
+    "wave1": "47,14",
+    "wave2": "49,94",
+  "wave3": "55,24",
+   "wave4": "58,7"
+  },
+  {
+    "country": "Cambodia",
+    "wave1": "58,62",
+    "wave2": "60,72",
+  "wave3": "64,42",
+   "wave4": "67,1"
+  },
+  {
+    "country": "Cameroon",
+    "wave1": "55,58",
+    "wave2": "54,5",
+  "wave3": "55,76",
+   "wave4": "58,26"
+  },
+  {
+    "country": "Canada",
+    "wave1": "78,5",
+    "wave2": "79,6",
+  "wave3": "80,62",
+   "wave4": "81,58"
+  },
+  {
+    "country": "Cape Verde",
+    "wave1": "68,64",
+    "wave2": "70,3",
+  "wave3": "71,62",
+   "wave4": "72,86"
+  },
+  {
+    "country": "Central African Rep.",
+    "wave1": "45,3",
+    "wave2": "44,56",
+  "wave3": "45,86",
+   "wave4": "48,1"
+  },
+  {
+    "country": "Chad",
+    "wave1": "52,8",
+    "wave2": "52,62",
+  "wave3": "54,8",
+   "wave4": "57,58"
+  },
+  {
+    "country": "Chile",
+    "wave1": "76,14",
+    "wave2": "77,66",
+  "wave3": "78,88",
+   "wave4": "79,6"
+  },
+  {
+    "country": "China",
+    "wave1": "69,02",
+    "wave2": "70,84",
+  "wave3": "73,4",
+   "wave4": "75,34"
+  },
+  {
+    "country": "Colombia",
+    "wave1": "72,58",
+    "wave2": "73,84",
+  "wave3": "75,64",
+   "wave4": "77,26"
+  },
+  {
+    "country": "Comoros",
+    "wave1": "60,2",
+    "wave2": "62,82",
+  "wave3": "64,74",
+   "wave4": "66,24"
+  },
+  {
+    "country": "Dem. Rep. Congo",
+    "wave1": "52,48",
+    "wave2": "53,94",
+  "wave3": "56,16",
+   "wave4": "58,68"
+  },
+  {
+    "country": "Congo",
+    "wave1": "50,78",
+    "wave2": "54,34",
+  "wave3": "58,08",
+   "wave4": "61,48"
+  },
+  {
+    "country": "Costa Rica",
+    "wave1": "77,34",
+    "wave2": "78,54",
+  "wave3": "79,88",
+   "wave4": "80,6"
+  },
+  {
+    "country": "Côte d'Ivoire",
+    "wave1": "52,8",
+    "wave2": "52,92",
+  "wave3": "54,68",
+   "wave4": "57,46"
+  },
+  {
+    "country": "Croatia",
+    "wave1": "73,1",
+    "wave2": "74,42",
+  "wave3": "75,58",
+   "wave4": "76,82"
+  },
+  {
+    "country": "Cuba",
+    "wave1": "75,74",
+    "wave2": "77,08",
+  "wave3": "77,96",
+   "wave4": "78,6"
+  },
+  {
+    "country": "Cyprus",
+    "wave1": "76,2",
+    "wave2": "77,44",
+  "wave3": "78,92",
+   "wave4": "80,36"
+  },
+  {
+    "country": "Czech Rep.",
+    "wave1": "74,06",
+    "wave2": "75,42",
+  "wave3": "76,76",
+   "wave4": "78,04"
+  },
+  {
+    "country": "Denmark",
+    "wave1": "76,16",
+    "wave2": "77,32",
+  "wave3": "78,62",
+   "wave4": "80,1"
+  },
+  {
+    "country": "Djibouti",
+    "wave1": "61,36",
+    "wave2": "61,58",
+  "wave3": "62,52",
+   "wave4": "64,64"
+  },
+  {
+    "country": "Dominica",
+    "wave1": "71,98",
+    "wave2": "73,1",
+  "wave3": "73,42",
+   "wave4": "72,86"
+  },
+  {
+    "country": "Dominican Rep.",
+    "wave1": "72,5",
+    "wave2": "73,38",
+  "wave3": "73,92",
+   "wave4": "74,92"
+  },
+  {
+    "country": "Ecuador",
+    "wave1": "73,42",
+    "wave2": "74,82",
+  "wave3": "76,04",
+   "wave4": "77,24"
+  },
+  {
+    "country": "Egypt",
+    "wave1": "68,52",
+    "wave2": "69,88",
+  "wave3": "70,4",
+   "wave4": "71,14"
+  },
+  {
+    "country": "El Salvador",
+    "wave1": "71,04",
+    "wave2": "72,5",
+  "wave3": "73,5",
+   "wave4": "74,46"
+  },
+  {
+    "country": "Eq. Guinea",
+    "wave1": "50,44",
+    "wave2": "56,54",
+  "wave3": "59,32",
+   "wave4": "62,6"
+  },
+  {
+    "country": "Eritrea",
+    "wave1": "55,92",
+    "wave2": "59,54",
+  "wave3": "61",
+   "wave4": "62,32"
+  },
+  {
+    "country": "Estonia",
+    "wave1": "69,64",
+    "wave2": "71,42",
+  "wave3": "73,66",
+   "wave4": "76,56"
+  },
+  {
+    "country": "Ethiopia",
+    "wave1": "50,8",
+    "wave2": "53,58",
+  "wave3": "58,24",
+   "wave4": "63,02"
+  },
+  {
+    "country": "Fiji",
+    "wave1": "64,32",
+    "wave2": "64,6",
+  "wave3": "64,92",
+   "wave4": "65,44"
+  },
+  {
+    "country": "Finland",
+    "wave1": "77",
+    "wave2": "78,26",
+  "wave3": "79,34",
+   "wave4": "80,58"
+  },
+  {
+    "country": "France",
+    "wave1": "78,52",
+    "wave2": "79,54",
+  "wave3": "80,78",
+   "wave4": "81,82"
+  },
+  {
+    "country": "Gabon",
+    "wave1": "59,54",
+    "wave2": "59,16",
+  "wave3": "61,04",
+   "wave4": "64"
+  },
+  {
+    "country": "Gambia",
+    "wave1": "62,96",
+    "wave2": "63,74",
+  "wave3": "64,66",
+   "wave4": "66,2"
+  },
+  {
+    "country": "Georgia",
+    "wave1": "71,16",
+    "wave2": "71,76",
+  "wave3": "72,44",
+   "wave4": "73,14"
+  },
+  {
+    "country": "Germany",
+    "wave1": "77,02",
+    "wave2": "78,4",
+  "wave3": "79,58",
+   "wave4": "80,42"
+  },
+  {
+    "country": "Ghana",
+    "wave1": "59,36",
+    "wave2": "59,44",
+  "wave3": "60,88",
+   "wave4": "63,6"
+  },
+  {
+    "country": "Greece",
+    "wave1": "78,12",
+    "wave2": "79,08",
+  "wave3": "80",
+   "wave4": "80,64"
+  },
+  {
+    "country": "Grenada",
+    "wave1": "71,34",
+    "wave2": "70,98",
+  "wave3": "71,28",
+   "wave4": "71,3"
+  },
+  {
+    "country": "Guatemala",
+    "wave1": "67,5",
+    "wave2": "69,2",
+  "wave3": "70,46",
+   "wave4": "71,8"
+  },
+  {
+    "country": "Guinea",
+    "wave1": "53,98",
+    "wave2": "55,18",
+  "wave3": "56,8",
+   "wave4": "58,8"
+  },
+  {
+    "country": "Guinea-Bissau",
+    "wave1": "50,92",
+    "wave2": "52,82",
+  "wave3": "54,16",
+   "wave4": "56,66"
+  },
+  {
+    "country": "Guyana",
+    "wave1": "65,3",
+    "wave2": "65,24",
+  "wave3": "65,1",
+   "wave4": "66,04"
+  },
+  {
+    "country": "Haiti",
+    "wave1": "55,74",
+    "wave2": "57,12",
+  "wave3": "58,92",
+   "wave4": "56"
+  },
+  {
+    "country": "Honduras",
+    "wave1": "67,74",
+    "wave2": "69,9",
+  "wave3": "71,06",
+   "wave4": "71,94"
+  },
+  {
+    "country": "Hungary",
+    "wave1": "70,82",
+    "wave2": "72,42",
+  "wave3": "73,62",
+   "wave4": "75,14"
+  },
+  {
+    "country": "Iceland",
+    "wave1": "79,14",
+    "wave2": "80,46",
+  "wave3": "81,56",
+   "wave4": "82,16"
+  },
+  {
+    "country": "India",
+    "wave1": "61,36",
+    "wave2": "63,08",
+  "wave3": 65,
+   "wave4": 67
+  },
+  {
+    "country": "Indonesia",
+    "wave1": "66,46",
+    "wave2": "67,46",
+  "wave3": "69,08",
+   "wave4": "70,5"
+  },
+  {
+    "country": "Iran",
+    "wave1": "71,18",
+    "wave2": "71,46",
+  "wave3": "73,36",
+   "wave4": "74,9"
+  },
+  {
+    "country": "Iraq",
+    "wave1": "65,46",
+    "wave2": "65,86",
+  "wave3": "65,22",
+   "wave4": "67,5"
+  },
+  {
+    "country": "Ireland",
+    "wave1": "76,1",
+    "wave2": "77,62",
+  "wave3": "79,5",
+   "wave4": "80,76"
+  },
+  {
+    "country": "Israel",
+    "wave1": "77,6",
+    "wave2": "78,78",
+  "wave3": "80,22",
+   "wave4": "81,66"
+  },
+  {
+    "country": "Italy",
+    "wave1": "78,62",
+    "wave2": "80,04",
+  "wave3": "81,18",
+   "wave4": "81,96"
+  },
+  {
+    "country": "Jamaica",
+    "wave1": 74,
+    "wave2": "73,94",
+  "wave3": "74,7",
+   "wave4": "74,82"
+  },
+  {
+    "country": "Japan",
+    "wave1": "80,24",
+    "wave2": "81,44",
+  "wave3": "82,34",
+   "wave4": "83,12"
+  },
+  {
+    "country": "Jordan",
+    "wave1": "72,82",
+    "wave2": "73,12",
+  "wave3": "74,28",
+   "wave4": "76,26"
+  },
+  {
+    "country": "Kazakhstan",
+    "wave1": "64,26",
+    "wave2": "64,8",
+  "wave3": "66,12",
+   "wave4": "69,76"
+  },
+  {
+    "country": "Kenya",
+    "wave1": "56,06",
+    "wave2": "55,8",
+  "wave3": "59,56",
+   "wave4": "64,44"
+  },
+  {
+    "country": "Kiribati",
+    "wave1": "59,08",
+    "wave2": "59,78",
+  "wave3": "60,4",
+   "wave4": "61,02"
+  },
+  {
+    "country": "Kuwait",
+    "wave1": "75,92",
+    "wave2": "76,84",
+  "wave3": "77,16",
+   "wave4": "79,2"
+  },
+  {
+    "country": "Kyrgyzstan",
+    "wave1": "65,24",
+    "wave2": "66,6",
+  "wave3": "67,1",
+   "wave4": "69,6"
+  },
+  {
+    "country": "Lao PDR",
+    "wave1": "55,5",
+    "wave2": "58,34",
+  "wave3": "61,66",
+   "wave4": "65,12"
+  },
+  {
+    "country": "Latvia",
+    "wave1": "68,64",
+    "wave2": "70,4",
+  "wave3": "71,34",
+   "wave4": "73,88"
+  },
+  {
+    "country": "Lebanon",
+    "wave1": "74,7",
+    "wave2": "77,32",
+  "wave3": "78,72",
+   "wave4": "79,8"
+  },
+  {
+    "country": "Lesotho",
+    "wave1": "54,58",
+    "wave2": "46,16",
+  "wave3": "43,96",
+   "wave4": "47,72"
+  },
+  {
+    "country": "Liberia",
+    "wave1": "51,64",
+    "wave2": "55,44",
+  "wave3": "59,24",
+   "wave4": "61,28"
+  },
+  {
+    "country": "Libya",
+    "wave1": "74,3",
+    "wave2": "74,7",
+  "wave3": "75,56",
+   "wave4": "72,6"
+  },
+  {
+    "country": "Lithuania",
+    "wave1": "70,68",
+    "wave2": "71,92",
+  "wave3": "71,62",
+   "wave4": "73,86"
+  },
+  {
+    "country": "Luxembourg",
+    "wave1": "77,34",
+    "wave2": "78,9",
+  "wave3": "80,64",
+   "wave4": "81,66"
+  },
+  {
+    "country": "Macedonia, FYR",
+    "wave1": "71,58",
+    "wave2": "72,46",
+  "wave3": "73,3",
+   "wave4": "74,22"
+  },
+  {
+    "country": "Madagascar",
+    "wave1": "57,52",
+    "wave2": "59,1",
+  "wave3": "60,54",
+   "wave4": "61,4"
+  },
+  {
+    "country": "Malawi",
+    "wave1": "45,08",
+    "wave2": "45,66",
+  "wave3": "49,6",
+   "wave4": "55,94"
+  },
+  {
+    "country": "Malaysia",
+    "wave1": "72,66",
+    "wave2": "73,4",
+  "wave3": "74,16",
+   "wave4": "74,76"
+  },
+  {
+    "country": "Maldives",
+    "wave1": "69,66",
+    "wave2": "73,3",
+  "wave3": "76,9",
+   "wave4": "78,52"
+  },
+  {
+    "country": "Mali",
+    "wave1": "51,86",
+    "wave2": "54,54",
+  "wave3": "57,74",
+   "wave4": "60,24"
+  },
+  {
+    "country": "Malta",
+    "wave1": "77,3",
+    "wave2": "78,14",
+  "wave3": "79,56",
+   "wave4": "80,72"
+  },
+  {
+    "country": "Marshall Islands",
+    "wave1": "64,12",
+    "wave2": "63,3",
+  "wave3": "63,24",
+   "wave4": "64,1"
+  },
+  {
+    "country": "Mauritania",
+    "wave1": "62,32",
+    "wave2": "64,5",
+  "wave3": "66,84",
+   "wave4": "68,94"
+  },
+  {
+    "country": "Mauritius",
+    "wave1": "70,86",
+    "wave2": "71,84",
+  "wave3": "72,78",
+   "wave4": "73,94"
+  },
+  {
+    "country": "Mexico",
+    "wave1": "73,48",
+    "wave2": "74,9",
+  "wave3": "75,46",
+   "wave4": "75,78"
+  },
+  {
+    "country": "Micronesia, Fed. Sts.",
+    "wave1": "64,64",
+    "wave2": "65,22",
+  "wave3": "65,58",
+   "wave4": "65,5"
+  },
+  {
+    "country": "Moldova",
+    "wave1": "66,42",
+    "wave2": "68,42",
+  "wave3": "69,22",
+   "wave4": "71,5"
+  },
+  {
+    "country": "Mongolia",
+    "wave1": "61,86",
+    "wave2": "63,3",
+  "wave3": "65,02",
+   "wave4": "67,08"
+  },
+  {
+    "country": "Montenegro",
+    "wave1": "73,74",
+    "wave2": "74,26",
+  "wave3": "75,62",
+   "wave4": "76,56"
+  },
+  {
+    "country": "Morocco",
+    "wave1": "69,8",
+    "wave2": "71,44",
+  "wave3": "72,74",
+   "wave4": "74,06"
+  },
+  {
+    "country": "Mozambique",
+    "wave1": "51,26",
+    "wave2": "51,86",
+  "wave3": "53,12",
+   "wave4": "55,9"
+  },
+  {
+    "country": "Myanmar",
+    "wave1": "60,18",
+    "wave2": "62,02",
+  "wave3": "63,78",
+   "wave4": "67,96"
+  },
+  {
+    "country": "Namibia",
+    "wave1": "57,58",
+    "wave2": "52,26",
+  "wave3": "54,2",
+   "wave4": "61,36"
+  },
+  {
+    "country": "Nepal",
+    "wave1": "61,92",
+    "wave2": "64,64",
+  "wave3": "66,9",
+   "wave4": "69,16"
+  },
+  {
+    "country": "Netherlands",
+    "wave1": "77,76",
+    "wave2": "78,5",
+  "wave3": "80,02",
+   "wave4": "81,1"
+  },
+  {
+    "country": "New Zealand",
+    "wave1": "77,56",
+    "wave2": "78,98",
+  "wave3": "80,18",
+   "wave4": "81,22"
+  },
+  {
+    "country": "Nicaragua",
+    "wave1": "74",
+    "wave2": "75,98",
+  "wave3": "77,02",
+   "wave4": "77,56"
+  },
+  {
+    "country": "Niger",
+    "wave1": "50,4",
+    "wave2": "53,48",
+  "wave3": "56,88",
+   "wave4": "59,8"
+  },
+  {
+    "country": "Nigeria",
+    "wave1": "54,66",
+    "wave2": "55,36",
+  "wave3": "58,28",
+   "wave4": "61,86"
+  },
+  {
+    "country": "North Korea",
+    "wave1": "63,96",
+    "wave2": "66",
+  "wave3": "69,88",
+   "wave4": "70,3"
+  },
+  {
+    "country": "Norway",
+    "wave1": "78,26",
+    "wave2": "79,2",
+  "wave3": "80,5",
+   "wave4": "81,48"
+  },
+  {
+    "country": "Oman",
+    "wave1": "73,62",
+    "wave2": "75,04",
+  "wave3": "76,18",
+   "wave4": "76,66"
+  },
+  {
+    "country": "Pakistan",
+    "wave1": "62,2",
+    "wave2": "62,96",
+  "wave3": "64,14",
+   "wave4": "66,12"
+  },
+  {
+    "country": "Palestine",
+    "wave1": "72,02",
+    "wave2": "71,46",
+  "wave3": "71,96",
+   "wave4": "71,86"
+  },
+  {
+    "country": "Panama",
+    "wave1": "75,96",
+    "wave2": "77,18",
+  "wave3": "77,58",
+   "wave4": "78,06"
+  },
+  {
+    "country": "Papua New Guinea",
+    "wave1": "57,18",
+    "wave2": "57,6",
+  "wave3": "57,98",
+   "wave4": "59,38"
+  },
+  {
+    "country": "Paraguay",
+    "wave1": "74,5",
+    "wave2": "74,24",
+  "wave3": "74,08",
+   "wave4": "74,14"
+  },
+  {
+    "country": "Peru",
+    "wave1": "72,62",
+    "wave2": "75,82",
+  "wave3": "77,62",
+   "wave4": "78,54"
+  },
+  {
+    "country": "Philippines",
+    "wave1": "68,32",
+    "wave2": "68,22",
+  "wave3": "68,52",
+   "wave4": "69,34"
+  },
+  {
+    "country": "Poland",
+    "wave1": "72,58",
+    "wave2": "74,5",
+  "wave3": "75,46",
+   "wave4": "76,8"
+  },
+  {
+    "country": "Portugal",
+    "wave1": "75,78",
+    "wave2": "77,32",
+  "wave3": "79",
+   "wave4": "80,28"
+  },
+  {
+    "country": "Qatar",
+    "wave1": "74,98",
+    "wave2": "75,8",
+  "wave3": "77,9",
+   "wave4": "80,14"
+  },
+  {
+    "country": "Romania",
+    "wave1": "69,8",
+    "wave2": "71,46",
+  "wave3": "72,98",
+   "wave4": "74,48"
+  },
+  {
+    "country": "Russia",
+    "wave1": "66,16",
+    "wave2": "65,6",
+  "wave3": "67,5",
+   "wave4": "70,18"
+  },
+  {
+    "country": "Rwanda",
+    "wave1": "46,08",
+    "wave2": "52,5",
+  "wave3": "60,82",
+   "wave4": "65,86"
+  },
+  {
+    "country": "Samoa",
+    "wave1": "70,06",
+    "wave2": "70,76",
+  "wave3": "70,92",
+   "wave4": "71,52"
+  },
+  {
+    "country": "Sao Tome and Principe",
+    "wave1": "63,82",
+    "wave2": "65,34",
+  "wave3": "67,26",
+   "wave4": "69,44"
+  },
+  {
+    "country": "Saudi Arabia",
+    "wave1": "72,84",
+    "wave2": "73,3",
+  "wave3": "74,4",
+   "wave4": "75,74"
+  },
+  {
+    "country": "Senegal",
+    "wave1": "58,78",
+    "wave2": "60,44",
+  "wave3": "62,66",
+   "wave4": "64,76"
+  },
+  {
+    "country": "Serbia",
+    "wave1": "71,42",
+    "wave2": "72,54",
+  "wave3": "73,86",
+   "wave4": "75,08"
+  },
+  {
+    "country": "Seychelles",
+    "wave1": "70,64",
+    "wave2": "71,48",
+  "wave3": "72,7",
+   "wave4": "73,56"
+  },
+  {
+    "country": "Sierra Leone",
+    "wave1": "50,04",
+    "wave2": "51,48",
+  "wave3": "53,34",
+   "wave4": "55,68"
+  },
+  {
+    "country": "Singapore",
+    "wave1": "78,14",
+    "wave2": "80,08",
+  "wave3": "81,62",
+   "wave4": "83,08"
+  },
+  {
+    "country": "Slovakia",
+    "wave1": "72,74",
+    "wave2": "73,72",
+  "wave3": "74,62",
+   "wave4": "76,16"
+  },
+  {
+    "country": "Slovenia",
+    "wave1": "75",
+    "wave2": "76,48",
+  "wave3": "78,28",
+   "wave4": "80,06"
+  },
+  {
+    "country": "Solomon Is.",
+    "wave1": "61,28",
+    "wave2": "61,22",
+  "wave3": "61,18",
+   "wave4": "62,14"
+  },
+  {
+    "country": "Somalia",
+    "wave1": "51,44",
+    "wave2": "52,76",
+  "wave3": "54,36",
+   "wave4": "55,18"
+  },
+  {
+    "country": "South Africa",
+    "wave1": "61,04",
+    "wave2": "53,26",
+  "wave3": "51,74",
+   "wave4": "57,48"
+  },
+  {
+    "country": "Korea",
+    "wave1": "74,96",
+    "wave2": "76,82",
+  "wave3": "79,14",
+   "wave4": "80,58"
+  },
+  {
+    "country": "S. Sudan",
+    "wave1": "53,5",
+    "wave2": "55,22",
+  "wave3": "57,1",
+   "wave4": "58,38"
+  },
+  {
+    "country": "Spain",
+    "wave1": "78,66",
+    "wave2": "79,82",
+  "wave3": "81,06",
+   "wave4": "82,36"
+  },
+  {
+    "country": "Sri Lanka",
+    "wave1": "72,26",
+    "wave2": "72,66",
+  "wave3": "74,22",
+   "wave4": "76,04"
+  },
+  {
+    "country": "St. Lucia",
+    "wave1": "73,74",
+    "wave2": "74,06",
+  "wave3": "74,86",
+   "wave4": "75,98"
+  },
+  {
+    "country": "St. Vincent and the Grenadines",
+    "wave1": "70,44",
+    "wave2": "70,62",
+  "wave3": "71,44",
+   "wave4": "71,54"
+  },
+  {
+    "country": "Sudan",
+    "wave1": "61,12",
+    "wave2": "63,48",
+  "wave3": "65,54",
+   "wave4": "66,84"
+  },
+  {
+    "country": "Suriname",
+    "wave1": "70,24",
+    "wave2": "69,4",
+  "wave3": "69,76",
+   "wave4": "70,66"
+  },
+  {
+    "country": "Swaziland",
+    "wave1": "54,76",
+    "wave2": "44,62",
+  "wave3": "43,84",
+   "wave4": "50,44"
+  },
+  {
+    "country": "Sweden",
+    "wave1": "79,22",
+    "wave2": "79,96",
+  "wave3": "80,9",
+   "wave4": "81,8"
+  },
+  {
+    "country": "Switzerland",
+    "wave1": "79,14",
+    "wave2": "80,34",
+  "wave3": "81,6",
+   "wave4": "82,6"
+  },
+  {
+    "country": "Syria",
+    "wave1": "72,52",
+    "wave2": "73,98",
+  "wave3": "75,32",
+   "wave4": "71,18"
+  },
+  {
+    "country": "Tajikistan",
+    "wave1": "64,1",
+    "wave2": "65,94",
+  "wave3": "68,38",
+   "wave4": "70,5"
+  },
+  {
+    "country": "Tanzania",
+    "wave1": "52,62",
+    "wave2": "53,84",
+  "wave3": "56,98",
+   "wave4": "60,86"
+  },
+  {
+    "country": "Thailand",
+    "wave1": "71,22",
+    "wave2": "72,78",
+  "wave3": "75,12",
+   "wave4": "77,1"
+  },
+  {
+    "country": "Timor-Leste",
+    "wave1": "60,48",
+    "wave2": "64,84",
+  "wave3": "69,06",
+   "wave4": "71,9"
+  },
+  {
+    "country": "Togo",
+    "wave1": "56,64",
+    "wave2": "56,22",
+  "wave3": "57,18",
+   "wave4": "60,22"
+  },
+  {
+    "country": "Tonga",
+    "wave1": "68,58",
+    "wave2": "69",
+  "wave3": "69,3",
+   "wave4": "70,04"
+  },
+  {
+    "country": "Trinidad and Tobago",
+    "wave1": "69,38",
+    "wave2": "70,18",
+  "wave3": "71,98",
+   "wave4": "72,8"
+  },
+  {
+    "country": "Tunisia",
+    "wave1": "73,92",
+    "wave2": "75,42",
+  "wave3": "76,4",
+   "wave4": "77,1"
+  },
+  {
+    "country": "Turkey",
+    "wave1": "71,76",
+    "wave2": "75,22",
+  "wave3": "77,8",
+   "wave4": "78,44"
+  },
+  {
+    "country": "Turkmenistan",
+    "wave1": "63,12",
+    "wave2": "64,3",
+  "wave3": "66,34",
+   "wave4": "68,78"
+  },
+  {
+    "country": "Uganda",
+    "wave1": "47,46",
+    "wave2": "50,2",
+  "wave3": "54,38",
+   "wave4": "58,74"
+  },
+  {
+    "country": "Ukraine",
+    "wave1": "67,34",
+    "wave2": "67,66",
+  "wave3": "68,1",
+   "wave4": "71,12"
+  },
+  {
+    "country": "United Arab Emirates",
+    "wave1": "74",
+    "wave2": "75,46",
+  "wave3": "76,72",
+   "wave4": "76,44"
+  },
+  {
+    "country": "United Kingdom",
+    "wave1": "77,06",
+    "wave2": "78,26",
+  "wave3": "79,56",
+   "wave4": "80,6"
+  },
+  {
+    "country": "United States",
+    "wave1": "76,44",
+    "wave2": "77,16",
+  "wave3": "78,12",
+   "wave4": "78,84"
+  },
+  {
+    "country": "Uruguay",
+    "wave1": "73,94",
+    "wave2": "75",
+  "wave3": "75,92",
+   "wave4": "76,6"
+  },
+  {
+    "country": "Uzbekistan",
+    "wave1": "66,12",
+    "wave2": "66,46",
+  "wave3": "67,56",
+   "wave4": "69,3"
+  },
+  {
+    "country": "Vanuatu",
+    "wave1": "62,02",
+    "wave2": "62,32",
+  "wave3": "62,54",
+   "wave4": "63,3"
+  },
+  {
+    "country": "Venezuela",
+    "wave1": "73,06",
+    "wave2": "74,42",
+  "wave3": "75",
+   "wave4": "75,4"
+  },
+  {
+    "country": "Vietnam",
+    "wave1": "70",
+    "wave2": "71,1",
+  "wave3": "72,28",
+   "wave4": "73,58"
+  },
+  {
+    "country": "Yemen",
+    "wave1": "61,28",
+    "wave2": "63,54",
+  "wave3": "65,94",
+   "wave4": "67,98"
+  },
+  {
+    "country": "Zambia",
+    "wave1": "45,24",
+    "wave2": "44,46",
+  "wave3": "48,12",
+   "wave4": "54,48"
+  },
+  {
+    "country": "Zimbabwe",
+    "wave1": "50,72",
+    "wave2": "45,78",
+  "wave3": "46,32",
+   "wave4": "53,64"
+  }
+]

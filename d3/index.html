@@ -1,127 +1,141 @@
 <!DOCTYPE html>
 <meta charset="utf-8" />
 <head>
+	
+	<link
+		rel="stylesheet"
+		href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	/>
+	<link
+		rel="stylesheet"
+		href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css"
+	/>
+	
+	
 	<link
 		rel="stylesheet"
 		href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css"
 		integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA"
 		crossorigin="anonymous"
 	/>
+	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+	<link rel="stylesheet" href="style.css" />
 </head>
-<style>
-	@font-face {
-		font-family: "Raleway Italic Bold";
-		src: url("assets/fonts/Raleway/Raleway-BoldItalic.ttf");
-	}
-
-	@font-face {
-		font-family: "Raleway Bold";
-		src: url("assets/fonts/Raleway/Raleway-Bold.ttf");
-	}
-
-	@font-face {
-		font-family: "Raleway Black";
-		src: url("assets/fonts/Raleway/Raleway-Black.ttf");
-	}
-	@font-face {
-		font-family: "Raleway Black Italic";
-		src: url("assets/fonts/Raleway/Raleway-BlackItalic.ttf");
-	}
-	@font-face {
-		font-family: "Raleway";
-		src: url("assets/fonts/Raleway/Raleway-Regular.ttf");
-	}
-
-	.background {
-		fill: none;
-		pointer-events: all;
-	}
-
-	.country:hover {
-		fill: #aaa !important;
-	}
-
-	.country {
-		fill: black;
-		stroke: white;
-		stroke-opacity: 0.3;
-	}
-
-	.flag {
-		width: 150px;
-	}
-
-	.active {
-		fill: orange;
-	}
-
-	.active:hover {
-		fill: orange !important;
-	
-	}
-
-	#countryInfo {
-		height: 70vh;
-	}
-
-	#countryName {
-		font-family: "Raleway Black";
-	}
-
-	.header {
-		color: white;
-		font-family: "Raleway Bold";
-	}
-
-	.bg {
-		background-image: url("assets/bg.png");
-		height: 100vh;
-	}
-	.hidden {
-		display: none;
-	}
-	div.tooltip {
-		color: rgb(5, 5, 5);
-		background: #fff;
-		padding: 0.5em;
-		text-shadow: #f5f5f5 0 1px 0;
-		border-radius: 2px;
-		box-shadow: 0px 0px 2px 0px #a6a6a6;
-		opacity: 0.9;
-		position: absolute;
-		font-family: "Raleway Black";
-	}
-
-	.map {
-		background-color: lightcyan;
-	}
-
-	#state-borders {
-		fill: none;
-		stroke: #fff;
-		stroke-width: 1.5px;
-		stroke-linejoin: round;
-		stroke-linecap: round;
-		pointer-events: none;
-	}
-</style>
 <body>
 	<div class="container-fluid bg">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="header text-center p-3 mb-5">
-					Project 2 - World value survey
-				</h2>
+		<div class="app p-4">
+			<div class="row">
+				<div class="col-12">
+					<h2 class="header text-center p-3 mb-3">
+						Project 2 - World values survey
+						<img
+							class="info ml-2"
+							src="assets/info.png"
+							alt="Information button"
+							data-toggle="modal"
+							data-target=".bd-example-modal-lg"
+						/>
+					</h2>
+				</div>
 			</div>
-		</div>
-		<div class="row mx-auto">
-			<div class="col-md-8">
-				<div id="container" class="mx-auto"></div>
+			<div
+				class="modal fade bd-example-modal-lg"
+				tabindex="-1"
+				role="dialog"
+				aria-labelledby="myLargeModalLabel"
+				aria-hidden="true"
+			>
+				<div class="modal-dialog modal-lg" role="document">
+					<div class="modal-content p-3">
+							<div class="modal-header">
+									<h3 class="modal-title">World values survey visualization</h3>
+									<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent btn-style" type="button" data-dismiss="modal" aria-label="Close">
+									  <span aria-hidden="true">X</span>
+									</button>
+								  </div>
+								  <div class="modal-body">
+						<p>
+							This is world values survey visualization including data from gapminder. Here you can learn
+							more about what people think is important in life. Click on a
+							country to learn more about it. You can also zoom and pan on the
+							map to easily find the country you want.
+						</p>
+						<br />
+						<div class="container mx-auto">
+						<img
+							class="mx-auto row col-6"
+							src="assets/gapminder.png"
+						/>
+						<img
+						class="mx-auto row col-6"
+						src="assets/wvs2.png"
+					/>
+				</div>
+				</div>
+					</div>
+				</div>
 			</div>
-			<div class="col-md-4">
-				<div id="countryInfo" class="card">
-					<h2 id="countryName" class="p-3 text-center"></h2>
-					<div id="countryFlag" class="mx-auto"></div>
+			<div class="row justify-content-center mb-4">
+				<div class="col-md-7 col-12">
+					<div id="container" class="mx-auto"></div>
+				</div>
+				<div class="col-md-3 col-12">
+					<div id="countryInfo" class="card">
+						<div id="countryHeader">
+							<h2 id="countryName" class="p-2 m-2 mt-3 text-center">
+								Welcome!
+								<p class="p-3 text-left">
+									Here you can learn more about what people think is important
+									in life. Click on a country to learn more about it. You can
+									also zoom and pan on the map to easily find the country you
+									want.
+								</p>
+							</h2>
+							<div class="row">
+								<div id="countryFlag" class="mx-auto"></div>
+							</div>
+						</div>
+						<div class="row mx-auto">
+							<div id="countryChart" class="mx-auto">
+								<img
+									class="img-fluid mx-auto org-img justify-content-center p-3"
+									src="assets/org.jpg"
+								/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="mx-auto">
+					<button
+						onclick="switchWave('wave1')"
+						id="wave1"
+						class="wave1 mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent btn-style"
+					>
+						1995-1999
+					</button>
+					<button
+						onclick="switchWave('wave2')"
+						id="wave2"
+						class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent btn-style"
+					>
+						2000-2004
+					</button>
+					<button
+						onclick="switchWave('wave3')"
+						id="wave3"
+						class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent btn-style"
+					>
+						2005-2009
+					</button>
+					<button
+						onclick="switchWave('wave4')"
+						id="wave4"
+						class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent btn-style"
+					>
+						2010-2014
+					</button>
 				</div>
 			</div>
 		</div>
@@ -143,27 +157,31 @@
 	></script>
 	<script src="https://d3js.org/d3.v3.min.js"></script>
 	<script src="https://d3js.org/topojson.v1.min.js"></script>
+	<script src="https://d3js.org/d3-queue.v3.min.js"></script>
 	<script>
 		window.addEventListener("resize", function() {
-			width = window.innerWidth * 0.66
-      height = window.innerHeight * 0.7;
+			width = window.innerWidth * 0.6;
+			height = window.innerHeight * 0.6;
 		});
 
-		var width = window.innerWidth * 0.66,
-			height = window.innerHeight * 0.7,
+		var width = window.innerWidth * 0.6,
+			height = window.innerHeight * 0.6,
 			centered,
-			world_id;
+			world_id,
+			life_expectancy,
+			currentWave = "wave1",
+			currentCountry = null,
+			category = "life";
 
 		var tooltip = d3
 			.select("#container")
 			.append("div")
 			.attr("class", "tooltip hidden");
 
-	
 		var projection = d3.geo
 			.mercator()
-			.scale(100)
-			.translate([width / 2, height / 1.50]);
+			.scale(120)
+			.translate([width / 2, height / 1.4]);
 
 		var path = d3.geo.path().projection(projection);
 
@@ -171,7 +189,7 @@
 			.zoom()
 			.translate(projection.translate())
 			.scale(projection.scale())
-			.scaleExtent([height * 0.197, 3 * height])
+			.scaleExtent([height * 0.25, 3 * height])
 			.on("zoom", zoomed);
 
 		var svg = d3
@@ -188,119 +206,285 @@
 			.attr("width", width)
 			.attr("height", height);
 
-		d3.json("world_id.json", function(error, data) {
-			if (error) throw error;
-			world_id = data;
-		});
+		var q = d3.queue();
 
-		d3.json("world-110m.v1.json", function(error, world) {
-			if (error) throw error;
+		d3.queue()
+			.defer(d3.json, "world-110m.v1.json")
+			.defer(d3.json, "data.json")
+			.await(function(error, world, data) {
+				if (error) throw error;
 
-			var rawCountries = topojson.feature(world, world.objects.countries)
-					.features,
-				neighbors = topojson.neighbors(world.objects.countries.geometries);
+				// Put data into variables
+				world_id = data;
+			
 
-			console.log(rawCountries);
-			console.log(neighbors);
-			var countries = [];
+				console.log("READING DATA");
+				console.log(world_id);
+				console.log(data)
 
-			// Splice(remove) random pieces
-			rawCountries.splice(145, 1);
-			rawCountries.splice(38, 1);
+			/*	var newArray = [];
+				var countryNum = [];
+				for (var i = 0; i < world_id.length; i++) {
+					//console.log(world_id[i])
+					var country = life_expectancy.filter(
+						count => count.country == world_id[i].name
+					);
+					//console.log(country[0])
+					countryNum.push(country[0]);
+					if (country[0]) {
+						var jsonobj = {
+							id: String(world_id[i].iso_n3),
+							iso_a2: world_id[i].iso_a2,
+							name: world_id[i].name,
+							wave1: { life: country[0].wave1 },
+							wave2: { life: country[0].wave2 },
+							wave3: { life: country[0].wave3 },
+							wave4: { life: country[0].wave4 }
+						};
+					} else {
+						var jsonobj = {
+							id: String(world_id[i].iso_n3),
+							iso_a2: world_id[i].iso_a2,
+							name: world_id[i].name,
+							wave1: null,
+							wave2: null,
+							wave3: null,
+							wave4: null
+						};
+					}
 
-			rawCountries.map(country => {
-				//console.log(parseInt(country.id) !== 010)
-				// Filter out Antartica and Kosovo
-				if (parseInt(country.id) !== parseInt("010")) {
-					countries.push(country);
-				} else {
-					console.log(country.id);
+					//console.log(jsonobj)
+					newArray.push(jsonobj);
 				}
-			});
+*/
+				console.log(data);
 
-			console.log(countries);
 
-			g.append("g")
-				.attr("id", "countries")
-				.selectAll(".country")
-				.data(countries)
-				.enter()
-				.insert("path", ".graticule")
-				.attr("class", "country")
-				.attr("d", path)
-				.attr("data-name", function(d) {
-					return d.id;
-				})
-				.on("click", clicked)
-				.on("mousemove", function(d, i) {
-					var mouse = d3.mouse(svg.node()).map(function(d) {
-						return parseInt(d);
-					});
 
-					tooltip
-						.classed("hidden", false)
-						.attr(
-							"style",
-							"left:" +
-								(mouse[0]) +
-								"px;top:" +
-								(mouse[1] - 50) +
-								"px"
-						)
-						.html(getCountryName(d.id));
-				})
-				.on("mouseout", function(d, i) {
-					tooltip.classed("hidden", true);
+				var updatedColorScale = updateColorScale()
+
+				var colorScale = d3.scale
+					.linear()
+					.domain(updatedColorScale
+					)
+					.range(["rgba(2, 100, 160,.1)", "rgba(2, 100, 160,1)"]);
+
+				//console.log(d3.extent(newArray, function(d){if(d[currentWave] != null){return parseInt(d[currentWave].life)}}))
+
+				//console.log(colorScale(parseInt(newArray[11][currentWave].life)))
+
+				var rawCountries = topojson.feature(world, world.objects.countries)
+						.features,
+					neighbors = topojson.neighbors(world.objects.countries.geometries);
+
+				//console.log(rawCountries);
+				//console.log(neighbors);
+				var countries = [];
+
+				// Splice(remove) random pieces
+				rawCountries.splice(145, 1);
+				rawCountries.splice(38, 1);
+
+				rawCountries.map(country => {
+					//console.log(parseInt(country.id) !== 010)
+					// Filter out Antartica and Kosovo
+					if (parseInt(country.id) !== parseInt("010")) {
+						countries.push(country);
+					} else {
+						//console.log(country.id);
+					}
 				});
-		});
+
+				//console.log(countries);
+
+				g.append("g")
+					.attr("id", "countries")
+					.selectAll(".country")
+					.data(countries)
+					.enter()
+					.insert("path", ".graticule")
+					.attr("class", "country")
+					.attr("d", path)
+					.attr("fill", function(d) {
+						//console.log(d)
+
+						var countryFill = world_id.filter(
+							country => String(country.id) == String(d.id)
+						);
+						//console.log(countryFill)
+						if (countryFill[0][currentWave] != null) {
+							return colorScale(parseInt(countryFill[0][currentWave][category]));
+						} else {
+							return "rgba(0,0,0,1)";
+						}
+					})
+					.attr("data-name", function(d) {
+						return d.id;
+					})
+					.on("click", clicked)
+					.on("mousemove", function(d, i) {
+						var mouse = d3.mouse(svg.node()).map(function(d) {
+							return parseInt(d);
+						});
+
+						tooltip
+							.classed("hidden", false)
+							.attr(
+								"style",
+								"left:" + mouse[0] + "px;top:" + (mouse[1] - 50) + "px"
+							)
+							.html(getCountryName(d.id));
+					})
+					.on("mouseout", function(d, i) {
+						tooltip.classed("hidden", true);
+					});
+			},
+			
+			// Add color to wave button
+			$("#" + currentWave).addClass("wave-active")
+			
+			);
+
+
+		function updateColorScale(){
+			var wave1 = d3.extent(world_id, function(d) {
+							if (d["wave1"] != null) {
+								return parseInt(d["wave1"][category]);
+							}})
+
+			var wave2 = d3.extent(world_id, function(d) {
+							if (d["wave2"] != null) {
+								return parseInt(d["wave2"][category]);
+							}})
+
+			var wave3 = d3.extent(world_id, function(d) {
+							if (d["wave3"] != null) {
+								return parseInt(d["wave3"][category]);
+							}})
+
+			var wave4 = d3.extent(world_id, function(d) {
+							if (d["wave4"] != null) {
+								return parseInt(d["wave4"][category]);
+							}})
+
+			
+			var waves = [wave1, wave2, wave3, wave4];
+
+			var minVal = null;
+			var maxVal = null;
+			var max;
+			var min;
+			for(var i = 0; i < waves.length; i++){
+				max = Math.max.apply(null, waves[i]);
+				min = Math.min.apply(null, waves[i]);
+				if(max > maxVal || maxVal == null){
+					maxVal = max
+				}
+				if(min < minVal || minVal == null){
+					minVal = min
+				}
+			}
+			console.log(minVal)
+			console.log(maxVal)
+			return colorScale = [minVal, maxVal]
+		}
+
+		function update() {
+
+			var updatedColorScale = updateColorScale()
+
+			var colorScale = d3.scale
+				.linear()
+				.domain(updatedColorScale)
+				.range(["rgba(2, 100, 160,.1)", "rgba(2, 100, 160,1)"]);
+
+			d3.selectAll("path")
+				.transition()
+				.duration(300)
+				.attr("fill", function(d) {
+					//console.log(d)
+
+					var countryFill = world_id.filter(
+						country => String(country.id) == String(d.id)
+					);
+					//console.log(countryFill)
+					if (countryFill[0][currentWave] != null) {
+						return colorScale(parseInt(countryFill[0][currentWave][category]));
+					} else {
+						return "rgba(0,0,0,1)";
+					}
+				});
+		}
+
+		function switchWave(wave) {
+			console.log(currentWave)
+			$("#"+ currentWave).removeClass("wave-active");
+			$("#"+ wave).addClass("wave-active");
+
+			currentWave = wave;
+			update();
+			if (currentCountry != null) {
+				updateCountry(currentCountry);
+				console.log(currentCountry);
+			}
+		}
 
 		function getCountryName(id) {
 			var country = world_id.filter(
-				country => parseInt(country.iso_n3) == parseInt(id)
+				country => parseInt(country.id) == parseInt(id)
 			);
 			console.log(country[0].name);
 			console.log(id);
 			return country[0].name;
 		}
 
-		function updateCountry(d) {
-			console.log(world_id);
+		function updateCountry(country) {
+			console.log(country);
 
-			var country = world_id.filter(
-				country => parseInt(country.iso_n3) == parseInt(d.id)
-			);
-			console.log(country[0].name);
-			if (country[0].name === "Kosovo") {
+			console.log(country.name);
+			if (country.name === "Kosovo") {
 				var iso_a2 = "xk";
 			} else {
-				var iso_a2 = country[0].iso_a2.toLowerCase();
+				var iso_a2 = country.iso_a2.toLowerCase();
 			}
 
 			// Remove any current data
 			$("#countryName").empty();
 			$("#countryFlag").empty();
+			$("#countryChart").empty();
 
-			$("#countryName").text(country[0].name);
+			$("#countryName").text(country.name);
+
+			currentCountry = country;
+			console.log("Current country");
+			console.log(currentCountry);
 
 			var src = "svg/" + iso_a2 + ".svg";
-			var img = "<img id='flag' class='flag' src=" + src + " />";
+			var img = "<img class='flag mx-auto shadow' src=" + src + " />";
 			$("#countryFlag").append(img);
+			if (country[currentWave] != null) {
+				$("#countryChart").text(country[currentWave][category]);
+			}
 		}
 
 		// Remove country when deselected
 		function removeCountry() {
 			$("#countryName").empty();
 			$("#countryFlag").empty();
+			$("#countryChart").empty();
+			currentCountry = null;
 		}
 
 		// When clicked on a country
 		function clicked(d) {
-			var x, y, z;
-
 			if (d && centered !== d) {
 				centered = d;
 
-				updateCountry(d);
+				var country = world_id.filter(
+					country => parseInt(country.id) == parseInt(d.id)
+				);
+
+				updateCountry(country[0]);
 			} else {
 				centered = null;
 				removeCountry();
@@ -316,13 +500,12 @@
 
 			console.log("Clicked");
 			console.log(d);
-			console.log(d);
 
 			var centroid = path.centroid(d),
 				translate = projection.translate();
 
-			console.log(translate);
-			console.log(centroid);
+			//console.log(translate);
+			//console.log(centroid);
 
 			projection.translate([
 				translate[0] - centroid[0] + width / 2,
@@ -339,7 +522,7 @@
 
 		// D3 zoomed
 		function zoomed() {
-			console.log("zoomed");
+			//console.log("zoomed");
 			projection.translate(d3.event.translate).scale(d3.event.scale);
 			g.selectAll("path").attr("d", path);
 		}

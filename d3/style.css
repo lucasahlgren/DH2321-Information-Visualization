@@ -1,4 +1,185 @@
-.map{
-    width: 100vw;
-    height: 100vh
+@font-face {
+    font-family: "Raleway Italic Bold";
+    src: url("assets/fonts/Raleway/Raleway-BoldItalic.ttf");
+}
+
+@font-face {
+    font-family: "Raleway Bold";
+    src: url("assets/fonts/Raleway/Raleway-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Raleway Black";
+    src: url("assets/fonts/Raleway/Raleway-Black.ttf");
+}
+@font-face {
+    font-family: "Raleway Black Italic";
+    src: url("assets/fonts/Raleway/Raleway-BlackItalic.ttf");
+}
+@font-face {
+    font-family: "Raleway";
+    src: url("assets/fonts/Raleway/Raleway-Regular.ttf");
+}
+
+/* Remove adsbox */
+.adsbox{
+    display: none;
+}
+
+.background {
+    fill: none;
+    pointer-events: all;
+}
+
+.country:hover {
+    fill: #aaa !important;
+    transition: 0.2s ease fill;
+}
+
+.country {
+    stroke: white;
+    stroke-opacity: 0.3;
+}
+
+#countryFlag {
+    max-height: 80px;
+}
+
+.flag {
+    height: 60px;
+}
+
+.active {
+    fill: orange;
+}
+
+.active:hover {
+    fill: orange !important;
+    transition: 0.3s ease fill;
+}
+
+#countryInfo {
+    height: 65vh;
+}
+
+#countryHeader {
+    background: rgb(236, 233, 233);
+    min-height: 35%;
+}
+
+#countryName {
+    font-family: "Raleway Black";
+}
+
+.header {
+    color: white;
+    font-family: "Raleway Bold";
+}
+
+.bg {
+    background-image: url("assets/bg2.jpg");
+    background-size: 100%;
+    min-height: 100vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+.hidden {
+    display: none;
+}
+div.tooltip {
+    color: rgb(5, 5, 5);
+    background: #fff;
+    padding: 0.5em;
+    text-shadow: #f5f5f5 0 1px 0;
+    border-radius: 2px;
+    box-shadow: 0px 0px 2px 0px #a6a6a6;
+    opacity: 0.9;
+    position: absolute;
+    font-family: "Raleway Black";
+}
+
+.info {
+    cursor: pointer;
+    max-height: 35px;
+}
+.map {
+    background-color: rgb(230, 246, 248);
+    min-width: 60vw;
+    min-height: 65vh;
+}
+
+
+.btn-style {
+    background: rgb(150, 143, 150) !important;
+    font-family: "Raleway Bold";
+}
+
+.wave-active{
+    background: rgb(233, 143, 8) !important;
+}
+
+.modal-content * {
+    font-family: "Raleway Black";
+}
+
+.app {
+    -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 1s; /* Firefox < 16 */
+    -ms-animation: fadein 1s; /* Internet Explorer */
+    animation: fadein 1s;
+    animation-fill-mode: backwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .map {
+        min-width: 60vw;
+        min-height: 60vh;
+    }
+}
+
+@media (max-width: 769px) {
+    .map {
+        width: 90vw;
+    }
 }
