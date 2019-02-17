@@ -21,6 +21,8 @@
     src: url("assets/fonts/Raleway/Raleway-Regular.ttf");
 }
 
+
+
 /* Remove adsbox */
 .adsbox{
     display: none;
@@ -29,6 +31,14 @@
 .background {
     fill: none;
     pointer-events: all;
+}
+
+.life-time{
+    font-family: "Raleway Black";
+}
+
+.life-time-data{
+    font-family: "Raleway Black";
 }
 
 .country:hover {
@@ -60,12 +70,16 @@
 
 #countryInfo {
     height: 65vh;
+    border-radius: 0 .25rem .25rem 0;
 }
 
 #countryHeader {
     background: rgb(236, 233, 233);
     min-height: 35%;
+    border-radius: 0 .25rem 0 0;
 }
+
+
 
 #countryName {
     font-family: "Raleway Black";
@@ -73,6 +87,15 @@
 
 .header {
     color: white;
+    font-family: "Raleway Bold";
+}
+
+
+.dropdown-title{
+    font-family: "Raleway Bold";
+}
+
+.dropdown-item{
     font-family: "Raleway Bold";
 }
 
@@ -107,14 +130,27 @@ div.tooltip {
     background-color: rgb(230, 246, 248);
 }
 
+#introHeader{
+    font-family: "Raleway Black";
+}
+
+#introText{
+    font-family: "Raleway";
+}
 
 .btn-style {
-    background: rgb(150, 143, 150) !important;
+
     font-family: "Raleway Bold";
+}
+
+
+.modal-body p{
+    font-family: "Raleway" !important;
 }
 
 .wave-active{
     background: rgb(233, 143, 8) !important;
+    color: white !important;
 }
 
 .modal-content * {
@@ -128,6 +164,10 @@ div.tooltip {
     animation: fadein 1s;
     animation-fill-mode: backwards;
     animation-delay: 0.5s;
+}
+
+.menu-btn{
+    font-family: "Raleway Bold";
 }
 
 @keyframes fadein {
