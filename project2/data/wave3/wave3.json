@@ -1,0 +1,827 @@
+[
+	{
+		"id": "032",
+		"iso_a2": "AR",
+		"name": "Argentina",
+		"wave3": {
+			"work": "96,1",
+			"family": "98,9",
+			"leisure": "82,5",
+			"politics": "30,2",
+			"happiness": "87,6",
+			"friends": "85,3",
+			"religion": "64,7",
+			"health": "78,7"
+		}
+	},
+	{
+		"id": "036",
+		"iso_a2": "AU",
+		"name": "Australia",
+		"wave3": {
+			"work": "79,9",
+			"family": "98,3",
+			"leisure": "90,5",
+			"politics": "47,7",
+			"happiness": "91,6",
+			"friends": "93,8",
+			"religion": "38,6",
+			"health": "74,4"
+		}
+	},
+	{
+        "id": "076",
+		"iso_a2": "BR",
+		"name": "Brazil",
+		"wave3": {
+			"work": "98,7",
+			"family": "99,5",
+			"leisure": "84,2",
+			"politics": "54,6",
+			"happiness": "90,4",
+			"friends": "87,5",
+			"religion": "90,9",
+			"health": "74,3"
+		}
+	},
+	{
+		"id": "100",
+		"iso_a2": "BG",
+		"name": "Bulgaria",
+		"wave3": {
+			"work": "79,2",
+			"family": "98,4",
+			"leisure": "67,5",
+			"politics": "22,2",
+			"happiness": "56,4",
+			"friends": "84,6",
+			"religion": "49,4",
+			"health": "54,9"
+		}
+	},
+	{
+        "id": "124",
+		"iso_a2": "CA",
+		"name": "Canada",
+		"wave3": {
+			"work": "85,6",
+			"family": "99,1",
+			"leisure": "88,4",
+			"politics": 49,
+			"happiness": "95,2",
+			"friends": "95,6",
+			"religion": "58,7",
+			"health": "81,7"
+		}
+	},
+	{
+		"id": "152",
+		"iso_a2": "CL",
+		"name": "Chile",
+		"wave3": {
+			"work": "90,7",
+			"family": "98,9",
+			"leisure": "85,1",
+			"politics": "20,1",
+			"happiness": "79,5",
+			"friends": "59,4",
+			"religion": "72,9",
+			"health": "61,4"
+		}
+	},
+	{
+		"id": "156",
+		"iso_a2": "CN",
+		"name": "China",
+		"wave3": {
+			"work": "85,5",
+			"family": "97,4",
+			"leisure": "50,3",
+			"politics": "48,2",
+			"happiness": "76,8",
+			"friends": "82,9",
+			"religion": "16,2",
+			"health": 65
+		}
+	},
+	{
+		"id": "158",
+		"iso_a2": "TW",
+		"name": "Taiwan",
+		"wave3": {
+			"work": 90,
+			"family": "99,2",
+			"leisure": "84,2",
+			"politics": "28,9",
+			"happiness": "85,1",
+			"friends": "92,3",
+			"religion": "51,7",
+			"health": "85,9"
+		}
+	},
+	{
+        "id": "196",
+		"iso_a2": "CY",
+		"name": "Cyprus",
+		"wave3": {
+			"work": "87,6",
+			"family": "99,1",
+			"leisure": "85,5",
+			"politics": "33,3",
+			"happiness": 87,
+			"friends": 92,
+			"religion": "80,4",
+			"health": "77,2"
+		}
+	},
+	{
+		"id": "231",
+		"iso_a2": "ET",
+		"name": "Ethiopia",
+		"wave3": {
+			"work": 98,
+			"family": "98,2",
+			"leisure": "81,2",
+			"politics": "73,7",
+			"happiness": "63,4",
+			"friends": "97,1",
+			"religion": "93,6",
+			"health": "64,5"
+		}
+	},
+	{
+		"id": "246",
+		"iso_a2": "FI",
+		"name": "Finland",
+		"wave3": {
+			"work": "84,8",
+			"family": "97,6",
+			"leisure": "93,1",
+			"politics": "28,3",
+			"happiness": 92,
+			"friends": "97,9",
+			"religion": 45,
+			"health": "66,9"
+		}
+	},
+	{
+        "id": "250",
+		"iso_a2": "FR",
+		"name": "France",
+		"wave3": {
+			"work": "92,9",
+			"family": "97,5",
+			"leisure": "86,7",
+			"politics": "47,4",
+			"happiness": "90,1",
+			"friends": 92,
+			"religion": "40,8",
+			"health": "72,4"
+		}
+	},
+	{
+        "id": "268",
+		"iso_a2": "GE",
+		"name": "Georgia",
+		"wave3": {
+			"work": "91,2",
+			"family": "99,6",
+			"leisure": "83,6",
+			"politics": "62,9",
+			"happiness": "66,1",
+			"friends": "98,1",
+			"religion": "96,4",
+			"health": "41,9"
+		}
+	},
+	{
+        "id": "276",
+		"iso_a2": "DE",
+		"name": "Germany",
+		"wave3": {
+			"work": "79,8",
+			"family": "96,5",
+			"leisure": "82,8",
+			"politics": "42,1",
+			"happiness": "81,2",
+			"friends": 94,
+			"religion": "33,2",
+			"health": "71,2"
+		}
+	},
+	{
+        "id": "288",
+		"iso_a2": "GH",
+		"name": "Ghana",
+		"wave3": {
+			"work": "97,7",
+			"family": "98,2",
+			"leisure": "82,2",
+			"politics": "48,2",
+			"happiness": "78,5",
+			"friends": "74,9",
+			"religion": "97,3",
+			"health": "80,3"
+		}
+	},
+	{
+        "id": "320",
+		"iso_a2": "GT",
+		"name": "Guatemala",
+		"wave3": {
+			"work": "99,3",
+			"family": "99,8",
+			"leisure": "88,9",
+			"politics": "39,8",
+			"happiness": 78,
+			"friends": "83,8",
+			"religion": "95,6",
+			"health": "62,6"
+		}
+	},
+	{
+        "id": "348",
+		"iso_a2": "HU",
+		"name": "Hungary",
+		"wave3": {
+			"work": "86,3",
+			"family": "96,6",
+			"leisure": "82,7",
+			"politics": 25,
+			"happiness": "75,6",
+			"friends": "80,7",
+			"religion": "37,7",
+			"health": "58,7"
+		}
+	},
+	{
+        "id": "356",
+		"iso_a2": "IN",
+		"name": "India",
+		"wave3": {
+			"work": "92,9",
+			"family": "98,6",
+			"leisure": "59,7",
+			"politics": "37,2",
+			"happiness": "75,3",
+			"friends": "83,4",
+			"religion": 78,
+			"health": "68,6"
+		}
+	},
+	{
+		"id": "360",
+		"iso_a2": "ID",
+		"name": "Indonesia",
+		"wave3": {
+			"work": 96,
+			"family": "99,2",
+			"leisure": "62,1",
+			"politics": "39,4",
+			"happiness": "92,1",
+			"friends": "93,3",
+			"religion": 98,
+			"health": 76
+		}
+	},
+	{
+		"id": "364",
+		"iso_a2": "IR",
+		"name": "Iran",
+		"wave3": {
+			"work": "93,3",
+			"family": "98,9",
+			"leisure": "78,2",
+			"politics": "49,5",
+			"happiness": "79,4",
+			"friends": "80,7",
+			"religion": "94,3",
+			"health": "67,2"
+		}
+	},
+	{
+		"id": "368",
+		"iso_a2": "IQ",
+		"name": "Iraq",
+		"wave3": {
+			"work": "93,7",
+			"family": "99,5",
+			"leisure": "69,7",
+			"politics": "63,2",
+			"happiness": "52,2",
+			"friends": "90,1",
+			"religion": "98,9",
+			"health": "65,2"
+		}
+	},
+	{
+		"id": "380",
+		"iso_a2": "IT",
+		"name": "Italy",
+		"wave3": {
+			"work": "94,8",
+			"family": "99,2",
+			"leisure": "85,7",
+			"politics": 37,
+			"happiness": "89,4",
+			"friends": "92,9",
+			"religion": "75,2",
+			"health": "74,1"
+		}
+	},
+	{
+        "id": "392",
+		"iso_a2": "JP",
+		"name": "Japan",
+		"wave3": {
+			"work": "84,9",
+			"family": "97,5",
+			"leisure": "90,1",
+			"politics": "61,4",
+			"happiness": "87,3",
+			"friends": "92,8",
+			"religion": "17,3",
+			"health": "53,6"
+		}
+	},
+	{
+        "id": "400",
+		"iso_a2": "JO",
+		"name": "Jordan",
+		"wave3": {
+			"work": "86,8",
+			"family": "99,4",
+			"leisure": "75,4",
+			"politics": "49,7",
+			"happiness": "86,9",
+			"friends": "92,1",
+			"religion": "99,6",
+			"health": "87,1"
+		}
+	},
+	{
+        "id": "410",
+		"iso_a2": "KR",
+		"name": "Korea",
+		"wave3": {
+			"work": 91,
+			"family": "99,8",
+			"leisure": 85,
+			"politics": "54,2",
+			"happiness": "87,4",
+			"friends": "93,8",
+			"religion": "46,9",
+			"health": "79,6"
+		}
+	},
+	{
+        "id": "458",
+		"iso_a2": "MY",
+		"name": "Malaysia",
+		"wave3": {
+			"work": "93,9",
+			"family": 100,
+			"leisure": "86,6",
+			"politics": 46,
+			"happiness": "94,8",
+			"friends": "93,7",
+			"religion": "95,9",
+			"health": "89,1"
+		}
+	},
+	{
+        "id": "466",
+		"iso_a2": "ML",
+		"name": "Mali",
+		"wave3": {
+			"work": "94,4",
+			"family": "97,4",
+			"leisure": "65,2",
+			"politics": "48,4",
+			"happiness": "82,6",
+			"friends": "90,6",
+			"religion": "96,5",
+			"health": "61,7"
+		}
+	},
+	{
+        "id": "484",
+		"iso_a2": "MX",
+		"name": "Mexico",
+		"wave3": {
+			"work": "97,5",
+			"family": 99,
+			"leisure": "84,3",
+			"politics": "46,5",
+			"happiness": "90,7",
+			"friends": "78,5",
+			"religion": "84,7",
+			"health": 64
+		}
+	},
+	{
+        "id": "498",
+		"iso_a2": "MD",
+		"name": "Moldova",
+		"wave3": {
+			"work": "90,1",
+			"family": "98,7",
+			"leisure": 67,
+			"politics": "25,6",
+			"happiness": "50,2",
+			"friends": "75,6",
+			"religion": "72,8",
+			"health": "52,6"
+		}
+	},
+	{
+        "id": "504",
+		"iso_a2": "MA",
+		"name": "Morocco",
+		"wave3": {
+			"work": "96,8",
+			"family": "99,4",
+			"leisure": "52,8",
+			"politics": "33,3",
+			"happiness": "80,8",
+			"friends": "85,1",
+			"religion": "98,4",
+			"health": "74,6"
+		}
+	},
+	{
+        "id": "528",
+		"iso_a2": "NL",
+		"name": "Netherlands",
+		"wave3": {
+			"work": "76,6",
+			"family": 94,
+			"leisure": "95,5",
+			"politics": "45,4",
+			"happiness": "93,9",
+			"friends": "96,1",
+			"religion": "30,2",
+			"health": "72,8"
+		}
+	},
+	{
+		"id": "554",
+		"iso_a2": "NZ",
+		"name": "New Zealand",
+		"wave3": {
+			"work": "82,3",
+			"family": "98,8",
+			"leisure": "87,5",
+			"politics": "39,3",
+			"happiness": "96,5",
+			"friends": "92,8",
+			"religion": "34,3",
+			"health": "81,3"
+		}
+	},
+	{
+		"id": "578",
+		"iso_a2": "NO",
+		"name": "Norway",
+		"wave3": {
+			"work": "92,5",
+			"family": "99,1",
+			"leisure": "94,7",
+			"politics": "58,3",
+			"happiness": "96,3",
+			"friends": "98,2",
+			"religion": "32,7",
+			"health": "79,5"
+		}
+	},
+	{
+		"id": "604",
+		"iso_a2": "PE",
+		"name": "Peru",
+		"wave3": {
+			"work": "94,7",
+			"family": "98,1",
+			"leisure": "66,8",
+			"politics": 28,
+			"happiness": "67,4",
+			"friends": "52,6",
+			"religion": "75,6",
+			"health": "47,7"
+		}
+	},
+	{
+        "id": "616",
+		"iso_a2": "PL",
+		"name": "Poland",
+		"wave3": {
+			"work": "86,9",
+			"family": 99,
+			"leisure": "82,7",
+			"politics": "28,7",
+			"happiness": "87,7",
+			"friends": "92,7",
+			"religion": "85,7",
+			"health": "55,7"
+		}
+	},
+	{
+        "id": "642",
+		"iso_a2": "RO",
+		"name": "Romania",
+		"wave3": {
+			"work": "88,4",
+			"family": "97,3",
+			"leisure": "68,9",
+			"politics": "21,4",
+			"happiness": "55,3",
+			"friends": "70,8",
+			"religion": 89,
+			"health": "53,6"
+		}
+	},
+	{
+        "id": "643",
+		"iso_a2": "RU",
+		"name": "Russia",
+		"wave3": {
+			"work": "79,6",
+			"family": "97,8",
+			"leisure": "75,9",
+			"politics": "34,4",
+			"happiness": "65,7",
+			"friends": "88,5",
+			"religion": "46,5",
+			"health": "39,8"
+		}
+	},
+	{
+        "id": "646",
+		"iso_a2": "RW",
+		"name": "Rwanda",
+		"wave3": {
+			"work": "98,7",
+			"family": "98,1",
+			"leisure": 95,
+			"politics": "54,1",
+			"happiness": "85,4",
+			"friends": "98,8",
+			"religion": "95,6",
+			"health": "33,6"
+		}
+	},
+	{
+        "id": "688",
+		"iso_a2": "RS",
+		"name": "Serbia",
+		"wave3": {
+			"work": "89,2",
+			"family": "98,9",
+			"leisure": 83,
+			"politics": "21,8",
+			"happiness": "62,2",
+			"friends": "94,5",
+			"religion": "65,5",
+			"health": "53,8"
+		}
+	},
+	{
+		"id": "704",
+		"iso_a2": "VN",
+		"name": "Vietnam",
+		"wave3": {
+			"work": "88,4",
+			"family": "99,6",
+			"leisure": "48,9",
+			"politics": "68,5",
+			"happiness": "91,5",
+			"friends": "84,5",
+			"religion": "32,4",
+			"health": "59,6"
+		}
+	},
+	{
+        "id": "705",
+		"iso_a2": "SI",
+		"name": "Slovenia",
+		"wave3": {
+			"work": "92,1",
+			"family": "97,6",
+			"leisure": "86,2",
+			"politics": "15,8",
+			"happiness": "79,8",
+			"friends": "90,1",
+			"religion": "42,3",
+			"health": "56,8"
+		}
+	},
+	{
+        "id": "710",
+		"iso_a2": "ZA",
+		"name": "South Africa",
+		"wave3": {
+			"work": "91,9",
+			"family": "99,1",
+			"leisure": "76,3",
+			"politics": "47,3",
+			"happiness": "77,8",
+			"friends": "73,3",
+			"religion": 90,
+			"health": "78,2"
+		}
+	},
+	{
+        "id": "724",
+		"iso_a2": "ES",
+		"name": "Spain",
+		"wave3": {
+			"work": "87,7",
+			"family": "98,8",
+			"leisure": "89,8",
+			"politics": "28,9",
+			"happiness": 92,
+			"friends": "94,1",
+			"religion": "38,9",
+			"health": "79,4"
+		}
+	},
+	{
+        "id": "752",
+		"iso_a2": "SE",
+		"name": "Sweden",
+		"wave3": {
+			"work": "91,9",
+			"family": "98,9",
+			"leisure": "95,3",
+			"politics": "62,6",
+			"happiness": "96,1",
+			"friends": 98,
+			"religion": "29,2",
+			"health": "77,6"
+		}
+	},
+	{
+        "id": "756",
+		"iso_a2": "CH",
+		"name": "Switzerland",
+		"wave3": {
+			"work": "91,9",
+			"family": "98,2",
+			"leisure": "90,9",
+			"politics": "56,4",
+			"happiness": "93,5",
+			"friends": "96,2",
+			"religion": "45,4",
+			"health": "84,2"
+		}
+	},
+	{
+        "id": "764",
+		"iso_a2": "TH",
+		"name": "Thailand",
+		"wave3": {
+			"work": "91,4",
+			"family": 99,
+			"leisure": "72,4",
+			"politics": "73,3",
+			"happiness": "92,4",
+			"friends": "84,6",
+			"religion": "93,7",
+			"health": 76
+		}
+	},
+	{
+        "id": "780",
+		"iso_a2": "TT",
+		"name": "Trinidad and Tobago",
+		"wave3": {
+			"work": "93,4",
+			"family": "98,8",
+			"leisure": "82,3",
+			"politics": "27,4",
+			"happiness": "86,8",
+			"friends": "73,5",
+			"religion": "89,5",
+			"health": "72,9"
+		}
+	},
+	{
+		"id": "792",
+		"iso_a2": "TR",
+		"name": "Turkey",
+		"wave3": {
+			"work": "86,5",
+			"family": "99,8",
+			"leisure": "87,3",
+			"politics": "37,2",
+			"happiness": "86,1",
+			"friends": "97,3",
+			"religion": "91,2",
+			"health": "68,3"
+		}
+	},
+	{
+        "id": "804",
+		"iso_a2": "UA",
+		"name": "Ukraine",
+		"wave3": {
+			"work": "77,8",
+			"family": "97,5",
+			"leisure": "77,6",
+			"politics": "38,4",
+			"happiness": "74,6",
+			"friends": "83,5",
+			"religion": 55,
+			"health": "46,7"
+		}
+	},
+	{
+        "id": "818",
+		"iso_a2": "EG",
+		"name": "Egypt",
+		"wave3": {
+			"work": "84,9",
+			"family": "99,8",
+			"leisure": "53,7",
+			"politics": "37,3",
+			"happiness": "83,1",
+			"friends": "89,9",
+			"religion": "99,5",
+			"health": "66,5"
+		}
+	},
+	{
+		"id": "826",
+		"iso_a2": "GB",
+		"name": "United Kingdom",
+		"wave3": {
+			"work": "70,8",
+			"family": "98,3",
+			"leisure": "88,7",
+			"politics": "40,2",
+			"happiness": "93,4",
+			"friends": "96,5",
+			"religion": "40,1",
+			"health": "74,2"
+		}
+	},
+	{
+        "id": "840",
+		"iso_a2": "US",
+		"name": "United States",
+		"wave3": {
+			"work": "79,2",
+			"family": "99,1",
+			"leisure": "88,4",
+			"politics": "50,7",
+			"happiness": "93,2",
+			"friends": "94,9",
+			"religion": "71,1",
+			"health": "81,7"
+		}
+	},
+	{
+        "id": "854",
+		"iso_a2": "BF",
+		"name": "Burkina Faso",
+		"wave3": {
+			"work": "97,2",
+			"family": "99,1",
+			"leisure": "54,4",
+			"politics": "45,3",
+			"happiness": "79,7",
+			"friends": "90,6",
+			"religion": "94,8",
+			"health": "71,5"
+		}
+	},
+	{
+        "id": "858",
+		"iso_a2": "UY",
+		"name": "Uruguay",
+		"wave3": {
+			"work": 92,
+			"family": "99,3",
+			"leisure": "87,5",
+			"politics": "33,5",
+			"happiness": "85,9",
+			"friends": "84,5",
+			"religion": "45,6",
+			"health": "77,3"
+		}
+	},
+	{
+		"id": "894",
+		"iso_a2": "ZM",
+		"name": "Zambia",
+		"wave3": {
+			"work": 92,
+			"family": "97,8",
+			"leisure": "59,9",
+			"politics": 53,
+			"happiness": "51,6",
+			"friends": "87,5",
+			"religion": "91,9",
+			"health": "68,9"
+		}
+	}
+]

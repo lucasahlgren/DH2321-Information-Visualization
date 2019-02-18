@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<head>
+	<title>Project 2 | World Values Survey Visualization</title>
+
+	<!-- Load styles and icons -->
+	<link rel="shortcut icon" type="image/png" href="assets/shortcut_logo.png" />
+	<link
+		rel="stylesheet"
+		href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	/>
+
+	<link
+		rel="stylesheet"
+		href="assets/bootstrap.min.css"
+		integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA"
+		crossorigin="anonymous"
+	/>
+
+	<link
+		href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.1/css/mdb.min.css"
+		rel="stylesheet"
+	/>
+
+	<link rel="stylesheet" href="style.css" />
+</head>
+<!-- Visualization based on a map example by Mike Bostock https://bl.ocks.org/mbostock/eec4a6cda2f573574a11 -->
+<body>
+	<div class="container-fluid bg">
+		<div class="app p-4">
+			<div class="row">
+				<div class="col-12">
+
+				<!-- Header -->
+					<h2 class="header text-center p-3 mb-3">
+						Project 2 - World values survey
+						<button
+							class="btn btn-sm btn-light ml-4 menu-btn"
+							data-toggle="modal"
+							data-target=".info-modal"
+						>
+							Info
+						</button>
+						<!--	<img
+							class="info ml-2"
+							src="assets/info.png"
+							alt="Information button"
+							data-toggle="modal"
+							data-target=".info-modal"
+						/>-->
+						<button
+							class="btn btn-sm btn-light menu-btn"
+							data-toggle="modal"
+							data-target=".discovery-modal"
+						>
+							Discovery process
+						</button>
+					</h2>
+				</div>
+			</div>
+
+			<!-- Info modal -->
+			<div
+				class="modal fade info-modal"
+				tabindex="-1"
+				role="dialog"
+				aria-labelledby="myLargeModalLabel"
+				aria-hidden="true"
+			>
+				<div class="modal-dialog modal-lg" role="document">
+					<div class="modal-content p-3">
+						<div class="modal-header">
+							<h3 class="modal-title">World values survey visualization</h3>
+							<button
+								class="btn-sm btn-light btn"
+								type="button"
+								data-dismiss="modal"
+								aria-label="Close"
+							>
+								<span aria-hidden="true">X</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<p>
+								This is world values survey visualization including data from
+								gapminder. Here you can learn more about what people think is
+								important in life and average life expectancy data from
+								gapminder. Click on a country to learn more about it. You can
+								also zoom and pan on the map to easily find the country you
+								want.
+							</p>
+							<div class="container mx-auto py-4">
+								<img class="mx-auto row col-6" src="assets/gapminder.png" />
+								<img class="mx-auto row col-6" src="assets/wvs2.png" />
+							</div>
+							<p>
+								Besides average life expectancy each category presents the
+								number of percent of people how thinks the category is very
+								important or rather important. The categories are: work,
+								politics, family, religion, happiness, state of health, leisure
+								time and friends. Each category is coded with the following
+								colors:
+							</p>
+
+							<!-- life: ["rgba(2, 100, 160,.1)", "rgba(2, 100, 160,1)"],
+							work: ["rgba(255, 50, 160,.1)", "rgba(255, 50, 160,1)"],
+							friends: ["rgba(255, 50, 80,.1)", "rgba(255, 50, 80,1)"],
+							religion: ["rgba(50, 120, 120,.1)", "rgba(50, 120, 120,1)"],
+							happiness: ["rgba(170, 170, 20,.1)", "rgba(170, 170, 20,1)"],
+							health: ["rgba(2, 150, 50,.1)", "rgba(2, 150, 50,1)"],
+							politics: ["rgba(70, 70, 70,.1)", "rgba(70, 70, 70,1)"],
+							leisure: ["rgba(150, 0, 150,.1)", "rgba(150, 0, 150,1)"],
+							family: ["rgba(100, 70, 50,.1)", "rgba(100, 70, 50,1)"]-->
+
+
+
+							<ul>
+								<li>Life expectancy - <span class="dot" style=" background-color: rgba(2, 100, 160,1)"></span></li>
+								<li>Work - <span class="dot" style=" background-color: rgba(255, 50, 160,1)"></span></li>
+								<li>Politics - <span class="dot" style=" background-color: rgba(70, 70, 70,1)"></span></li>
+								<li>Family - <span class="dot" style=" background-color: rgba(100, 70, 50,1)"></span></li>
+								<li>Religion - <span class="dot" style=" background-color: rgba(50, 120, 120,1)"></span></li>
+								<li>Happiness - <span class="dot" style=" background-color: rgba(170, 170, 20,1)"></span></li>
+								<li>State of health - <span class="dot" style=" background-color: rgba(2, 150, 50,1)"></span></li>
+								<li>Leisure time - <span class="dot" style=" background-color: rgba(150, 0, 150,1)"></span></li>
+								<li>Friends - <span class="dot" style=" background-color:rgba(255, 50, 80,1)"></span></li>
+							</ul>
+							<p>The visualization is based on a map example by Mike Bostock which can be found <a href="https://bl.ocks.org/mbostock/eec4a6cda2f573574a11">here</a>.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Discovery modal -->
+			<div
+				class="modal fade discovery-modal"
+				tabindex="-1"
+				role="dialog"
+				aria-labelledby="myLargeModalLabel"
+				aria-hidden="true"
+			>
+				<div class="modal-dialog modal-lg" role="document">
+					<div class="modal-content p-3">
+						<div class="modal-header">
+							<h3 class="modal-title">Discovery process</h3>
+							<button
+								class="btn-sm btn-light btn"
+								type="button"
+								data-dismiss="modal"
+								aria-label="Close"
+							>
+								<span aria-hidden="true">X</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<h4>World values survey</h4>
+							<p>
+								First I had to select all the countries I wanted to include.
+							</p>
+							<br />
+							<h4>Project 2 visualization</h4>
+							<p>
+								With my visualization you don't have to select all the countries
+								you want, they are all there. It is easy to select a specific
+								topic/question and get immediate response about the country
+								because of preattentive properties such as color and position.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Visualization container -->
+			<div class="row justify-content-center mb-3">
+				
+				<!-- Map container -->
+				<div class="col-7">
+					<div id="container" class="mx-auto"></div>
+				</div>
+
+				<!-- Country container -->
+				<div class="col-3">
+					<div id="countryInfo" class="card">
+						<div id="countryHeader" class="p-3">
+							<h2 id="introHeader" class="pb-2 m-2 mt-2 text-center">
+								Welcome!
+							</h2>
+							<p id="introText" class="pr-4 pl-4 pb-3 text-left">
+								Here you can learn more about what people think is important in
+								life. Click on a country to learn more about it. You can also
+								zoom and pan on the map to easily find the country you want.
+							</p>
+						</div>
+						<div class="row mx-auto">
+							<div id="countryChart" class="mx-auto p-3">
+								<div class="col-11 mx-auto">
+									<img class="col-12 p-3" src="assets/gapminder.png" />
+									<img class="col-12 p-3" src="assets/wvs2.png" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Filter container -->
+			<div class="row">
+				<div class="mx-auto">
+					<button
+						type="button"
+						onclick="switchWave('wave1')"
+						id="wave1"
+						class="wave1 btn btn-light btn-style"
+					>
+						1995-1999
+					</button>
+					<button
+						onclick="switchWave('wave2')"
+						id="wave2"
+						class="btn btn-light btn-style"
+					>
+						2000-2004
+					</button>
+					<button
+						onclick="switchWave('wave3')"
+						id="wave3"
+						class="btn btn-light btn-style"
+					>
+						2005-2009
+					</button>
+					<button
+						onclick="switchWave('wave4')"
+						id="wave4"
+						class="btn btn-light btn-style"
+					>
+						2010-2014
+					</button>
+
+					<!--Dropdown primary-->
+					<!--Trigger-->
+					<button
+						class="btn dropdown-toggle dropdown-title ml-5"
+						type="button"
+						id="dropdownMenu1"
+						data-toggle="dropdown"
+						aria-haspopup="true"
+						aria-expanded="false"
+					>
+						Active
+					</button>
+
+					<!--Menu-->
+					<div class="dropdown-menu dropdown-primary">
+						<a class="dropdown-item" onclick="updateCategory('life')"
+							>Life expectancy</a
+						>
+						<a class="dropdown-item" onclick="updateCategory('work')"
+							>Work is important</a
+						>
+						<a class="dropdown-item" onclick="updateCategory('family')"
+							>Family is important</a
+						>
+						<a class="dropdown-item" onclick="updateCategory('religion')"
+							>Religion is important</a
+						>
+						<a class="dropdown-item" onclick="updateCategory('politics')"
+							>Politics is important</a
+						>
+						<a class="dropdown-item" onclick="updateCategory('leisure')"
+							>Leisure time is important</a
+						>
+						<a class="dropdown-item" onclick="updateCategory('friends')"
+							>Friends is important</a
+						>
+						<a class="dropdown-item" onclick="updateCategory('health')"
+							>State of health</a
+						>
+						<a class="dropdown-item" onclick="updateCategory('happiness')"
+							>Happiness</a
+						>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Load scripts: jquery, bootstrap, mdbootstrap, topojson, d3 -->
+	<script
+		src="assets/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"
+	></script>
+	<script
+		src="assets/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"
+	></script>
+	<script
+		src="assets/bootstrap.min.js"
+		integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp"
+		crossorigin="anonymous"
+	></script>
+	<script defer src="assets/material.min.js"></script>
+	<script src="assets/d3.v3.min.js"></script>
+	<script src="assets/topojson.v1.min.js"></script>
+	<script src="assets/d3-queue.v3.min.js"></script>
+
+	<!-- Visualization script -->
+	<script>
+		var questions = {
+			life: "Life expectancy",
+			work: "Work is important",
+			friends: "Friends is important",
+			religion: "Religion is important",
+			happiness: "Happiness",
+			health: "State of health",
+			politics: "Politics is important",
+			leisure: "Leisure time is important",
+			family: "Family is important"
+		};
+
+		var questionColor = {
+			life: ["rgba(2, 100, 160,.1)", "rgba(2, 100, 160,1)"],
+			work: ["rgba(255, 50, 160,.1)", "rgba(255, 50, 160,1)"],
+			friends: ["rgba(255, 50, 80,.1)", "rgba(255, 50, 80,1)"],
+			religion: ["rgba(50, 120, 120,.1)", "rgba(50, 120, 120,1)"],
+			happiness: ["rgba(170, 170, 20,.1)", "rgba(170, 170, 20,1)"],
+			health: ["rgba(2, 150, 50,.1)", "rgba(2, 150, 50,1)"],
+			politics: ["rgba(70, 70, 70,.1)", "rgba(70, 70, 70,1)"],
+			leisure: ["rgba(150, 0, 150,.1)", "rgba(150, 0, 150,1)"],
+			family: ["rgba(100, 70, 50,.1)", "rgba(100, 70, 50,1)"]
+		};
+
+		// Global variables
+		var width = window.innerWidth * 0.6,
+			height = window.innerHeight * 0.65,
+			centered,
+			world_id,
+			life_expectancy,
+			currentWave = "wave1",
+			currentCountry = null,
+			currentCategory = "life";
+
+			// Change category button style on load
+		$(".dropdown-title")
+			.attr("style", "background-color: " + questionColor[currentCategory][1])
+			.text(questions[currentCategory]);
+
+		var tooltip = d3
+			.select("#container")
+			.append("div")
+			.attr("class", "tooltip hidden");
+
+		var projection = d3.geo
+			.mercator()
+			.scale(120)
+			.translate([width / 2.1, height / 1.5]);
+
+		var path = d3.geo.path().projection(projection);
+
+		var zoom = d3.behavior
+			.zoom()
+			.translate(projection.translate())
+			.scale(projection.scale())
+			.scaleExtent([height * 0.27, 3 * height])
+			.on("zoom", zoomed);
+
+		var svg = d3
+			.select("#container")
+			.append("svg")
+			.attr("width", width)
+			.attr("class", "map card shadow")
+			.attr("height", height);
+
+		var g = svg.append("g").call(zoom);
+
+		g.append("rect")
+			.attr("class", "background")
+			.attr("width", width)
+			.attr("height", height);
+
+		// Create map
+		d3.queue()
+			.defer(d3.json, "world-110m.v1.json")
+			.defer(d3.json, "data_final.json")
+			.await(
+				function(error, world, data) {
+					if (error) throw error;
+
+					// Put data into variables
+					world_id = data;
+
+					console.log("READING DATA");
+					console.log(world_id);
+				
+
+					var updatedColorScale = updateColorScale();
+
+					var colorScale = d3.scale
+						.linear()
+						.domain(updatedColorScale)
+						.range(questionColor[currentCategory]);
+
+					//console.log(d3.extent(newArray, function(d){if(d[currentWave] != null){return parseInt(d[currentWave].life)}}))
+
+					//console.log(colorScale(parseInt(newArray[11][currentWave].life)))
+
+					var rawCountries = topojson.feature(world, world.objects.countries)
+							.features,
+						neighbors = topojson.neighbors(world.objects.countries.geometries);
+
+					//console.log(rawCountries);
+					//console.log(neighbors);
+					var countries = [];
+
+					// Splice(remove) random pieces
+					rawCountries.splice(145, 1);
+					rawCountries.splice(38, 1);
+
+					rawCountries.map(country => {
+						//console.log(parseInt(country.id) !== 010)
+						// Filter out Antartica and Kosovo
+						if (parseInt(country.id) !== parseInt("010")) {
+							countries.push(country);
+						} else {
+							//console.log(country.id);
+						}
+					});
+
+					//console.log(countries);
+
+					g.append("g")
+						.attr("id", "countries")
+						.selectAll(".country")
+						.data(countries)
+						.enter()
+						.insert("path", ".graticule")
+						.attr("class", "country")
+						.attr("d", path)
+						.attr("fill", function(d) {
+							//console.log(d)
+
+							var countryFill = world_id.filter(
+								country => String(country.id) == String(d.id)
+							);
+							//console.log(countryFill)
+							if (countryFill[0][currentWave] != null) {
+								return colorScale(
+									parseInt(countryFill[0][currentWave][currentCategory])
+								);
+							} else {
+								return "rgba(0,0,0,1)";
+							}
+						})
+						.attr("data-name", function(d) {
+							return d.id;
+						})
+						.on("click", clicked)
+						.on("mousemove", function(d, i) {
+							var mouse = d3.mouse(svg.node()).map(function(d) {
+								return parseInt(d);
+							});
+
+							tooltip
+								.classed("hidden", false)
+								.attr(
+									"style",
+									"left:" + mouse[0] + "px;top:" + (mouse[1] - 50) + "px"
+								)
+								.html(getCountryName(d.id));
+						})
+						.on("mouseout", function(d, i) {
+							tooltip.classed("hidden", true);
+						});
+				},
+
+				// Add color to wave button
+				$("#" + currentWave).addClass("wave-active")
+			);
+
+
+			// Update color scale when changing category and on load
+		function updateColorScale() {
+			var wave1 = d3.extent(world_id, function(d) {
+				if (d["wave1"] != null) {
+					return parseInt(d["wave1"][currentCategory]);
+				}
+			});
+
+			var wave2 = d3.extent(world_id, function(d) {
+				if (d["wave2"] != null) {
+					return parseInt(d["wave2"][currentCategory]);
+				}
+			});
+
+			var wave3 = d3.extent(world_id, function(d) {
+				if (d["wave3"] != null) {
+					return parseInt(d["wave3"][currentCategory]);
+				}
+			});
+
+			var wave4 = d3.extent(world_id, function(d) {
+				if (d["wave4"] != null) {
+					return parseInt(d["wave4"][currentCategory]);
+				}
+			});
+
+			var waves = [wave1, wave2, wave3, wave4];
+
+			var minVal = null;
+			var maxVal = null;
+			var max;
+			var min;
+			for (var i = 0; i < waves.length; i++) {
+				max = Math.max.apply(null, waves[i]);
+				min = Math.min.apply(null, waves[i]);
+				if (max > maxVal || maxVal == null) {
+					maxVal = max;
+				}
+				if (min < minVal || minVal == null) {
+					minVal = min;
+				}
+			}
+			console.log(minVal);
+			console.log(maxVal);
+			return (colorScale = [minVal, maxVal]);
+		}
+
+		// Update visualization when changing wave
+		function update() {
+			var updatedColorScale = updateColorScale();
+
+			var colorScale = d3.scale
+				.linear()
+				.domain(updatedColorScale)
+				.range(questionColor[currentCategory]);
+
+			d3.selectAll("path")
+				.transition()
+				.duration(300)
+				.attr("fill", function(d) {
+					//console.log(d)
+
+					var countryFill = world_id.filter(
+						country => String(country.id) == String(d.id)
+					);
+					//console.log(countryFill)
+					if (countryFill[0][currentWave] != null) {
+						return colorScale(
+							parseInt(countryFill[0][currentWave][currentCategory])
+						);
+					} else {
+						return "rgba(0,0,0,1)";
+					}
+				});
+		}
+
+		// Update visualization when changing category
+		function updateCategoryColor() {
+			var updatedColorScale = updateColorScale();
+
+			var colorScale = d3.scale
+				.linear()
+				.domain(updatedColorScale)
+				.range(questionColor[currentCategory]);
+
+			d3.selectAll("path").attr("fill", function(d) {
+				//console.log(d)
+
+				var countryFill = world_id.filter(
+					country => String(country.id) == String(d.id)
+				);
+				//console.log(countryFill)
+				if (countryFill[0][currentWave] != null) {
+					return colorScale(
+						parseInt(countryFill[0][currentWave][currentCategory])
+					);
+				} else {
+					return "rgba(0,0,0,1)";
+				}
+			});
+		}
+
+		// Update to new category
+		function updateCategory(category) {
+			currentCategory = category;
+
+			// Update button title
+			updateCategoryColor();
+
+			$(".dropdown-title")
+				.attr("style", "background-color: " + questionColor[currentCategory][1])
+				.text(questions[currentCategory]);
+		}
+
+		// Change wave
+		function switchWave(wave) {
+			console.log(currentWave);
+			$("#" + currentWave).removeClass("wave-active");
+			$("#" + wave).addClass("wave-active");
+
+			currentWave = wave;
+			update();
+			if (currentCountry != null) {
+				updateCountry(currentCountry);
+				console.log(currentCountry);
+			}
+		}
+
+		// Get country name from id
+		function getCountryName(id) {
+			var country = world_id.filter(
+				country => parseInt(country.id) == parseInt(id)
+			);
+			//console.log(country[0].name);
+			//console.log(id);
+			return country[0].name;
+		}
+
+		// Update visualization country info
+		function updateCountry(country) {
+			console.log(country);
+
+			console.log(country.name);
+			if (country.name === "Kosovo") {
+				var iso_a2 = "xk";
+			} else {
+				var iso_a2 = country.iso_a2.toLowerCase();
+			}
+
+			// Remove any current data
+
+			$("#countryChart").empty();
+			$("#countryHeader").empty();
+
+			/*		<p class="p-3 text-left">
+									Here you can learn more about what people think is important
+									in life. Click on a country to learn more about it. You can
+									also zoom and pan on the map to easily find the country you
+									want.
+								</p>
+							<div class="row">
+								<div id="countryFlag" class="mx-auto"></div>
+							</div>
+						</div>*/
+
+			var countryName =
+				"<h2 id='countryName' class='m-2 mt-2 text-center'></h2>";
+
+			//console.log(countryName)
+
+			$("#countryHeader").append(countryName);
+			$("#countryName").text(country.name);
+
+			currentCountry = country;
+			console.log("Current country");
+			console.log(currentCountry);
+
+			var src = "svg/" + iso_a2 + ".svg";
+			var img = "<img class='flag mx-auto shadow' src=" + src + " />";
+
+			var countryFlag =
+				"<div class='row'><div id='countryFlag' class='mx-auto mb-2'></div></div>";
+
+			$("#countryHeader").append(countryFlag);
+			$("#countryFlag").append(img);
+
+			if (country[currentWave] != null) {
+				var life =
+					"<h5 class='life-time text-center'>Average life expectancy </h5><h6 class='life-time-data text-center'>" +
+					country[currentWave]["life"] +
+					" years</h6>";
+
+				var div = "<div id='countryData1' class='col-6'></div>"
+				var div2 = "<div id='countryData2' class='col-6'></div>"
+				var div3 = "<div id='countryRow' class='row mt-4'></div>"
+
+				var work = "<p>Work: " + country[currentWave]["work"] + "%</p>"
+				var family = "<p>Family: " + country[currentWave]["family"] + "%</p>"
+				var leisure = "<p>Leisure: " + country[currentWave]["leisure"] + "%</p>"
+				var religion = "<p>Religion: " + country[currentWave]["religion"] + "%</p>"
+				var happiness = "<p>Happiness: " + country[currentWave]["happiness"] + "%</p>"
+				var health = "<p>Health: " + country[currentWave]["health"] + "%</p>"
+				var politics = "<p>Politics: " + country[currentWave]["politics"] + "%</p>"
+				var friends = "<p>Friends: " + country[currentWave]["friends"] + "%</p>"
+
+				$("#countryChart").append(life);
+				$("#countryChart").append(div3);
+				$("#countryRow").append(div);
+				$("#countryRow").append(div2);
+
+				$("#countryData1").append(work);
+				$("#countryData1").append(family);
+				$("#countryData1").append(leisure);
+				$("#countryData1").append(religion);
+
+
+				$("#countryData2").append(happiness);
+				$("#countryData2").append(health);
+				$("#countryData2").append(politics);
+				$("#countryData2").append(friends);
+
+			}else{
+				var message = "<h4 class='text-center'>No data available</h4>";
+				$("#countryChart").append(message);
+			}
+
+		}
+
+		// Remove country when deselected
+		function removeCountry() {
+			$("#countryHeader").empty();
+			$("#countryChart").empty();
+			currentCountry = null;
+		}
+
+		// When clicked on a country
+		function clicked(d) {
+			if (d && centered !== d) {
+				centered = d;
+
+				var country = world_id.filter(
+					country => parseInt(country.id) == parseInt(d.id)
+				);
+
+				updateCountry(country[0]);
+			} else {
+				centered = null;
+				removeCountry();
+			}
+
+			g.selectAll("path").classed(
+				"active",
+				centered &&
+					function(d) {
+						return d === centered;
+					}
+			);
+
+			console.log("Clicked");
+			//console.log(d);
+
+			var centroid = path.centroid(d),
+				translate = projection.translate();
+
+			//console.log(translate);
+			//console.log(centroid);
+
+			projection.translate([
+				translate[0] - centroid[0] + width / 2,
+				translate[1] - centroid[1] + height / 2
+			]);
+
+			zoom.translate(projection.translate());
+
+			g.selectAll("path")
+				.transition()
+				.duration(700)
+				.attr("d", path);
+		}
+
+		// D3 zoomed
+		function zoomed() {
+			//console.log("zoomed");
+			projection.translate(d3.event.translate).scale(d3.event.scale);
+			g.selectAll("path").attr("d", path);
+		}
+	</script>
+</body>
