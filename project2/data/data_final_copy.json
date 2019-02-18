@@ -3238,10 +3238,37 @@
 		"id": "158",
 		"iso_a2": "TW",
 		"name": "Taiwan",
-		"wave1": null,
+		"wave1": {
+			"work": "90,2",
+			"family": "98,3",
+			"leisure": "77,6",
+			"politics": "41,9",
+			"happiness": "90,6",
+			"friends": "87,6",
+			"religion": "47,7",
+			"health": "47,5"
+		},
 		"wave2": null,
-		"wave3": null,
-		"wave4": null
+		"wave3": {
+			"work": 90,
+			"family": "99,2",
+			"leisure": "84,2",
+			"politics": "28,9",
+			"happiness": "85,1",
+			"friends": "92,3",
+			"religion": "51,7",
+			"health": "85,9"
+		},
+		"wave4": {
+			"work": "90,1",
+			"family": "98,8",
+			"leisure": "84,3",
+			"politics": 30,
+			"happiness": "89,9",
+			"friends": "90,3",
+			"religion": "52,7",
+			"health": "86,3"
+		}
 	},
 	{
 		"id": "834",

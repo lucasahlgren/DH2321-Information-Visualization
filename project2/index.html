@@ -84,7 +84,7 @@
 							<p>
 								This is world values survey visualization including data from
 								gapminder. Here you can learn more about what people think is
-								important in life and average life expectancy data from
+								important in life as well as their state of health, if they feel happy and the average life expectancy with data from
 								gapminder. Click on a country to learn more about it. You can
 								also zoom and pan on the map to easily find the country you
 								want.
@@ -94,26 +94,14 @@
 								<img class="mx-auto row col-6" src="assets/wvs2.png" />
 							</div>
 							<p>
-								Besides average life expectancy each category presents the
-								number of percent of people how thinks the category is very
-								important or rather important. The categories are: work,
-								politics, family, religion, happiness, state of health, leisure
-								time and friends. Each category is coded with the following
-								colors:
+								Besides average life expectancy (years) each category presents the
+								number of percent of people who thinks the category is very
+								important or rather important when it comes to work, politics, religion, leisure time and friends. 
+								For happiness, the number of percents corresponds to people who answered that they feel very happy or quite happy. 
+								For the state of health, the number of percents corresponds to people who answered that their state of health is very good or good. 
+								Each category is coded with the colors down below. A stronger color corresponds to a higher percentage. The color scale goes from the lowest percentage of all countries to the highest percentage of all countries.
+								This helps to differentiate countries from another when the percentage differences are small.
 							</p>
-
-							<!-- life: ["rgba(2, 100, 160,.1)", "rgba(2, 100, 160,1)"],
-							work: ["rgba(255, 50, 160,.1)", "rgba(255, 50, 160,1)"],
-							friends: ["rgba(255, 50, 80,.1)", "rgba(255, 50, 80,1)"],
-							religion: ["rgba(50, 120, 120,.1)", "rgba(50, 120, 120,1)"],
-							happiness: ["rgba(170, 170, 20,.1)", "rgba(170, 170, 20,1)"],
-							health: ["rgba(2, 150, 50,.1)", "rgba(2, 150, 50,1)"],
-							politics: ["rgba(70, 70, 70,.1)", "rgba(70, 70, 70,1)"],
-							leisure: ["rgba(150, 0, 150,.1)", "rgba(150, 0, 150,1)"],
-							family: ["rgba(100, 70, 50,.1)", "rgba(100, 70, 50,1)"]-->
-
-
-
 							<ul>
 								<li>Life expectancy - <span class="dot" style=" background-color: rgba(2, 100, 160,1)"></span></li>
 								<li>Work - <span class="dot" style=" background-color: rgba(255, 50, 160,1)"></span></li>
@@ -181,21 +169,22 @@
 				<!-- Country container -->
 				<div class="col-3">
 					<div id="countryInfo" class="card">
-						<div id="countryHeader" class="p-3">
-							<h2 id="introHeader" class="pb-2 m-2 mt-2 text-center">
+						<div id="countryHeader" class="p-2 pt-3">
+							<h3 id="introHeader" class="pb-2 m-2 mt-2 text-center">
 								Welcome!
-							</h2>
-							<p id="introText" class="pr-4 pl-4 pb-3 text-left">
-								Here you can learn more about what people think is important in
-								life. Click on a country to learn more about it. You can also
-								zoom and pan on the map to easily find the country you want.
+							</h3>
+							<p id="introText" class="pr-3 pl-3 pb-2 text-left">
+									This is world values survey visualization. Here you can learn more about what people think is
+									important in life and more. You can read more if you click the info button above. Click on a country to learn more about it. You can
+									also zoom and pan on the map to easily find the country you
+									want.
 							</p>
 						</div>
 						<div class="row mx-auto">
 							<div id="countryChart" class="mx-auto p-3">
-								<div class="col-11 mx-auto">
-									<img class="col-12 p-3" src="assets/gapminder.png" />
-									<img class="col-12 p-3" src="assets/wvs2.png" />
+								<div class="col-8 mx-auto p-2">
+									<img class="col-12 pb-2" src="assets/gapminder.png" />
+									<img class="col-12 p-0 " src="assets/wvs2.png" />
 								</div>
 							</div>
 						</div>
