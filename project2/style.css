@@ -22,6 +22,29 @@
 }
 
 
+
+/* Simple bar chart styles */
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: black;
+  shape-rendering: crispEdges;
+}
+
+text,
+.axis text {
+  font-size: 12px;
+  font-family: "Raleway Bold";
+  font-weight: bold;
+
+}
+
+
+#legend{
+    transform-origin: bottom left !important;
+    background: red;
+}
 #countryData p {
     font-size: 10pt;
 }
@@ -80,6 +103,7 @@
 }
 
 #countryInfo {
+    min-height: 430px !important;
     height: 65vh;
     border-radius: 0 .25rem .25rem 0;
 }
@@ -139,14 +163,19 @@ div.tooltip {
 }
 .map {
     background-color: rgb(230, 246, 248);
+    min-height: 430px;
+    height: 65vh;
+    width: 60vw;
 }
 
 #introHeader{
     font-family: "Raleway Bold";
+    font-size: 2vw;
 }
 
 #introText{
     font-family: "Raleway";
+    font-size: 1vw;
 }
 
 .btn-style {

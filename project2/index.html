@@ -30,8 +30,7 @@
 		<div class="app p-4">
 			<div class="row">
 				<div class="col-12">
-
-				<!-- Header -->
+					<!-- Header -->
 					<h2 class="header text-center p-3 mb-3">
 						Project 2 - World values survey
 						<button
@@ -82,38 +81,105 @@
 						</div>
 						<div class="modal-body">
 							<p>
-								This is world values survey visualization including data from
+								This is a world values survey visualization including data from
 								gapminder. Here you can learn more about what people think is
-								important in life as well as their state of health, if they feel happy and the average life expectancy with data from
-								gapminder. Click on a country to learn more about it. You can
-								also zoom and pan on the map to easily find the country you
-								want.
+								important in life as well as the state of health, if they feel
+								happy and the average life expectancy. Click on a country to
+								learn more about it. You can also zoom and pan on the map to
+								easily find the country you want.
 							</p>
 							<div class="container mx-auto py-4">
 								<img class="mx-auto row col-6" src="assets/gapminder.png" />
 								<img class="mx-auto row col-6" src="assets/wvs2.png" />
 							</div>
 							<p>
-								Besides average life expectancy (years) each category presents the
-								number of percent of people who thinks the category is very
-								important or rather important when it comes to work, politics, religion, leisure time and friends. 
-								For happiness, the number of percents corresponds to people who answered that they feel very happy or quite happy. 
-								For the state of health, the number of percents corresponds to people who answered that their state of health is very good or good. 
-								Each category is coded with the colors down below. A stronger color corresponds to a higher percentage. The color scale goes from the lowest percentage of all countries to the highest percentage of all countries.
-								This helps to differentiate countries from another when the percentage differences are small.
+								Besides average life expectancy (years) each category presents
+								the number of percent of people who thinks the category is very
+								important or rather important when it comes to work, politics,
+								religion, leisure time and friends. For happiness, the number of
+								percents corresponds to people who answered that they feel very
+								happy or quite happy. For the state of health, the number of
+								percents corresponds to people who answered that their state of
+								health is very good or good. Each category is encoded with the
+								colors down below. A stronger color corresponds to a higher
+								percentage. The color scale goes from the lowest percentage of
+								all countries in that category to the highest percentage of all
+								countries. This helps to differentiate countries from another
+								when the difference is small. It makes it easier to see which
+								country is the worst and the best wihtin that category.
 							</p>
 							<ul>
-								<li>Life expectancy - <span class="dot" style=" background-color: rgba(2, 100, 160,1)"></span></li>
-								<li>Work - <span class="dot" style=" background-color: rgba(255, 50, 160,1)"></span></li>
-								<li>Politics - <span class="dot" style=" background-color: rgba(70, 70, 70,1)"></span></li>
-								<li>Family - <span class="dot" style=" background-color: rgba(100, 70, 50,1)"></span></li>
-								<li>Religion - <span class="dot" style=" background-color: rgba(50, 120, 120,1)"></span></li>
-								<li>Happiness - <span class="dot" style=" background-color: rgba(170, 170, 20,1)"></span></li>
-								<li>State of health - <span class="dot" style=" background-color: rgba(2, 150, 50,1)"></span></li>
-								<li>Leisure time - <span class="dot" style=" background-color: rgba(150, 0, 150,1)"></span></li>
-								<li>Friends - <span class="dot" style=" background-color:rgba(255, 50, 80,1)"></span></li>
+								<li>
+									Life expectancy -
+									<span
+										class="dot"
+										style=" background-color: rgba(2, 100, 160,1)"
+									></span>
+								</li>
+								<li>
+									Work -
+									<span
+										class="dot"
+										style=" background-color: rgba(255, 50, 160,1)"
+									></span>
+								</li>
+								<li>
+									Politics -
+									<span
+										class="dot"
+										style=" background-color: rgba(70, 70, 70,1)"
+									></span>
+								</li>
+								<li>
+									Family -
+									<span
+										class="dot"
+										style=" background-color: rgba(100, 70, 50,1)"
+									></span>
+								</li>
+								<li>
+									Religion -
+									<span
+										class="dot"
+										style=" background-color: rgba(50, 120, 120,1)"
+									></span>
+								</li>
+								<li>
+									Happiness -
+									<span
+										class="dot"
+										style=" background-color: rgba(170, 170, 20,1)"
+									></span>
+								</li>
+								<li>
+									State of health -
+									<span
+										class="dot"
+										style=" background-color: rgba(2, 150, 50,1)"
+									></span>
+								</li>
+								<li>
+									Leisure time -
+									<span
+										class="dot"
+										style=" background-color: rgba(150, 0, 150,1)"
+									></span>
+								</li>
+								<li>
+									Friends -
+									<span
+										class="dot"
+										style=" background-color:rgba(255, 50, 80,1)"
+									></span>
+								</li>
 							</ul>
-							<p>The visualization is based on a map example by Mike Bostock which can be found <a href="https://bl.ocks.org/mbostock/eec4a6cda2f573574a11">here</a>.</p>
+							<p>
+								The visualization is based on a map example by Mike Bostock
+								which can be found
+								<a href="https://bl.ocks.org/mbostock/eec4a6cda2f573574a11"
+									>here</a
+								>.
+							</p>
 						</div>
 					</div>
 				</div>
@@ -151,7 +217,7 @@
 								With my visualization you don't have to select all the countries
 								you want, they are all there. It is easy to select a specific
 								topic/question and get immediate response about the country
-								because of preattentive properties such as color and position.
+								because of preattentive features such as color and position.
 							</p>
 						</div>
 					</div>
@@ -160,24 +226,25 @@
 
 			<!-- Visualization container -->
 			<div class="row justify-content-center mb-3">
-				
 				<!-- Map container -->
 				<div class="col-7">
 					<div id="container" class="mx-auto"></div>
 				</div>
 
 				<!-- Country container -->
-				<div class="col-3">
+				<div class="col-4">
 					<div id="countryInfo" class="card">
 						<div id="countryHeader" class="p-2 pt-3">
 							<h3 id="introHeader" class="pb-2 m-2 mt-2 text-center">
 								Welcome!
 							</h3>
 							<p id="introText" class="pr-3 pl-3 pb-2 text-left">
-									This is world values survey + gapminder visualization. Here you can learn more about what people think is
-									important in life. If you are interested in what kind of data you can click the info button above to read more.
-									Click on a country to learn more about it. You can also zoom and pan on the map to easily find the country you
-									want.
+								This is a world values survey + gapminder visualization. Here
+								you can learn more about what people think is important in life.
+								If you are interested in what kind of data you can click the
+								info button above to read more. Click on a country to learn more
+								about it. You can also zoom and pan on the map to easily find
+								the country you want.
 							</p>
 						</div>
 						<div class="row mx-auto">
@@ -190,6 +257,7 @@
 						</div>
 					</div>
 				</div>
+				<div id="chart"></div>
 			</div>
 
 			<!-- Filter container -->
@@ -320,6 +388,11 @@
 			family: ["rgba(100, 70, 50,.1)", "rgba(100, 70, 50,1)"]
 		};
 
+		addEventListener("resize", function() {
+			width = window.innerWidth * 0.6;
+			height = window.innerHeight * 0.65;
+		});
+
 		// Global variables
 		var width = window.innerWidth * 0.6,
 			height = window.innerHeight * 0.65,
@@ -330,7 +403,7 @@
 			currentCountry = null,
 			currentCategory = "life";
 
-			// Change category button style on load
+		// Change category button style on load
 		$(".dropdown-title")
 			.attr("style", "background-color: " + questionColor[currentCategory][1])
 			.text(questions[currentCategory]);
@@ -381,9 +454,90 @@
 
 					console.log("READING DATA");
 					console.log(world_id);
-				
 
 					var updatedColorScale = updateColorScale();
+
+					// Custom legend
+
+					var legend = d3
+						.select(".map")
+						.append("svg")
+						.attr("height", 200)
+						.attr("id", "legend")
+						.attr("width", 300)
+						.append("g")
+
+
+					if (currentCategory == "life") {
+						var unit = " years";
+					} else {
+						var unit = " %";
+					}
+
+					legend
+						.append("rect")
+						.attr("x", 0)
+
+						.attr("transform", "translate(15,10)")
+						.attr("y", 0)
+						.attr("width", parseInt(255+unit.length*7))
+						.attr("height", 50)
+						.style("fill", "white");
+
+					legend
+						.append("rect")
+						.attr("x", 0)
+
+						.attr("transform", "translate(40,25)")
+						.attr("y", 0)
+						.attr("width", 20)
+						.attr("height", 20)
+						.style("fill", questionColor[currentCategory][0]);
+
+					legend
+						.append("text")
+						.attr("transform", "translate(65,38)")
+						.text(updatedColorScale[0] + unit);
+
+					legend
+						.append("rect")
+						.attr("x", 0)
+						.attr(
+							"transform",
+							"translate(" + parseInt(105 + unit.length * 3) + ",25)"
+						)
+						.attr("y", 0)
+						.attr("width", 20)
+						.attr("height", 20)
+						.style("fill", questionColor[currentCategory][1]);
+
+					legend
+						.append("text")
+						.attr(
+							"transform",
+							"translate(" + parseInt(130 + unit.length * 3) + ", 39)"
+						)
+						.text(updatedColorScale[1] + unit);
+
+					legend
+						.append("rect")
+						.attr("x", 0)
+						.attr(
+							"transform",
+							"translate(" + parseInt(175 + unit.length * 5) + ",25)"
+						)
+						.attr("y", 0)
+						.attr("width", 20)
+						.attr("height", 20)
+						.style("fill", "black");
+
+					legend
+						.append("text")
+						.attr(
+							"transform",
+							"translate(" + parseInt(200 + unit.length * 5) + ", 38)"
+						)
+						.text("No data");
 
 					var colorScale = d3.scale
 						.linear()
@@ -467,8 +621,7 @@
 				$("#" + currentWave).addClass("wave-active")
 			);
 
-
-			// Update color scale when changing category and on load
+		// Update color scale when changing category and on load
 		function updateColorScale() {
 			var wave1 = d3.extent(world_id, function(d) {
 				if (d["wave1"] != null) {
@@ -524,7 +677,8 @@
 				.domain(updatedColorScale)
 				.range(questionColor[currentCategory]);
 
-			d3.selectAll("path")
+			d3.select("#container")
+				.selectAll("path")
 				.transition()
 				.duration(300)
 				.attr("fill", function(d) {
@@ -548,38 +702,121 @@
 		function updateCategoryColor() {
 			var updatedColorScale = updateColorScale();
 
+		// Custom legend
+
+		d3.select("#legend").selectAll("*").remove();
+		var legend = d3.select("#legend").append("g");
+				
+				
+				
+				var unit;
+				if (currentCategory == "life") {
+					unit = " years";
+				} else {
+					unit = " %";
+				}
+
+				legend
+					.append("rect")
+					.attr("x", 0)
+
+					.attr("transform", "translate(15,10)")
+					.attr("y", 0)
+					.attr("width", parseInt(255+unit.length*7))
+					.attr("height", 50)
+					.style("fill", "white");
+
+				legend
+					.append("rect")
+					.attr("x", 0)
+
+					.attr("transform", "translate(40,25)")
+					.attr("y", 0)
+					.attr("width", 20)
+					.attr("height", 20)
+					.style("fill", questionColor[currentCategory][0]);
+
+				legend
+					.append("text")
+					.attr("transform", "translate(65,38)")
+					.text(updatedColorScale[0] + unit);
+
+				legend
+					.append("rect")
+					.attr("x", 0)
+					.attr(
+						"transform",
+						"translate(" + parseInt(105 + unit.length * 3) + ",25)"
+					)
+					.attr("y", 0)
+					.attr("width", 20)
+					.attr("height", 20)
+					.style("fill", questionColor[currentCategory][1]);
+
+				legend
+					.append("text")
+					.attr(
+						"transform",
+						"translate(" + parseInt(130 + unit.length * 3) + ", 38)"
+					)
+					.text(updatedColorScale[1] + unit);
+
+				legend
+					.append("rect")
+					.attr("x", 0)
+					.attr(
+						"transform",
+						"translate(" + parseInt(175 + unit.length * 5) + ",25)"
+					)
+					.attr("y", 0)
+					.attr("width", 20)
+					.attr("height", 20)
+					.style("fill", "black");
+
+				legend
+					.append("text")
+					.attr(
+						"transform",
+						"translate(" + parseInt(200 + unit.length * 5) + ", 39)"
+					)
+					.text("No data");
+
+
+
 			var colorScale = d3.scale
 				.linear()
 				.domain(updatedColorScale)
 				.range(questionColor[currentCategory]);
 
-			d3.selectAll("path").attr("fill", function(d) {
-				//console.log(d)
+			d3.select("#container")
+				.selectAll("path")
+				.attr("fill", function(d) {
+					//console.log(d)
 
-				var countryFill = world_id.filter(
-					country => String(country.id) == String(d.id)
-				);
-				//console.log(countryFill)
-				if (countryFill[0][currentWave] != null) {
-					return colorScale(
-						parseInt(countryFill[0][currentWave][currentCategory])
+					var countryFill = world_id.filter(
+						country => String(country.id) == String(d.id)
 					);
-				} else {
-					return "rgba(0,0,0,1)";
-				}
-			});
+					//console.log(countryFill)
+					if (countryFill[0][currentWave] != null) {
+						return colorScale(
+							parseInt(countryFill[0][currentWave][currentCategory])
+						);
+					} else {
+						return "rgba(0,0,0,1)";
+					}
+				});
 		}
 
 		// Update to new category
 		function updateCategory(category) {
-			currentCategory = category;
-
-			// Update button title
-			updateCategoryColor();
+			currentCategory = category.toLowerCase();
 
 			$(".dropdown-title")
 				.attr("style", "background-color: " + questionColor[currentCategory][1])
 				.text(questions[currentCategory]);
+
+			// Update button title
+			updateCategoryColor();
 		}
 
 		// Change wave
@@ -589,6 +826,7 @@
 			$("#" + wave).addClass("wave-active");
 
 			currentWave = wave;
+			console.log(currentWave);
 			update();
 			if (currentCountry != null) {
 				updateCountry(currentCountry);
@@ -606,6 +844,184 @@
 			return country[0].name;
 		}
 
+		function drawBarChart(country) {
+			var init = country;
+			//console.log(country);
+
+			//console.log(init);
+			//console.log(init[currentWave]);
+
+			var dataset = [];
+			var categories = [];
+
+			for (var hej in init[currentWave]) {
+				//console.log(hej);
+				var name = hej;
+				//console.log(name);
+				categories.push(name);
+			}
+			//	console.log(categories);
+
+			for (var i = 0; i < categories.length; i++) {
+				//console.log(init[currentWave][categories[i]]);
+				var category;
+				//console.log(categories[i]);
+				category = categories[i];
+				var json = {};
+				if (category != "life") {
+					var category = category[0].toUpperCase() + category.substring(1);
+					json["name"] = category;
+					json["data"] = parseInt(init[currentWave][categories[i]]);
+					dataset.push(json);
+				}
+			}
+
+			//console.log(dataset);
+
+			// Dimensions for the chart: height, width, and space b/t the bars
+			var margins = { top: 20, right: 20, bottom: 50, left: 50 };
+			var height = window.innerHeight * 0.3 - margins.left - margins.right,
+				width = window.innerWidth * 0.25 - margins.top - margins.bottom,
+				barPadding = 5;
+
+			// Create a scale for the y-axis based on data
+			// >> Domain - min and max values in the dataset
+			// >> Range - physical range of the scale (reversed)
+			var yScale = d3.scale
+				.linear()
+				.domain([
+					0,
+					d3.max(dataset, function(d) {
+						return d.data;
+					})
+				])
+				.range([height, 0]);
+
+			// Implements the scale as an actual axis
+			// >> Orient - places the axis on the left of the graph
+			// >> Ticks - number of points on the axis, automated
+			var yAxis = d3.svg
+				.axis()
+				.scale(yScale)
+				.orient("left")
+				.ticks(5);
+
+			// Creates a scale for the x-axis based on city names
+			var xScale = d3.scale
+				.ordinal()
+				.domain(
+					dataset.map(function(d) {
+						return d.name;
+					})
+				)
+				.rangeRoundBands([0, width], 0.1);
+
+			// Creates an axis based off the xScale properties
+			var xAxis = d3.svg
+				.axis()
+				.scale(xScale)
+				.orient("bottom");
+
+			// Creates the initial space for the chart
+			// >> Select - grabs the empty <div> above this script
+			// >> Append - places an <svg> wrapper inside the div
+			// >> Attr - applies our height & width values from above
+			var chart = d3
+				.select("#countryChart")
+				.append("svg")
+				.attr("class", "bar-chart")
+				.attr("width", width + margins.left + margins.right)
+				.attr("height", height + margins.top + margins.bottom)
+				.append("g")
+				.attr(
+					"transform",
+					"translate(" + margins.left + "," + margins.top + ")"
+				);
+
+			// For each value in our dataset, places and styles a bar on the chart
+
+			// Step 1: selectAll.data.enter.append
+			// >> Loops through the dataset and appends a rectangle for each value
+			chart
+				.selectAll("rect")
+				.data(dataset)
+				.enter()
+				.append("rect")
+
+				// Step 2: X & Y
+				// >> X - Places the bars in horizontal order, based on number of
+				//        points & the width of the chart
+				// >> Y - Places vertically based on scale
+				.attr("x", function(d, i) {
+					return xScale(d.name);
+				})
+				.attr("y", function(d) {
+					return yScale(d.data);
+				})
+
+				// Step 3: Height & Width
+				// >> Width - Based on barpadding and number of points in dataset
+				// >> Height - Scale and height of the chart area
+				.attr("width", width / dataset.length - barPadding)
+				.attr("height", function(d) {
+					return height - yScale(d.data);
+				})
+				.attr("fill", function(d) {
+					return questionColor[d.name.toLowerCase()][1];
+				})
+				.on("mousemove", function(d, i) {
+					var mouse = d3.mouse(svg.node()).map(function(d) {
+						return parseInt(d);
+					});
+
+					tooltip
+						.classed("hidden", false)
+						.attr(
+							"style",
+							"left:" + mouse[0] + "px;top:" + (mouse[1] - 50) + "px"
+						)
+						.html(d.data + "%");
+				})
+				.on("mouseout", function(d, i) {
+					tooltip.classed("hidden", true);
+				})
+				.on("click", function(d) {
+					updateCategory(d.name);
+				});
+
+			// Renders the yAxis once the chart is finished
+			// >> Moves it to the left 10 pixels so it doesn't overlap
+			chart
+				.append("g")
+				.attr("class", "axis y-axis")
+				.attr("transform", "translate(-5, 0)")
+				.call(yAxis);
+
+			// Appends the yAxis
+			chart
+				.append("g")
+				.attr("class", "axis x-axis")
+				.attr("transform", "translate(0," + (height + 5) + ")")
+				.call(xAxis);
+
+			// Adds yAxis title
+			chart
+				.append("text")
+				.text("Percent")
+				.attr("transform", "translate(-30, -10)");
+
+			chart
+				.select(".x-axis")
+				.selectAll("text")
+				.attr("y", function(d, i) {
+					if (i % 2 == 0) {
+						return "10";
+					} else {
+						return "25";
+					}
+				});
+		}
+
 		// Update visualization country info
 		function updateCountry(country) {
 			console.log(country);
@@ -618,20 +1034,8 @@
 			}
 
 			// Remove any current data
-
 			$("#countryChart").empty();
 			$("#countryHeader").empty();
-
-			/*		<p class="p-3 text-left">
-									Here you can learn more about what people think is important
-									in life. Click on a country to learn more about it. You can
-									also zoom and pan on the map to easily find the country you
-									want.
-								</p>
-							<div class="row">
-								<div id="countryFlag" class="mx-auto"></div>
-							</div>
-						</div>*/
 
 			var countryName =
 				"<h2 id='countryName' class='m-2 mt-2 text-center'></h2>";
@@ -641,7 +1045,6 @@
 			$("#countryHeader").append(countryName);
 			$("#countryName").text(country.name);
 
-			currentCountry = country;
 			console.log("Current country");
 			console.log(currentCountry);
 
@@ -659,41 +1062,14 @@
 					"<h5 class='life-time text-center'>Average life expectancy </h5><h6 class='life-time-data text-center'>" +
 					country[currentWave]["life"] +
 					" years</h6>";
-
-				var div = "<div id='countryData1' class='col-6'></div>"
-				var div2 = "<div id='countryData2' class='col-6'></div>"
-				var div3 = "<div id='countryRow' class='row mt-4'></div>"
-
-				var work = "<p>Work: " + country[currentWave]["work"] + "%</p>"
-				var family = "<p>Family: " + country[currentWave]["family"] + "%</p>"
-				var leisure = "<p>Leisure: " + country[currentWave]["leisure"] + "%</p>"
-				var religion = "<p>Religion: " + country[currentWave]["religion"] + "%</p>"
-				var happiness = "<p>Happiness: " + country[currentWave]["happiness"] + "%</p>"
-				var health = "<p>Health: " + country[currentWave]["health"] + "%</p>"
-				var politics = "<p>Politics: " + country[currentWave]["politics"] + "%</p>"
-				var friends = "<p>Friends: " + country[currentWave]["friends"] + "%</p>"
-
 				$("#countryChart").append(life);
-				$("#countryChart").append(div3);
-				$("#countryRow").append(div);
-				$("#countryRow").append(div2);
-
-				$("#countryData1").append(work);
-				$("#countryData1").append(family);
-				$("#countryData1").append(leisure);
-				$("#countryData1").append(religion);
-
-
-				$("#countryData2").append(happiness);
-				$("#countryData2").append(health);
-				$("#countryData2").append(politics);
-				$("#countryData2").append(friends);
-
-			}else{
+				drawBarChart(country);
+			} else {
 				var message = "<h4 class='text-center'>No data available</h4>";
 				$("#countryChart").append(message);
 			}
 
+			currentCountry = country;
 		}
 
 		// Remove country when deselected
@@ -701,6 +1077,8 @@
 			$("#countryHeader").empty();
 			$("#countryChart").empty();
 			currentCountry = null;
+			console.log("Current country");
+			console.log(currentCountry);
 		}
 
 		// When clicked on a country
@@ -744,7 +1122,7 @@
 
 			g.selectAll("path")
 				.transition()
-				.duration(700)
+				.duration(900)
 				.attr("d", path);
 		}
 
