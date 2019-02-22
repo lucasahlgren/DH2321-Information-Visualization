@@ -103,10 +103,9 @@
 								health is very good or good. Each category is encoded with the
 								colors down below. A stronger color corresponds to a higher
 								percentage. The color scale goes from the lowest percentage of
-								all countries in that category to the highest percentage of all
+								all countries in that category over the 20 years to the highest percentage of all
 								countries. This helps to differentiate countries from another
-								when the difference is small. It makes it easier to see which
-								country is the worst and the best wihtin that category.
+								and makes it easier to see which country is the worst and which is the best within that category.
 							</p>
 							<ul>
 								<li>
@@ -452,8 +451,8 @@
 					// Put data into variables
 					world_id = data;
 
-					console.log("READING DATA");
-					console.log(world_id);
+					//console.log("READING DATA");
+					//console.log(world_id);
 
 					var updatedColorScale = updateColorScale();
 
@@ -535,7 +534,7 @@
 						.append("text")
 						.attr(
 							"transform",
-							"translate(" + parseInt(200 + unit.length * 5) + ", 38)"
+							"translate(" + parseInt(200 + unit.length * 5) + ", 39)"
 						)
 						.text("No data");
 
@@ -663,8 +662,8 @@
 					minVal = min;
 				}
 			}
-			console.log(minVal);
-			console.log(maxVal);
+			//console.log(minVal);
+			//console.log(maxVal);
 			return (colorScale = [minVal, maxVal]);
 		}
 
@@ -821,7 +820,7 @@
 
 		// Change wave
 		function switchWave(wave) {
-			console.log(currentWave);
+			//console.log(currentWave);
 			$("#" + currentWave).removeClass("wave-active");
 			$("#" + wave).addClass("wave-active");
 
@@ -830,7 +829,7 @@
 			update();
 			if (currentCountry != null) {
 				updateCountry(currentCountry);
-				console.log(currentCountry);
+				//console.log(currentCountry);
 			}
 		}
 
@@ -845,25 +844,21 @@
 		}
 
 		function drawBarChart(country) {
-			var init = country;
+		
 			//console.log(country);
-
-			//console.log(init);
-			//console.log(init[currentWave]);
 
 			var dataset = [];
 			var categories = [];
 
-			for (var hej in init[currentWave]) {
+			for (var key in country[currentWave]) {
 				//console.log(hej);
-				var name = hej;
+				var key = key;
 				//console.log(name);
-				categories.push(name);
+				categories.push(key);
 			}
 			//	console.log(categories);
 
 			for (var i = 0; i < categories.length; i++) {
-				//console.log(init[currentWave][categories[i]]);
 				var category;
 				//console.log(categories[i]);
 				category = categories[i];
@@ -871,7 +866,7 @@
 				if (category != "life") {
 					var category = category[0].toUpperCase() + category.substring(1);
 					json["name"] = category;
-					json["data"] = parseInt(init[currentWave][categories[i]]);
+					json["data"] = parseInt(country[currentWave][categories[i]]);
 					dataset.push(json);
 				}
 			}
@@ -895,7 +890,8 @@
 						return d.data;
 					})
 				])
-				.range([height, 0]);
+				.range([height, 0])
+				.nice();
 
 			// Implements the scale as an actual axis
 			// >> Orient - places the axis on the left of the graph
@@ -1024,9 +1020,9 @@
 
 		// Update visualization country info
 		function updateCountry(country) {
-			console.log(country);
+			//console.log(country);
 
-			console.log(country.name);
+			//console.log(country.name);
 			if (country.name === "Kosovo") {
 				var iso_a2 = "xk";
 			} else {
@@ -1045,8 +1041,8 @@
 			$("#countryHeader").append(countryName);
 			$("#countryName").text(country.name);
 
-			console.log("Current country");
-			console.log(currentCountry);
+			//console.log("Current country");
+			//console.log(currentCountry);
 
 			var src = "svg/" + iso_a2 + ".svg";
 			var img = "<img class='flag mx-auto shadow' src=" + src + " />";
@@ -1077,8 +1073,8 @@
 			$("#countryHeader").empty();
 			$("#countryChart").empty();
 			currentCountry = null;
-			console.log("Current country");
-			console.log(currentCountry);
+			//console.log("Current country");
+			//console.log(currentCountry);
 		}
 
 		// When clicked on a country
@@ -1104,7 +1100,7 @@
 					}
 			);
 
-			console.log("Clicked");
+			//console.log("Clicked");
 			//console.log(d);
 
 			var centroid = path.centroid(d),
