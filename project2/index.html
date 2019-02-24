@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <meta charset="utf-8" />
 <head>
-	<title>Project 2 | World Values Survey Visualization</title>
+	<title>Visualizing the World Through its Own Worldview</title>
 
 	<!-- Load styles and icons -->
 	<link rel="shortcut icon" type="image/png" href="assets/shortcut_logo.png" />
@@ -27,35 +27,30 @@
 <!-- Visualization based on a map example by Mike Bostock https://bl.ocks.org/mbostock/eec4a6cda2f573574a11 -->
 <body>
 	<div class="container-fluid bg">
-		<div class="app p-4">
+		<div class="app p-4 ">
 			<div class="row">
 				<div class="col-12">
 					<!-- Header -->
-					<h2 class="header text-center p-3 mb-3">
-						Project 2 - World values survey
-						<button
-							class="btn btn-sm btn-light ml-4 menu-btn"
-							data-toggle="modal"
-							data-target=".info-modal"
-						>
-							Info
-						</button>
-						<!--	<img
-							class="info ml-2"
-							src="assets/info.png"
-							alt="Information button"
-							data-toggle="modal"
-							data-target=".info-modal"
-						/>-->
-						<button
-							class="btn btn-sm btn-light menu-btn"
-							data-toggle="modal"
-							data-target=".discovery-modal"
-						>
-							Discovery process
-						</button>
+					<h2 class="header text-center p-0 pb-2 m-0">
+						Visualizing the World Through its Own Worldview
 					</h2>
 				</div>
+			</div>
+			<div class="text-center m-3">
+				<button
+					class="btn btn-sm btn-light ml-4 menu-btn"
+					data-toggle="modal"
+					data-target=".info-modal"
+				>
+					About
+				</button>
+				<button
+					class="btn btn-sm btn-light menu-btn"
+					data-toggle="modal"
+					data-target=".discovery-modal"
+				>
+					Discovery process
+				</button>
 			</div>
 
 			<!-- Info modal -->
@@ -69,111 +64,114 @@
 				<div class="modal-dialog modal-lg" role="document">
 					<div class="modal-content p-3">
 						<div class="modal-header">
-							<h3 class="modal-title">World values survey visualization</h3>
-							<button
-								class="btn-sm btn-light btn"
-								type="button"
+							<h3 class="modal-title">World Values Survey visualization</h3>
+							<img
 								data-dismiss="modal"
 								aria-label="Close"
-							>
-								<span aria-hidden="true">X</span>
-							</button>
+								class="p-1 close-button"
+								style="height:30px;"
+								src="assets/close.svg"
+								alt="Close button"
+							/>
 						</div>
 						<div class="modal-body">
 							<p>
-								This is a world values survey visualization including data from
-								gapminder. Here you can learn more about what people think is
-								important in life as well as the state of health, if they feel
-								happy and the average life expectancy. Click on a country to
-								learn more about it. You can also zoom and pan on the map to
-								easily find the country you want.
+								This is a World Values Survey (WVS) visualization with
+								additional data from Gapminder. Here you can learn more about
+								what people think is important in life and what they think about their own lives in terms of
+								 their state of health and if they feel happy. 
+								 Moreover data about each country's average life expectancy is also presented to add another dimension for analysis of correlations between life values.
+								Click on a country to learn more about it. You can also zoom and
+								pan on the map to easily find the country you want.
 							</p>
 							<div class="container mx-auto py-4">
 								<img class="mx-auto row col-6" src="assets/gapminder.png" />
 								<img class="mx-auto row col-6" src="assets/wvs2.png" />
 							</div>
 							<p>
-								Besides average life expectancy (years) each category presents
-								the number of percent of people who thinks the category is very
-								important or rather important when it comes to work, politics,
-								religion, leisure time and friends. For happiness, the number of
-								percents corresponds to people who answered that they feel very
-								happy or quite happy. For the state of health, the number of
-								percents corresponds to people who answered that their state of
-								health is very good or good. Each category is encoded with the
-								colors down below. A stronger color corresponds to a higher
-								percentage. The color scale goes from the lowest percentage of
-								all countries in that category over the 20 years to the highest percentage of all
+								Each statement/category presents the number of percent of people who
+								thinks the category is very important or rather important when
+								it comes to work, politics, religion, leisure time and friends.
+								For happiness, the number of percent corresponds to people who
+								answered that they feel very happy or quite happy. For the state
+								of health, the number of percent corresponds to people who
+								answered that their state of health is very good or good. Life
+								expectancy is the number of years a person is expected to live
+								with current standards (data from Gapminder). Each category is
+								encoded with a color which can be seen down below. A stronger
+								color corresponds to a higher percentage. The color scale goes
+								from the lowest percentage of all countries in that category
+								over the 20 years (1995-2014) to the highest percentage of all
 								countries. This helps to differentiate countries from another
-								and makes it easier to see which country is the worst and which is the best within that category.
+								and makes it easier to see the overall importance of each category.
 							</p>
-							<ul>
-								<li>
-									Life expectancy -
+							<ul class="category-color row col-9 mx-auto">
+								<li class="col-4 p-2 category-color-item">
 									<span
 										class="dot"
 										style=" background-color: rgba(2, 100, 160,1)"
 									></span>
+									Life expectancy
 								</li>
-								<li>
-									Work -
+								<li class="col-4 p-2 category-color-item">
 									<span
 										class="dot"
 										style=" background-color: rgba(255, 50, 160,1)"
 									></span>
+									Work
 								</li>
-								<li>
-									Politics -
+								<li class="col p-2 category-color-item">
 									<span
 										class="dot"
 										style=" background-color: rgba(70, 70, 70,1)"
 									></span>
+									Politics
 								</li>
-								<li>
-									Family -
+								<li class="col-4 p-2 category-color-item">
 									<span
 										class="dot"
 										style=" background-color: rgba(100, 70, 50,1)"
 									></span>
+									Family
 								</li>
-								<li>
-									Religion -
+								<li class="col-4 p-2 category-color-item">
 									<span
 										class="dot"
 										style=" background-color: rgba(50, 120, 120,1)"
 									></span>
+									Religion
 								</li>
-								<li>
-									Happiness -
+								<li class="col-4 p-2 category-color-item">
 									<span
 										class="dot"
 										style=" background-color: rgba(170, 170, 20,1)"
 									></span>
+									Happiness
 								</li>
-								<li>
-									State of health -
+								<li class="col-4 p-2 category-color-item">
 									<span
 										class="dot"
 										style=" background-color: rgba(2, 150, 50,1)"
 									></span>
+									State of health
 								</li>
-								<li>
-									Leisure time -
+								<li class="col-4 p-2 category-color-item">
 									<span
 										class="dot"
 										style=" background-color: rgba(150, 0, 150,1)"
 									></span>
+									Leisure time
 								</li>
-								<li>
-									Friends -
+								<li class="col-4 p-2 category-color-item">
 									<span
 										class="dot"
 										style=" background-color:rgba(255, 50, 80,1)"
 									></span>
+									Friends
 								</li>
 							</ul>
-							<p>
-								The visualization is based on a map example by Mike Bostock
+							<p class="text-center">
+								The visualization is inspired by an example from Mike Bostock
 								which can be found
 								<a href="https://bl.ocks.org/mbostock/eec4a6cda2f573574a11"
 									>here</a
@@ -196,27 +194,176 @@
 					<div class="modal-content p-3">
 						<div class="modal-header">
 							<h3 class="modal-title">Discovery process</h3>
-							<button
-								class="btn-sm btn-light btn"
-								type="button"
+							<img
 								data-dismiss="modal"
 								aria-label="Close"
-							>
-								<span aria-hidden="true">X</span>
-							</button>
+								class="p-1 close-button"
+								style="height:30px;"
+								src="assets/close.svg"
+								alt="Close button"
+							/>
 						</div>
 						<div class="modal-body">
-							<h4>World values survey</h4>
-							<p>
-								First I had to select all the countries I wanted to include.
+							<h4>The World Values Survey's visualization tools</h4>
+							<p class="py-3">
+								I am interested to know what people think about life, what is
+								important and how do they feel about their own lives. On the
+								World Values Survey's website you have the option to select a
+								wave. I am interested in the wave 2010-2014.
 							</p>
+							<img
+								class="col-7 m-3 p-0 shadow mx-auto d-block"
+								src="assets/discovery_process/WVS1.jpg"
+								alt="World values survey visualization"
+							/>
+							<p class="py-3">
+								In the next step I can pick between different countries I want
+								to compare. I would like to select all countries at once, but
+								that is not possible unfortunately. I select a couple of
+								countries.
+							</p>
+							<img
+								class="col-7 m-3 p-0 shadow mx-auto d-block"
+								src="assets/discovery_process/WVS2.jpg"
+								alt="Country selection"
+							/>
+							<p class="py-3">
+								I search for life and can see several life-related questions. I
+								choose to go with politics.
+							</p>
+							<img
+								class="col-7 m-3 p-0 shadow mx-auto d-block"
+								src="assets/discovery_process/WVS3.jpg"
+								alt="Survey questions"
+							/>
+							<p class="py-3">
+								From here I can see the percentages for the question
+								alternatives between countries, but I would like to compare
+								countries based on people who think politics is important.
+							</p>
+							<img
+								class="col-7 m-3 p-0 shadow mx-auto d-block"
+								src="assets/discovery_process/WVS4.jpg"
+								alt="Survey results"
+							/>
+							<p class="py-3">
+								I go to the map view and try to filter based on very and rather
+								important answers, but cannot get it to work. Moreover it is
+								hard to compare countries based on the world view since some
+								countries are very small.
+							</p>
+
+							<img
+								class="col-7 m-3 p-0 shadow mx-auto d-block"
+								src="assets/discovery_process/WVS5.jpg"
+								alt="Map view filtering"
+							/>
+							<img
+								class="col-7 m-3 p-0 shadow mx-auto d-block"
+								src="assets/discovery_process/WVS6.jpg"
+								alt="Map view selection"
+							/>
+							<p class="py-3">
+								I would also like to compare the results with other
+								life-related questions (e.g. family is important) for
+								each wave to find eventual correlations, but that is also not possible
+								unfortunately. It is hard to draw any conclusions.
+							</p>
+							<img
+								class="col-7 m-3 p-0 shadow mx-auto d-block"
+								src="assets/discovery_process/WVS7.jpg"
+								alt="Wave selection"
+							/>
+							<img
+								class="col-7 m-3 p-0 shadow mx-auto d-block"
+								src="assets/discovery_process/WVS8.jpg"
+								alt="Question survey if family is important"
+							/>
 							<br />
-							<h4>Project 2 visualization</h4>
-							<p>
-								With my visualization you don't have to select all the countries
-								you want, they are all there. It is easy to select a specific
-								topic/question and get immediate response about the country
-								because of preattentive features such as color and position.
+							<h4 class="pt-3">New improved visualization</h4>
+							<p class="py-3">
+								This visualization uses the navigation concept overview +
+								detail. The overview consists of a world map where you can zoom
+								and pan to easily find the country you want to analyze.
+							</p>
+							<img
+								class="col-9 m-3 p-0 shadow mx-auto d-block"
+								src="assets/discovery_process/Project1.jpg"
+								alt="Visualization overview"
+							/>
+							<p class="py-3">
+								It is easy to select a specific statement/category and get
+								immediate response about the country's result because of
+								preattentive features such as color and position.
+							</p>
+							<img
+								class="col-9 m-3 p-0 shadow mx-auto d-block"
+								src="assets/discovery_process/Project2.jpg"
+								alt="Survey category selection"
+							/>
+							<p class="py-3">
+								Each category is color-encoded to differentiate the
+								categories. Moreover the color on each country on the
+								map corresponds to the summation of percent of people thinking
+								that category is important. A stronger color denotes a
+								higher percentage. In the upper left corner there is a color
+								scale which goes from the lowest to the highest value over all
+								20 years (1995-2014), it helps to analyze the overall importance
+								of that category.
+							</p>
+							<img
+								class="col-9 m-3 p-0 shadow mx-auto d-block"
+								src="assets/discovery_process/Project3.jpg"
+								alt="Survey category politics"
+							/>
+							<img
+								class="col-9 m-3 p-0 shadow mx-auto d-block"
+								src="assets/discovery_process/Project4.jpg"
+								alt="Zoom in on Slovenia"
+							/>
+							<p class="py-3">
+								A click on a country reveals its detail view with the results
+								from all included life-related categories as a bar chart. 
+								I can tell that politics is of lowest importance in Slovenia.
+							</p>
+							<img
+								class="col-9 m-3 p-0 shadow mx-auto d-block"
+								src="assets/discovery_process/Project5.jpg"
+								alt="Survey category results Slovenia"
+							/>
+							<p class="py-3">
+								Hover the bar chart to get the exact number in percent.
+							</p>
+							<img
+								class="col-9 m-3 p-0 shadow mx-auto d-block"
+								src="assets/discovery_process/Project6.jpg"
+								alt="Hover bar chart"
+							/>
+							<p class="py-3">
+								It is easy to change wave and find out if the results have
+								changed.
+							</p>
+							<img
+								class="col-9 m-3 p-0 shadow mx-auto d-block"
+								src="assets/discovery_process/Project7.jpg"
+								alt="Slovenia 2010-2014"
+							/>
+							<p class="py-3">
+								A click on the bar chart will also update the map view with the
+								specific category.
+							</p>
+							<img
+								class="col-9 m-3 p-0 shadow mx-auto d-block"
+								src="assets/discovery_process/Project8.jpg"
+								alt="Slovenia 2010-2014"
+							/>
+							<br />
+							<h4 class="pt-3">What have I learned?</h4>
+							<p class="py-3">
+								I have learned to analyze and breakdown a visualization to find areas for improvement. 
+								Furthermore, I have learned to put theory into practice, to make the new visualization easy to use, understandable and helpful for gaining insights about the dataset.
+								From working with this project, I better understand the importance of and the complexity of how to do data cleaning and decide on what data structures to use, which will be helpful in any future data-related project. 
+								It has been a fun project and I now understand that people of Slovenia think politics is really not important at all.
 							</p>
 						</div>
 					</div>
@@ -232,31 +379,42 @@
 
 				<!-- Country container -->
 				<div class="col-4">
-					<div id="countryInfo" class="card">
-						<div id="countryHeader" class="p-2 pt-3">
-							<h3 id="introHeader" class="pb-2 m-2 mt-2 text-center">
-								Welcome!
-							</h3>
-							<p id="introText" class="pr-3 pl-3 pb-2 text-left">
-								This is a world values survey + gapminder visualization. Here
-								you can learn more about what people think is important in life.
-								If you are interested in what kind of data you can click the
-								info button above to read more. Click on a country to learn more
-								about it. You can also zoom and pan on the map to easily find
-								the country you want.
-							</p>
-						</div>
-						<div class="row mx-auto">
-							<div id="countryChart" class="mx-auto p-3">
-								<div class="col-8 mx-auto p-2">
-									<img class="col-12 pb-2" src="assets/gapminder.png" />
-									<img class="col-12 p-0 " src="assets/wvs2.png" />
+					<div class="container p-0">
+						<div id="countryInfo" class="card">
+							<div id="countryHeader">
+								<div id="intro" class="p-2 pt-3">
+									<h3 id="introHeader" class="pb-2 m-2 mt-2 text-center">
+										Welcome!
+									</h3>
+									<p id="introText" class="pr-4 pl-4 pb-2 text-left">
+										This is a World Values Survey (WVS) visualization with
+										additional data from Gapminder. Here you can learn more
+										about what people think is important in life and what they think about their own lives. If you are
+										interested in what kind of data you can click the about
+										button above to read more. Click on a country to learn more
+										about it. You can also zoom and pan on the map to easily
+										find the country you want.
+									</p>
+								</div>
+							</div>
+							<div class="row mx-auto fill-height">
+								<div id="countryChart" class="mx-auto p-3">
+									<div class="col-md-10 mx-auto p-2">
+										<img
+											class="col-md-8 d-block mx-auto pb-2"
+											src="assets/gapminder.png"
+										/>
+										<img
+											class="col-md-8 d-block mx-auto p-0 "
+											src="assets/wvs2.png"
+										/>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
+					<div id="chart"></div>
 				</div>
-				<div id="chart"></div>
 			</div>
 
 			<!-- Filter container -->
@@ -458,19 +616,49 @@
 
 					// Custom legend
 
+					var defs = svg.append("defs");
+
+					var gradient = defs
+						.append("linearGradient")
+						.attr("id", "svgGradient")
+						.attr("x1", "0%")
+						.attr("x2", "100%")
+						.attr("y1", "100%")
+						.attr("y2", "100%");
+
+					gradient
+						.append("stop")
+						.attr("class", "start")
+						.attr("offset", "0%")
+						.attr("stop-color", questionColor[currentCategory][0])
+						.attr("stop-opacity", 1);
+
+					gradient
+						.append("stop")
+						.attr("class", "end")
+						.attr("offset", "100%")
+						.attr("stop-color", questionColor[currentCategory][1])
+						.attr("stop-opacity", 1);
+
 					var legend = d3
 						.select(".map")
 						.append("svg")
 						.attr("height", 200)
 						.attr("id", "legend")
-						.attr("width", 300)
-						.append("g")
+						.attr("width", 390)
+						.append("g");
 
-
+					var unit;
+					var margin;
+					var width;
 					if (currentCategory == "life") {
-						var unit = " years";
+						unit = " years";
+						margin = 35;
+						width = 350;
 					} else {
-						var unit = " %";
+						unit = " %";
+						margin = 10;
+						width = 305;
 					}
 
 					legend
@@ -479,43 +667,27 @@
 
 						.attr("transform", "translate(15,10)")
 						.attr("y", 0)
-						.attr("width", parseInt(255+unit.length*7))
+						.attr("width", width)
 						.attr("height", 50)
-						.style("fill", "white");
-
-					legend
-						.append("rect")
-						.attr("x", 0)
-
-						.attr("transform", "translate(40,25)")
-						.attr("y", 0)
-						.attr("width", 20)
-						.attr("height", 20)
-						.style("fill", questionColor[currentCategory][0]);
+						.attr("fill", "white");
 
 					legend
 						.append("text")
-						.attr("transform", "translate(65,38)")
+						.attr("transform", "translate(30,38)")
 						.text(updatedColorScale[0] + unit);
 
 					legend
 						.append("rect")
 						.attr("x", 0)
-						.attr(
-							"transform",
-							"translate(" + parseInt(105 + unit.length * 3) + ",25)"
-						)
+						.attr("transform", "translate(" + parseInt(55 + margin) + ",25)")
 						.attr("y", 0)
-						.attr("width", 20)
+						.attr("width", 100)
 						.attr("height", 20)
-						.style("fill", questionColor[currentCategory][1]);
+						.style("fill", "url(#svgGradient)");
 
 					legend
 						.append("text")
-						.attr(
-							"transform",
-							"translate(" + parseInt(130 + unit.length * 3) + ", 39)"
-						)
+						.attr("transform", "translate(" + parseInt(162 + margin) + ",38)")
 						.text(updatedColorScale[1] + unit);
 
 					legend
@@ -523,7 +695,7 @@
 						.attr("x", 0)
 						.attr(
 							"transform",
-							"translate(" + parseInt(175 + unit.length * 5) + ",25)"
+							"translate(" + parseInt(205 + 2 * margin) + ",25)"
 						)
 						.attr("y", 0)
 						.attr("width", 20)
@@ -534,7 +706,7 @@
 						.append("text")
 						.attr(
 							"transform",
-							"translate(" + parseInt(200 + unit.length * 5) + ", 39)"
+							"translate(" + parseInt(230 + 2 * margin) + ", 39)"
 						)
 						.text("No data");
 
@@ -701,86 +873,93 @@
 		function updateCategoryColor() {
 			var updatedColorScale = updateColorScale();
 
-		// Custom legend
+			// Custom legend
+			d3.select("defs").remove();
 
-		d3.select("#legend").selectAll("*").remove();
-		var legend = d3.select("#legend").append("g");
-				
-				
-				
-				var unit;
-				if (currentCategory == "life") {
-					unit = " years";
-				} else {
-					unit = " %";
-				}
+			d3.select("#legend")
+				.selectAll("*")
+				.remove();
+			var legend = d3.select("#legend").append("g");
 
-				legend
-					.append("rect")
-					.attr("x", 0)
+			var defs = svg.append("defs");
 
-					.attr("transform", "translate(15,10)")
-					.attr("y", 0)
-					.attr("width", parseInt(255+unit.length*7))
-					.attr("height", 50)
-					.style("fill", "white");
+			var gradient = defs
+				.append("linearGradient")
+				.attr("id", "svgGradient")
+				.attr("x1", "0%")
+				.attr("x2", "100%")
+				.attr("y1", "100%")
+				.attr("y2", "100%");
 
-				legend
-					.append("rect")
-					.attr("x", 0)
+			gradient
+				.append("stop")
+				.attr("class", "start")
+				.attr("offset", "0%")
+				.attr("stop-color", questionColor[currentCategory][0])
+				.attr("stop-opacity", 1);
 
-					.attr("transform", "translate(40,25)")
-					.attr("y", 0)
-					.attr("width", 20)
-					.attr("height", 20)
-					.style("fill", questionColor[currentCategory][0]);
+			gradient
+				.append("stop")
+				.attr("class", "end")
+				.attr("offset", "100%")
+				.attr("stop-color", questionColor[currentCategory][1])
+				.attr("stop-opacity", 1);
 
-				legend
-					.append("text")
-					.attr("transform", "translate(65,38)")
-					.text(updatedColorScale[0] + unit);
+			var unit;
+			var margin;
+			var width;
+			if (currentCategory == "life") {
+				unit = " years";
+				margin = 35;
+				width = 350;
+			} else {
+				unit = " %";
+				margin = 10;
+				width = 305;
+			}
 
-				legend
-					.append("rect")
-					.attr("x", 0)
-					.attr(
-						"transform",
-						"translate(" + parseInt(105 + unit.length * 3) + ",25)"
-					)
-					.attr("y", 0)
-					.attr("width", 20)
-					.attr("height", 20)
-					.style("fill", questionColor[currentCategory][1]);
+			legend
+				.append("rect")
+				.attr("x", 0)
 
-				legend
-					.append("text")
-					.attr(
-						"transform",
-						"translate(" + parseInt(130 + unit.length * 3) + ", 38)"
-					)
-					.text(updatedColorScale[1] + unit);
+				.attr("transform", "translate(15,10)")
+				.attr("y", 0)
+				.attr("width", width)
+				.attr("height", 50)
+				.attr("fill", "white");
 
-				legend
-					.append("rect")
-					.attr("x", 0)
-					.attr(
-						"transform",
-						"translate(" + parseInt(175 + unit.length * 5) + ",25)"
-					)
-					.attr("y", 0)
-					.attr("width", 20)
-					.attr("height", 20)
-					.style("fill", "black");
+			legend
+				.append("text")
+				.attr("transform", "translate(30,38)")
+				.text(updatedColorScale[0] + unit);
 
-				legend
-					.append("text")
-					.attr(
-						"transform",
-						"translate(" + parseInt(200 + unit.length * 5) + ", 39)"
-					)
-					.text("No data");
+			legend
+				.append("rect")
+				.attr("x", 0)
+				.attr("transform", "translate(" + parseInt(55 + margin) + ",25)")
+				.attr("y", 0)
+				.attr("width", 100)
+				.attr("height", 20)
+				.style("fill", "url(#svgGradient)");
 
+			legend
+				.append("text")
+				.attr("transform", "translate(" + parseInt(162 + margin) + ",38)")
+				.text(updatedColorScale[1] + unit);
 
+			legend
+				.append("rect")
+				.attr("x", 0)
+				.attr("transform", "translate(" + parseInt(205 + 2 * margin) + ",25)")
+				.attr("y", 0)
+				.attr("width", 20)
+				.attr("height", 20)
+				.style("fill", "black");
+
+			legend
+				.append("text")
+				.attr("transform", "translate(" + parseInt(230 + 2 * margin) + ", 39)")
+				.text("No data");
 
 			var colorScale = d3.scale
 				.linear()
@@ -844,7 +1023,6 @@
 		}
 
 		function drawBarChart(country) {
-		
 			//console.log(country);
 
 			var dataset = [];
@@ -875,7 +1053,7 @@
 
 			// Dimensions for the chart: height, width, and space b/t the bars
 			var margins = { top: 20, right: 20, bottom: 50, left: 50 };
-			var height = window.innerHeight * 0.3 - margins.left - margins.right,
+			var height = window.innerHeight * 0.31 - margins.left - margins.right,
 				width = window.innerWidth * 0.25 - margins.top - margins.bottom,
 				barPadding = 5;
 
@@ -925,7 +1103,7 @@
 			var chart = d3
 				.select("#countryChart")
 				.append("svg")
-				.attr("class", "bar-chart")
+				.attr("id", "bar-chart")
 				.attr("width", width + margins.left + margins.right)
 				.attr("height", height + margins.top + margins.bottom)
 				.append("g")
@@ -1033,12 +1211,14 @@
 			$("#countryChart").empty();
 			$("#countryHeader").empty();
 
+			var countryWrapper = "<div id='country' class='pt-3 pb-2'></div>";
 			var countryName =
-				"<h2 id='countryName' class='m-2 mt-2 text-center'></h2>";
+				"<h2 id='countryName' class='mb-2 mt-1 text-center'></h2>";
 
 			//console.log(countryName)
 
-			$("#countryHeader").append(countryName);
+			$("#countryHeader").append(countryWrapper);
+			$("#country").append(countryName);
 			$("#countryName").text(country.name);
 
 			//console.log("Current country");
@@ -1048,20 +1228,20 @@
 			var img = "<img class='flag mx-auto shadow' src=" + src + " />";
 
 			var countryFlag =
-				"<div class='row'><div id='countryFlag' class='mx-auto mb-2'></div></div>";
+				"<div class='row'><div id='countryFlag' class='mx-auto mb-3'></div></div>";
 
-			$("#countryHeader").append(countryFlag);
+			$("#country").append(countryFlag);
 			$("#countryFlag").append(img);
 
 			if (country[currentWave] != null) {
 				var life =
-					"<h5 class='life-time text-center'>Average life expectancy </h5><h6 class='life-time-data text-center'>" +
+					"<h5 class='life-time text-center'>Average life expectancy </h5><h6 class='life-time-data mb-3 text-center'>" +
 					country[currentWave]["life"] +
 					" years</h6>";
 				$("#countryChart").append(life);
 				drawBarChart(country);
 			} else {
-				var message = "<h4 class='text-center'>No data available</h4>";
+				var message = "<h4 class='text-center noData'>No data available</h4>";
 				$("#countryChart").append(message);
 			}
 
