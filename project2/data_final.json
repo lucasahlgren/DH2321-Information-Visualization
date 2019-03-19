@@ -2613,26 +2613,8 @@
 		"id": "630",
 		"iso_a2": "PR",
 		"name": "Puerto Rico",
-		"wave1": {
-			"work": "95,9",
-			"family": "99,6",
-			"leisure": "88,4",
-			"politics": "35,4",
-			"happiness": "90,8",
-			"friends": "75,6",
-			"religion": "92,8",
-			"health": "67,6"
-		},
-		"wave2": {
-			"work": "94,2",
-			"family": "99,5",
-			"leisure": 86,
-			"politics": "39,4",
-			"happiness": 94,
-			"friends": "81,8",
-			"religion": "93,5",
-			"health": "72,8"
-		},
+		"wave1": null,
+		"wave2": null,
 		"wave3": null,
 		"wave4": null
 	},
